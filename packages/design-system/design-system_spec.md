@@ -188,12 +188,13 @@ Component tests use Vitest and Testing Library in jsdom, plus an axe check (`vit
 - `DocHero`: a `PageHero` with `size="lg"` for each page title.
 - `TokenTable`: takes a token file's raw text (imported with Vite's `?raw` suffix), parses it with the same helper the tests use, and lists every variable with its name, value and usage comment. Variants render a color swatch (light and dark side by side), a type specimen, a spacing bar or a radius box. Because the blocks read the CSS files themselves, the docs can't drift from the tokens.
 - `DoDont`: two panels side by side for usage rules.
+- `ThemePair`: the same panel rendered in the light and dark themes side by side, for the Introduction page.
 
 Pages:
 
 | Page | Sidebar path | Content |
 | --- | --- | --- |
-| Introduction | Introduction | What the system is (its name and what it's for; don't describe the Ciaccona mockup it came from), the four principles (§1), how to install and import (`@dnd/design-system`, `@dnd/design-system/styles.css`). No contributor or AI rules: those live in CONSTITUTION Part II §4 and this spec. |
+| Introduction | Introduction | What the system is (its name and what it's for; don't describe the Ciaccona mockup it came from), the four principles (§1), then a "How to use" section with two parts. **Install and import** covers `@dnd/design-system` and `@dnd/design-system/styles.css`. **Light and dark** explains the theme terms in plain words: a theme is a set of color values; light is the default; `data-theme="dark"` on any element (or `<html>`) turns that part dark and `data-theme="light"` turns it back; color tokens are named by role (`ink`, `ground`, `surface`, `forest`) so one name is right in both themes; the toolbar Theme switch controls stories and docs while the Storybook sidebar follows the OS setting. It shows the same panel in both themes side by side (doc-only `ThemePair` block). No contributor or AI rules: those live in CONSTITUTION Part II §4 and this spec. |
 | Voice | Foundations/Voice | The voice rules (§1) with example copy. |
 | Color | Foundations/Color | As described in the color spec. |
 | Typography | Foundations/Typography | As described in the typography spec. |

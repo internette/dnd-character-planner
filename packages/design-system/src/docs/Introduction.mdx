@@ -1,6 +1,7 @@
 import { Meta } from "@storybook/addon-docs/blocks";
 import { DocPage } from "./blocks/DocPage";
 import { DocHero } from "./blocks/DocHero";
+import { ThemePair } from "./blocks/ThemePair";
 
 <Meta title="Introduction" name="Docs" />
 
@@ -21,7 +22,9 @@ Bag of Holding is the design system for the D&D Character Planner. Like the magi
 3. **Phase is a language.** A pick's role in the loop is always shown with its word. Color supports the word and never replaces it.
 4. **The player decides.** Recommendations are marked *Recommended*, with alternatives directly under them. Nothing reads as a requirement.
 
-## Install and import
+## How to use
+
+### Install and import
 
 The package lives in this monorepo as `@dnd/design-system`. Add it to a workspace with `"@dnd/design-system": "workspace:*"`, then import the styles once and the components where you need them:
 
@@ -32,6 +35,24 @@ import { PageHero } from "@dnd/design-system";
 
 `styles.css` includes the tokens, the shared `cp-` classes and every component's styles. Use `@dnd/design-system/tokens.css` for the tokens alone. Fonts load from `@dnd/design-system/fonts.css`, unless the app loads Lora and Public Sans itself (the web app uses `next/font`).
 
-Light is the default theme. Set `data-theme="dark"` on any ancestor to switch a subtree to dark. In this Storybook, use the theme switch in the toolbar.
+### Light and dark
+
+Bag of Holding has two **themes**, light and dark. A theme is a full set of color values; only colors change between them, never type, spacing or shape.
+
+- **Light** is the default. A page with no theme set is light.
+- **Dark** applies to everything inside an element with `data-theme="dark"`. Set it on `<html>` for a whole page, or on any element to theme just that part.
+- `data-theme="light"` switches a part back to light inside a dark page.
+
+Color tokens are named for their **role**, not their look, so the same name is right in both themes. `ink` is the main text color: near-black on a light page and near-white on a dark one. `ground` is the page background, `surface` is a card on top of it, and `forest` is the hero green, which stays dark in both themes.
+
+```html
+<html data-theme="dark">
+  <!-- every color token now uses its dark value -->
+</html>
+```
+
+<ThemePair />
+
+In this Storybook, the **Theme** switch in the toolbar sets the theme for every story and docs page. The Storybook sidebar itself follows your computer's light or dark setting.
 
 </DocPage>

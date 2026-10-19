@@ -283,3 +283,30 @@
   border: var(--stroke-hairline) solid var(--color-line);
   border-radius: var(--radius-lg);
 }
+
+.cp-doc-themes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--layout-card-min), 1fr));
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+.cp-doc-theme {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--color-ground);
+  border: var(--stroke-hairline) solid var(--color-line);
+  border-radius: var(--radius-lg);
+}
+
+.cp-doc-theme-label {
+  color: var(--color-ink-muted);
+}
+
+.cp-doc .cp-doc-theme-body {
+  margin: 0;
+  font: var(--type-body);
+  color: var(--color-ink-body);
+}
