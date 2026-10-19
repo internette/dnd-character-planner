@@ -1,6 +1,6 @@
 # SideNav component spec
 
-Parent: [root spec](../../../SPEC.md). The root spec's shared component rules apply; this file adds what is specific to SideNav.
+Parent: [root spec](../../../design-system_spec.md). The root spec's shared component rules apply; this file adds what is specific to SideNav.
 
 ## Purpose
 
