@@ -1,0 +1,32 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { DocPage } from "./blocks/DocPage";
+import { DocHero } from "./blocks/DocHero";
+import { TokenTable } from "./blocks/TokenTable";
+import spacingCss from "../styles/tokens/spacing/spacing.css?raw";
+import shapeCss from "../styles/tokens/shape/shape.css?raw";
+
+<Meta title="Foundations/Spacing" name="Docs" />
+
+<DocPage>
+
+<DocHero title="Spacing and shape" subtitle="Everything sits on a 4px grid." />
+
+`--space-N` is N × 4px. Use only these steps; never hand-type a value between them. There are no 2px or 6px nudges. `space-12` (48px) is the minimum height and width of anything tappable.
+
+## Spacing
+
+<TokenTable css={spacingCss} variant="space" />
+
+## Radii
+
+Radii are on the 4px grid. Pills are 24px tall with `radius-xl`; discs use `radius-full`.
+
+<TokenTable css={shapeCss} variant="radius" prefix="--radius-" />
+
+## Strokes
+
+Strokes are the one exception to the 4px rule, because they are lines, not space. Cards get a hairline border and no shadow; there are no shadow tokens.
+
+<TokenTable css={shapeCss} variant="stroke" prefix="--stroke-" />
+
+</DocPage>

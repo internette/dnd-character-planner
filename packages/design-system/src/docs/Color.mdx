@@ -1,0 +1,21 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { DocPage } from "./blocks/DocPage";
+import { DocHero } from "./blocks/DocHero";
+import { TokenTable } from "./blocks/TokenTable";
+import colorCss from "../styles/tokens/color/color.css?raw";
+
+<Meta title="Foundations/Color" name="Docs" />
+
+<DocPage>
+
+<DocHero title="Color" subtitle="Every color in the system, for light and dark." />
+
+Colors are CSS custom properties named for their role, never their look: `var(--color-ink)`, `var(--color-gather-tint)`. Light values are the default. Set `data-theme="dark"` on any ancestor for dark. Components and pages never use a hex value directly.
+
+Each token below shows its light swatch, then its dark swatch, with the contrast pairs it belongs to. Every pair passes WCAG 4.5:1 in both themes, and the token tests check them all. The page reads `color.css` itself, so it can't drift from the tokens.
+
+`gold` is for the RECOMMENDED and STEP labels only, never body text. `hold` also marks CONCENTRATION.
+
+<TokenTable css={colorCss} variant="color" />
+
+</DocPage>

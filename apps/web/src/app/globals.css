@@ -1,0 +1,12 @@
+/* Point the design system's font families at the fonts next/font loads. */
+html {
+  --font-display: var(--next-font-lora), Georgia, "Times New Roman", serif;
+  --font-body: var(--next-font-public-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ground);
+  color: var(--color-ink);
+  font: var(--type-body);
+}

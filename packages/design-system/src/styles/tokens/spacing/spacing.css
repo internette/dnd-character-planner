@@ -1,0 +1,23 @@
+/* Character Planner spacing tokens. --space-N is N x 4px. */
+:root {
+  /* Tag padding (vertical), gap between a label and a spell name. */
+  --space-1: 4px;
+  /* Chip padding (horizontal), gap between chips and between list items. */
+  --space-2: 8px;
+  /* Nav item padding, gap between pick blocks and step cards. */
+  --space-3: 12px;
+  /* Pick block padding, gap inside a level card, badge-to-card gap. */
+  --space-4: 16px;
+  /* Padding on compact panels: nav card, At a glance, step cards. */
+  --space-5: 20px;
+  /* Level card padding, gap between table columns. */
+  --space-6: 24px;
+  /* Page gutter and the gap between major sections. */
+  --space-8: 32px;
+  /* Hero padding. */
+  --space-10: 40px;
+  /* Minimum height and width of anything tappable; level column in At a glance; avatar diameter. */
+  --space-12: 48px;
+  /* Level badge diameter; spacing above a new page section. */
+  --space-16: 64px;
+}

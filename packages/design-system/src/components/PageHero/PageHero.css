@@ -1,0 +1,78 @@
+/* PageHero: the forest band that opens a page. */
+.cp-hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-10);
+  background: var(--color-forest);
+  color: var(--color-on-forest);
+  border-radius: var(--radius-xl);
+}
+
+.cp-hero > * {
+  position: relative;
+}
+
+.cp-hero > .cp-hero-swirl {
+  position: absolute;
+  top: 0;
+  right: calc(-1 * var(--space-10));
+  opacity: 0.32;
+  color: var(--color-on-forest-muted);
+}
+
+.cp-hero-eyebrow {
+  font: var(--type-caption);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  color: var(--color-on-forest-muted);
+}
+
+.cp-hero-title {
+  margin: 0;
+  color: var(--color-on-forest);
+}
+
+.cp-hero-xl {
+  font: var(--type-display-xl);
+}
+
+.cp-hero-lg {
+  font: var(--type-display-lg);
+}
+
+.cp-hero-sub {
+  margin: 0;
+  font: var(--type-subtitle);
+  color: var(--color-on-forest-muted);
+}
+
+.cp-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-2) 0 0;
+  list-style: none;
+}
+
+.cp-hero-tag {
+  padding: var(--space-1) var(--space-3);
+  border: var(--stroke-hairline) solid var(--color-on-forest-muted);
+  border-radius: var(--radius-xl);
+  font: var(--type-caption);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+}
+
+@media (width < 480px) {
+  .cp-hero {
+    padding: var(--space-6);
+  }
+
+  .cp-hero-xl {
+    font: var(--type-display-lg);
+  }
+}

@@ -1,0 +1,17 @@
+/* Storybook canvas and docs ground. The theme attribute sits on <html> and on each story root. */
+html,
+body,
+.sbdocs-wrapper {
+  background: var(--color-ground);
+  color: var(--color-ink);
+}
+
+body {
+  margin: 0;
+  font: var(--type-body);
+}
+
+.cp-story-root {
+  background: var(--color-ground);
+  color: var(--color-ink);
+}

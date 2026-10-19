@@ -1,0 +1,106 @@
+/* Character Planner color tokens. Light is the default; set data-theme="dark" on any ancestor for dark. */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Ground and surfaces */
+  /* Page background behind every surface. */
+  --color-ground: #f4f6f4;
+  /* Cards, tables, nav panels and the app bar. */
+  --color-surface: #ffffff;
+  /* Quiet fills set into the page: the Before you level up panel, feature chips and the current nav item. */
+  --color-surface-sunken: #e9f0ec;
+
+  /* Text */
+  /* Headings and primary text on ground, surface and surface-sunken. */
+  --color-ink: #1c2b26;
+  /* Long-form paragraphs and step descriptions. */
+  --color-ink-body: #3d4f48;
+  /* Source meta (XGtE · 5th · Bard), column labels and captions. Passes 4.5:1 on surface and ground. */
+  --color-ink-muted: #4f625b;
+
+  /* Lines */
+  /* Every border and divider: cards, tables and rows inside lists and tables. */
+  --color-line: #d5e0db;
+
+  /* Brand */
+  /* Hero bands and the brand block. Text on it uses on-forest. */
+  --color-forest: #1f4038;
+  /* Title text on forest. */
+  --color-on-forest: #eaf2ee;
+  /* Eyebrows, subtitles and hero pill borders on forest. */
+  --color-on-forest-muted: #b8d6c9;
+  /* Level badge ring, chevrons, focus rings and active nav. */
+  --color-accent: #2f6f5a;
+  /* Links, chip text, When to take it column, section titles in accent. */
+  --color-accent-ink: #24584a;
+
+  /* Recommendation */
+  /* RECOMMENDED and STEP labels only. Never body text. */
+  --color-gold: #8a6420;
+  /* Recommended pick blocks and combo cards. */
+  --color-gold-tint: #faf4e8;
+  /* Border on combo cards sitting on ground. */
+  --color-gold-line: #eadbbf;
+
+  /* Phases */
+  /* GATHER phase text and dot. Blue so it differs from strike by lightness and hue. */
+  --color-gather: #2d5a7b;
+  /* GATHER tag fill. */
+  --color-gather-tint: #e1ecf5;
+  /* HOLD phase text and CONCENTRATION tag text. */
+  --color-hold: #7a5414;
+  /* HOLD and CONCENTRATION tag fill. */
+  --color-hold-tint: #f6ebd6;
+  /* STRIKE phase text and dot. */
+  --color-strike: #8e2f2f;
+  /* STRIKE tag fill. */
+  --color-strike-tint: #f6e1e1;
+
+  /* Table-dependent */
+  /* Table-dependent content: ASK YOUR DM, non-core sources. */
+  --color-arcane: #5e3f7a;
+  /* ASK YOUR DM tag fill. */
+  --color-arcane-tint: #eee6f4;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Ground and surfaces */
+  --color-ground: #121a17;
+  --color-surface: #1a2420;
+  --color-surface-sunken: #1f2b26;
+
+  /* Text */
+  --color-ink: #e7efeb;
+  --color-ink-body: #c5d3cc;
+  --color-ink-muted: #9db0a8;
+
+  /* Lines */
+  --color-line: #2e3d37;
+
+  /* Brand */
+  --color-forest: #1e4a3d;
+  --color-on-forest: #eaf2ee;
+  --color-on-forest-muted: #b8d6c9;
+  --color-accent: #6fb79c;
+  --color-accent-ink: #8ccbb2;
+
+  /* Recommendation */
+  --color-gold: #d9b26a;
+  --color-gold-tint: #2a2418;
+  --color-gold-line: #4a3d24;
+
+  /* Phases */
+  --color-gather: #8ec0e4;
+  --color-gather-tint: #1c2e3b;
+  --color-hold: #e2b76a;
+  --color-hold-tint: #33281a;
+  --color-strike: #ec9a96;
+  --color-strike-tint: #3a2020;
+
+  /* Table-dependent */
+  --color-arcane: #c9a8e8;
+  --color-arcane-tint: #2d2238;
+}

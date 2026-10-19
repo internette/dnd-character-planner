@@ -1,0 +1,44 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { DocPage } from "./blocks/DocPage";
+import { DocHero } from "./blocks/DocHero";
+import { DoDont } from "./blocks/DoDont";
+
+<Meta title="Foundations/Voice" name="Docs" />
+
+<DocPage>
+
+<DocHero title="Voice" subtitle="Plain, warm and specific." />
+
+Lead with what a pick does at the table, then why it fits the character.
+
+<DoDont
+  do={<p>Hits up to five foes at once. Reflavor the weapon flourish as a gust of pistol shots.</p>}
+  dont={<p>An incredibly powerful option that every optimized bard absolutely needs!</p>}
+/>
+
+## Use game units as written
+
+Write units the way the books do: 20 ft, 1,500 gp, d10.
+
+<DoDont do={<p>A 20 ft psychic burst.</p>} dont={<p>A 20-foot (6 m) psychic burst.</p>} />
+
+## Sentence case, except labels
+
+Titles, buttons and headings use sentence case. Labels (eyebrows, tags, column heads) are uppercase, set with `text-transform` in CSS so screen readers read words.
+
+<DoDont do={<p>Before you level up</p>} dont={<p>Before You Level Up</p>} />
+
+## The player decides
+
+Mark a suggestion *Recommended* and put its alternatives directly under it. Don't phrase picks as requirements, and don't lecture about a choice the player has made.
+
+<DoDont
+  do={<p>Recommended: Hypnotic Pattern. Alternatives: Fear, for a cone that sends foes running.</p>}
+  dont={<p>You must take Hypnotic Pattern.</p>}
+/>
+
+## Name the source
+
+Every spell, feat or feature names its source book and level in its meta line, like `XGtE · 5th · Druid · Concentration`. Don't paste rules text from non-SRD books; describe what a pick does in your own short words.
+
+</DocPage>

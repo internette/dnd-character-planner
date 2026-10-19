@@ -1,0 +1,20 @@
+/* Character Planner shape tokens: radii and strokes. */
+:root {
+  /* Radii */
+  /* Chips and square tags. */
+  --radius-sm: 4px;
+  /* Pick blocks, nav items, buttons. */
+  --radius-md: 8px;
+  /* Cards, tables, panels. */
+  --radius-lg: 12px;
+  /* Hero bands and pill tags. */
+  --radius-xl: 16px;
+  /* Level badge and avatar discs. */
+  --radius-full: 50%;
+
+  /* Strokes */
+  /* Card, table and app bar borders. */
+  --stroke-hairline: 1px;
+  /* Level badge ring, icon strokes, focus rings, note dividers. */
+  --stroke-strong: 2px;
+}

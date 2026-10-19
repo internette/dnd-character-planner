@@ -1,0 +1,30 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { DocPage } from "./blocks/DocPage";
+import { DocHero } from "./blocks/DocHero";
+import { ChevronSpecimen } from "./blocks/Icons";
+import { PageHero } from "../components/PageHero";
+
+<Meta title="Foundations/Iconography" name="Docs" />
+
+<DocPage>
+
+<DocHero title="Iconography" subtitle="Few icons, drawn as strokes." />
+
+Icons are inline stroke SVG at `size-icon` (16px), with a 2px stroke, round caps and joins, colored with `currentColor` and hidden from assistive technology with `aria-hidden="true"`. No emoji. There's no logo yet; the product name is set in Lora.
+
+## Chevron
+
+The only icon so far. It leads each alternative in an AltList, in `accent`.
+
+<div className="sb-unstyled cp-doc-specimens">
+  <ChevronSpecimen />
+  <code>M6 4l4 4-4 4</code>
+</div>
+
+## Wind swirl
+
+Decoration on the PageHero for Aero-themed characters: three round-capped strokes in `on-forest-muted` at 32% opacity. Turn it off with `swirl={false}` for other characters.
+
+<PageHero size="lg" eyebrow="D&D 5E · Character progression" title="Ciaccona" />
+
+</DocPage>

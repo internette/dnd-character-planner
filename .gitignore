@@ -39,3 +39,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# storybook build served by the web app
+apps/web/public/design-system/

@@ -1,0 +1,43 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as Stories from "./PageHero.stories";
+import { DocPage } from "../../docs/blocks/DocPage";
+import { DocHero } from "../../docs/blocks/DocHero";
+
+<Meta of={Stories} />
+
+<DocPage>
+
+<DocHero eyebrow="Component" title="PageHero" subtitle="The forest band that opens a character page or a supplement." />
+
+<Canvas of={Stories.Character} />
+
+<Controls of={Stories.Character} />
+
+## Variants
+
+Supplements use the `lg` size, which renders an `h2`.
+
+<Canvas of={Stories.Supplement} />
+
+Turn the wind swirl off for characters without an Aero theme.
+
+<Canvas of={Stories.NoSwirl} />
+
+## Content rules
+
+- One `xl` hero per page. Supplements use `lg`.
+- The eyebrow names the edition and kind of page.
+- The title is the character's name, never a slogan.
+- The subtitle is one italic line: subclass, purpose, level range.
+- Two or three uppercase identity tags.
+- The swirl is decoration for Aero-themed characters; turn it off otherwise.
+
+## Accessibility
+
+`xl` renders `h1` and `lg` renders `h2`. Tags are a list. The swirl is hidden from assistive technology.
+
+## Open question
+
+Below 480px wide the `xl` title steps down to `display-lg` and the padding to `space-6`, so "Ciaccona" fits on a 375px phone. This isn't in the mockup and needs Antoinette's confirmation.
+
+</DocPage>

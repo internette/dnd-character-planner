@@ -1,0 +1,56 @@
+/* Character Planner typography tokens. Sizes and line heights are named in 4px steps. */
+:root {
+  /* Families */
+  /* Headings, names and numerals. */
+  --font-display: Lora, Georgia, "Times New Roman", serif;
+  /* Running text, labels and captions. */
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Font sizes */
+  --font-size-3: 12px;
+  --font-size-4: 16px;
+  --font-size-5: 20px;
+  --font-size-6: 24px;
+  --font-size-8: 32px;
+  --font-size-10: 40px;
+  --font-size-16: 64px;
+
+  /* Line heights */
+  --line-height-3: 12px;
+  --line-height-4: 16px;
+  --line-height-5: 20px;
+  --line-height-6: 24px;
+  --line-height-7: 28px;
+  --line-height-8: 32px;
+  --line-height-10: 40px;
+  --line-height-12: 48px;
+  --line-height-18: 72px;
+
+  /* Text styles: use with the font shorthand, e.g. font: var(--type-body) */
+  /* Character name in the page hero. One per page. */
+  --type-display-xl: var(--font-weight-semibold) var(--font-size-16)/var(--line-height-18) var(--font-display);
+  /* Supplement and secondary hero titles. */
+  --type-display-lg: var(--font-weight-semibold) var(--font-size-10)/var(--line-height-12) var(--font-display);
+  /* Section titles inside the main column. */
+  --type-heading-lg: var(--font-weight-semibold) var(--font-size-8)/var(--line-height-10) var(--font-display);
+  /* Level card titles and step names. */
+  --type-heading-md: var(--font-weight-semibold) var(--font-size-6)/var(--line-height-8) var(--font-display);
+  /* Spell and feat names, panel titles. */
+  --type-heading-sm: var(--font-weight-semibold) var(--font-size-5)/var(--line-height-7) var(--font-display);
+  /* The one italic line under a hero title. */
+  --type-subtitle: italic var(--font-weight-regular) var(--font-size-5)/var(--line-height-7) var(--font-display);
+  /* All running text and descriptions. */
+  --type-body: var(--font-weight-regular) var(--font-size-4)/var(--line-height-6) var(--font-body);
+  /* Option names in alternatives lists. */
+  --type-body-strong: var(--font-weight-semibold) var(--font-size-4)/var(--line-height-6) var(--font-body);
+  /* Eyebrows, tags and column heads. Always uppercase. */
+  --type-label: var(--font-weight-bold) var(--font-size-3)/var(--line-height-4) var(--font-body);
+  /* Source, level and class meta; footers. */
+  --type-caption: var(--font-weight-regular) var(--font-size-3)/var(--line-height-4) var(--font-body);
+}
