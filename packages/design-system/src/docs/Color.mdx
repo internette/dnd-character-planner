@@ -12,7 +12,19 @@ import colorCss from "../styles/tokens/color/color.css?raw";
 
 Colors are CSS custom properties named for their role, never their look: `var(--color-ink)`, `var(--color-gather-tint)`. Light values are the default. Set `data-theme="dark"` on any ancestor for dark. Components and pages never use a hex value directly.
 
-Each token below shows its light swatch, then its dark swatch, with the contrast pairs it belongs to. Every pair passes WCAG 4.5:1 in both themes, and the token tests check them all. The page reads `color.css` itself, so it can't drift from the tokens.
+Each token below shows its light swatch, then its dark swatch, with the contrast pairs it belongs to. The page reads `color.css` itself, so it can't drift from the tokens.
+
+## Reading the contrast ratios
+
+A contrast ratio measures how much a text color stands out from the background behind it. It compares how light the two colors are and runs from **1:1** (the same color, so the text is invisible) to **21:1** (black on white). Higher is easier to read.
+
+A line such as `ink-muted on surface: 6.5:1 light, 7.0:1 dark` means that text in `ink-muted` on a `surface` background has a ratio of 6.5 to 1 in the light theme and 7.0 to 1 in the dark theme.
+
+The bar is **4.5:1**, the minimum the Web Content Accessibility Guidelines (WCAG 2.1, level AA) set for normal-size text. It keeps text readable for people with low vision or color blindness, and on a dim screen or in sunlight. Every pair listed here passes 4.5:1 in both themes, and the token tests fail if a color change drops one below it. Pairs above 7:1 also meet the stricter AAA level.
+
+Only the pairs that are meant to be used together are listed. Putting a color on a background that isn't listed, such as `gold` on `surface`, hasn't been checked, so don't use it for text.
+
+## Tokens
 
 `gold` is for the RECOMMENDED and STEP labels only, never body text. `hold` also marks CONCENTRATION.
 
