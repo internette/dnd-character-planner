@@ -33,7 +33,7 @@ The repo is a pnpm workspace (set up on branch `claude/repo-setup-ot8op7`, PR #2
 | --- | --- | --- |
 | `apps/web` | `@dnd/web` | Next.js 16, React 19, App Router under `src/app`. Already has `transpilePackages: ["@dnd/design-system"]`. |
 | `apps/api` | `@dnd/api` | Express. Not touched by this work. |
-| `packages/design-system` | `@dnd/design-system` | Storybook 10 with `@storybook/react-vite`, TypeScript, ESM. Exports from `src/index.ts`. Contains a placeholder `Button` to delete. |
+| `packages/design-system` | `@dnd/design-system` | Storybook 10 with `@storybook/react-vite`, TypeScript, ESM. Exports from `src/index.ts`. |
 
 Root scripts: `pnpm storybook`, `pnpm build`, `pnpm typecheck`, `pnpm test`. Node 22+, pnpm 10.
 
@@ -149,7 +149,7 @@ Each component spec covers purpose, API, markup and accessibility, styling by to
 
 Component tests use Vitest + Testing Library in jsdom, plus an axe check (`vitest-axe`) on every story's args. Add a `test` script to the package.
 
-Delete the placeholder `Button` and its story.
+The placeholder `Button` from the repo setup has been removed; it had no spec.
 
 ## 7. Storybook
 
@@ -193,7 +193,25 @@ Use `@storybook/addon-docs/blocks` for `Meta`, `Canvas`, `Controls`, `Stories`.
 
 ### 7.3 Stories
 
-One `<Name>.stories.tsx` per component under `Components/<Name>`, using CSF3 with `satisfies Meta<typeof Component>` like the existing placeholder. Default args come from the component's `preview.html`. Add stories for each variant (every `PhaseTag` phase and size, every `Chip` tone, one-pick and two-pick `LevelCard`, `PageHero` with and without swirl). Tag stories `autodocs` only where no hand-written MDX page exists.
+One `<Name>.stories.tsx` per component under `Components/<Name>`, using CSF3 with `satisfies Meta<typeof Component>`. For example:
+
+```tsx
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Chip } from "./Chip";
+
+const meta = {
+  title: "Components/Chip",
+  component: Chip,
+  args: { children: "5th-level spells" },
+} satisfies Meta<typeof Chip>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Neutral: Story = {};
+```
+
+Default args come from the component's `preview.html`. Add stories for each variant (every `PhaseTag` phase and size, every `Chip` tone, one-pick and two-pick `LevelCard`, `PageHero` with and without swirl). Tag stories `autodocs` only where no hand-written MDX page exists.
 
 ## 8. The `/design-system` route
 

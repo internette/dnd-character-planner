@@ -1,2 +1,2 @@
-export { Button } from "./components/Button/Button";
-export type { ButtonProps } from "./components/Button/Button";
+// Components are exported here as they're built from their specs.
+export {};
