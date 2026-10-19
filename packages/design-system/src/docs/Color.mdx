@@ -15,6 +15,12 @@ Colors are CSS custom properties named for their role, never their look: `var(--
 
 Each token below shows its light swatch, then its dark swatch, with its hex values and what it's for. The page reads `color.css` itself, so it can't drift from the tokens.
 
+## Tokens
+
+`gold` is for the RECOMMENDED and STEP labels only, never body text. `hold` also marks CONCENTRATION.
+
+<TokenTable css={colorCss} variant="color" />
+
 ## Reading the contrast ratios
 
 A contrast ratio measures how much a text color stands out from the background behind it. It compares how light the two colors are and runs from **1:1** (the same color, so the text is invisible) to **21:1** (black on white). Higher is easier to read.
@@ -26,11 +32,5 @@ The bar is **4.5:1**, the minimum the Web Content Accessibility Guidelines (WCAG
 <ContrastTable css={colorCss} />
 
 Only the pairs that are meant to be used together are listed. Putting a color on a background that isn't listed, such as `gold` on `surface`, hasn't been checked, so don't use it for text.
-
-## Tokens
-
-`gold` is for the RECOMMENDED and STEP labels only, never body text. `hold` also marks CONCENTRATION.
-
-<TokenTable css={colorCss} variant="color" />
 
 </DocPage>
