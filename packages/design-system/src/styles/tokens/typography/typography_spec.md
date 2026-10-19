@@ -1,6 +1,6 @@
 # Typography tokens spec
 
-Parent: [root spec](../../../design-system_spec.md). Defines `src/tokens/typography/typography.css` and `src/tokens/typography/fonts.css`.
+Parent: [root spec](../../../../design-system_spec.md). Defines `src/styles/tokens/typography/typography.css` and `src/styles/tokens/typography/fonts.css`.
 
 ## Purpose
 

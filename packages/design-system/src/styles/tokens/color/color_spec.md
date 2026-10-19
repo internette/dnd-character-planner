@@ -1,6 +1,6 @@
 # Color tokens spec
 
-Parent: [root spec](../../../design-system_spec.md). Defines `src/tokens/color/color.css`.
+Parent: [root spec](../../../../design-system_spec.md). Defines `src/styles/tokens/color/color.css`.
 
 ## Purpose
 
@@ -157,7 +157,7 @@ Parse `color.css` as text (read the file with `node:fs`; a few regexes are enoug
 - The light block and the dark block declare exactly the same set of `--color-*` names.
 - Every value is a 6-digit hex color.
 - Every variable in the light block has a usage comment directly above it.
-- Every contrast pair above passes 4.5:1 in both themes. Write a small WCAG relative-luminance helper in `src/tokens/test-utils.ts`; no dependency needed.
+- Every contrast pair above passes 4.5:1 in both themes. Write a small WCAG relative-luminance helper in `src/styles/tokens/test-utils.ts`; no dependency needed.
 
 ## Docs page
 

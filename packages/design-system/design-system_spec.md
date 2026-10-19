@@ -12,7 +12,7 @@ This is the root spec. It links to a spec for each token group and each componen
 packages/design-system/
   design-system_spec.md                  # this file
   component-template_spec.md             # copy for new components
-  src/tokens/<group>/<group>_spec.md     # color, typography, spacing, shape, layout
+  src/styles/tokens/<group>/<group>_spec.md   # color, typography, spacing, shape, layout
   src/components/<Name>/<Name>_spec.md   # one per component
 ```
 
@@ -66,16 +66,17 @@ packages/design-system/
     theme.ts            # storybook/theming create() for light and dark
     theme.test.ts       # theme colors match color.css
   src/
-    tokens/
-      color/        color.css       color_spec.md       color.test.ts
-      typography/   typography.css  fonts.css  typography_spec.md  typography.test.ts
-      spacing/      spacing.css     spacing_spec.md     spacing.test.ts
-      shape/        shape.css       shape_spec.md       shape.test.ts
-      layout/       layout.css      layout_spec.md      layout.test.ts
-      tokens.css        # imports every token file except fonts.css
-      test-utils.ts     # reads a token file and returns { name, value, comment } per variable; WCAG contrast helper
     styles/
+      index.css         # imports tokens.css, base.css and every component CSS
       base.css          # shared classes: .cp-row, .cp-stack, .cp-meta, .cp-label, .cp-panel, .cp-panel-title
+      tokens/
+        color/        color.css       color_spec.md       color.test.ts
+        typography/   typography.css  fonts.css  typography_spec.md  typography.test.ts
+        spacing/      spacing.css     spacing_spec.md     spacing.test.ts
+        shape/        shape.css       shape_spec.md       shape.test.ts
+        layout/       layout.css      layout_spec.md      layout.test.ts
+        tokens.css      # imports every token file except fonts.css
+        test-utils.ts   # reads a token file and returns { name, value, comment } per variable; WCAG contrast helper
     components/
       <Name>/
         <Name>_spec.md
@@ -90,7 +91,6 @@ packages/design-system/
       Introduction.mdx
       ...
     index.ts            # public exports
-    styles.css          # imports tokens.css, base.css and every component CSS
 ```
 
 `package.json` exports:
@@ -98,9 +98,9 @@ packages/design-system/
 ```json
 "exports": {
   ".": "./src/index.ts",
-  "./styles.css": "./src/styles.css",
-  "./tokens.css": "./src/tokens/tokens.css",
-  "./fonts.css": "./src/tokens/typography/fonts.css"
+  "./styles.css": "./src/styles/index.css",
+  "./tokens.css": "./src/styles/tokens/tokens.css",
+  "./fonts.css": "./src/styles/tokens/typography/fonts.css"
 }
 ```
 
@@ -112,11 +112,11 @@ Tokens are CSS custom properties, written by hand in one CSS file per group. The
 
 | Group | Spec | File | Prefixes |
 | --- | --- | --- | --- |
-| Color | [color_spec.md](./src/tokens/color/color_spec.md) | `color/color.css` | `--color-*` (light and dark) |
-| Typography | [typography_spec.md](./src/tokens/typography/typography_spec.md) | `typography/typography.css`, `typography/fonts.css` | `--font-*`, `--font-size-*`, `--line-height-*`, `--type-*` |
-| Spacing | [spacing_spec.md](./src/tokens/spacing/spacing_spec.md) | `spacing/spacing.css` | `--space-*` |
-| Shape | [shape_spec.md](./src/tokens/shape/shape_spec.md) | `shape/shape.css` | `--radius-*`, `--stroke-*` |
-| Layout | [layout_spec.md](./src/tokens/layout/layout_spec.md) | `layout/layout.css` | `--layout-*`, `--size-*` |
+| Color | [color_spec.md](./src/styles/tokens/color/color_spec.md) | `color/color.css` | `--color-*` (light and dark) |
+| Typography | [typography_spec.md](./src/styles/tokens/typography/typography_spec.md) | `typography/typography.css`, `typography/fonts.css` | `--font-*`, `--font-size-*`, `--line-height-*`, `--type-*` |
+| Spacing | [spacing_spec.md](./src/styles/tokens/spacing/spacing_spec.md) | `spacing/spacing.css` | `--space-*` |
+| Shape | [shape_spec.md](./src/styles/tokens/shape/shape_spec.md) | `shape/shape.css` | `--radius-*`, `--stroke-*` |
+| Layout | [layout_spec.md](./src/styles/tokens/layout/layout_spec.md) | `layout/layout.css` | `--layout-*`, `--size-*` |
 
 Rules for every token file:
 
@@ -167,7 +167,7 @@ Component tests use Vitest and Testing Library in jsdom, plus an axe check (`vit
 ### 6.1 Configuration
 
 - `main.ts`: `stories: ["../src/docs/**/*.mdx", "../src/**/*.mdx", "../src/**/*.stories.@(ts|tsx)"]`; addons `@storybook/addon-docs` and `@storybook/addon-a11y`; `docs: { defaultName: "Overview" }`.
-- `preview.tsx`: import `../src/tokens/typography/fonts.css` and `../src/styles.css`. Add a global `theme` toolbar item (Light, Dark). A decorator sets `data-theme` on the story root and on the docs container, so stories and MDX pages switch together. Turn the backgrounds addon off; the theme provides the ground. Sort the sidebar: Introduction, Foundations, Components, Patterns.
+- `preview.tsx`: import `../src/styles/tokens/typography/fonts.css` and `../src/styles/index.css`. Add a global `theme` toolbar item (Light, Dark). A decorator sets `data-theme` on the story root and on the docs container, so stories and MDX pages switch together. Turn the backgrounds addon off; the theme provides the ground. Sort the sidebar: Introduction, Foundations, Components, Patterns.
 - `theme.ts` and `manager.ts`: brand the Storybook UI with `create()` from `storybook/theming`:
   - `brandTitle`: "Character Planner", set in Lora; no logo yet.
   - `colorPrimary` and `colorSecondary`: `accent`. `appBg`: `ground`. `appContentBg`: `surface`. `appBorderColor`: `line`. `textColor`: `ink`. `textMutedColor`: `ink-muted`. `barSelectedColor`: `accent`. `appBorderRadius`: 12.

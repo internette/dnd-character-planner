@@ -1,6 +1,6 @@
 # Layout tokens spec
 
-Parent: [root spec](../../../design-system_spec.md). Defines `src/tokens/layout/layout.css`.
+Parent: [root spec](../../../../design-system_spec.md). Defines `src/styles/tokens/layout/layout.css`.
 
 ## Purpose
 

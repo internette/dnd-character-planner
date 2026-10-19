@@ -1,6 +1,6 @@
 # Shape tokens spec
 
-Parent: [root spec](../../../design-system_spec.md). Defines `src/tokens/shape/shape.css`.
+Parent: [root spec](../../../../design-system_spec.md). Defines `src/styles/tokens/shape/shape.css`.
 
 ## Purpose
 

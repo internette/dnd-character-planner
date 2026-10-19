@@ -1,6 +1,6 @@
 # Spacing tokens spec
 
-Parent: [root spec](../../../design-system_spec.md). Defines `src/tokens/spacing/spacing.css`.
+Parent: [root spec](../../../../design-system_spec.md). Defines `src/styles/tokens/spacing/spacing.css`.
 
 ## Purpose
 
