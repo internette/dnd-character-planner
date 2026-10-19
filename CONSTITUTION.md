@@ -75,6 +75,18 @@ D&D can be dark, and that's the group's call.
 
 These rules apply to any AI coding agent working on this codebase. They complement, and do not replace, normal human code review.
 
+### Repository layout
+
+This is a pnpm workspace monorepo. Put each change in the workspace that owns it:
+
+| Path | Package | What lives there |
+| --- | --- | --- |
+| `apps/web` | `@dnd/web` | The player-facing React app, built with Next.js. |
+| `apps/api` | `@dnd/api` | The Express API, including every server-side call to an AI model. |
+| `packages/design-system` | `@dnd/design-system` | Shared React components and tokens, documented in Storybook. |
+
+New shared code (for example, rules logic used by both the app and the API) goes in a new package under `packages/`, not copied between apps. Use pnpm, not npm or yarn, and add dependencies to the workspace that uses them rather than to the root.
+
 ### 1. Follow this constitution in what you build
 
 Any AI-powered feature an agent adds or changes must comply with Part I. If a request would violate it, the agent says so in the PR rather than quietly building it.
@@ -83,25 +95,37 @@ Any AI-powered feature an agent adds or changes must comply with Part I. If a re
 
 Game mechanics (modifiers, proficiency, multiclassing, spell slots, encumbrance, and so on) live in plain, deterministic, unit-tested code. Don't route them through a model call. When implementing a rule, cite its source and edition in a comment or test name.
 
+Rules logic belongs in a shared package under `packages/` so the app and the API compute the same numbers from one implementation. Don't bury it in React components or Express route handlers.
+
 ### 3. Don't add copyrighted game content
 
 Only commit content the project is licensed to use, such as SRD material with proper attribution. Don't paste text from non-SRD books, paid supplements, or other sites into the repo.
 
 ### 4. Build on the design system
 
-Before building any UI, check whether the project has a design system (shared components, tokens, typefaces, and similar).
+The design system is `packages/design-system` (`@dnd/design-system`), documented in Storybook (`pnpm storybook`). Product UI in `apps/web` imports from it. Before building any UI, check what it already offers.
+
+The design system is currently a scaffold: its tokens and components haven't been ported yet. Until they are, ask before building new UI whether it should wait for, or start, the matching design-system component.
 
 - **If a design system exists, use it first.** Build from its existing components, tokens, and typefaces before writing anything new.
 - **If new functionality is needed, pause and ask.** When the design system doesn't cover what a feature needs, stop development and ask the user whether the change belongs in the design system component or should be a new component in the product only. Don't decide this on your own.
 - **Look for repetition when building a feature.** Check for similar existing features. If anything looks reusable (a component, a typeface, a color, a spacing pattern, and so on), recommend moving it into the design system.
-- **If no design system exists, recommend starting one.**
+- **Every design-system component ships with a story.** Add or update its `*.stories.tsx` file in the same change, covering its main variants and states.
 
-### 5. Be transparent about changes
+### 5. Keep AI calls on the server
+
+Any call to an AI model goes through `apps/api`. The web app calls the API, never a model provider directly, so API keys and provider SDKs never ship to the browser. Keys come from environment variables, never from committed files. The API is also where Part I's data rules are enforced: it sends a model only the fields a feature needs.
+
+### 6. Check your work before opening a pull request
+
+Run `pnpm typecheck`, `pnpm test`, and `pnpm build` from the repository root and make sure they pass. If a check fails for a reason unrelated to your change, say so in the PR instead of hiding it.
+
+### 7. Be transparent about changes
 
 - Keep pull requests focused, and explain what changed and why in plain language.
 - Note anything you were unsure about or couldn't verify.
 - Never commit secrets, API keys, or real user data, including in tests or fixtures.
 
-### 6. Humans decide
+### 8. Humans decide
 
 Agents open pull requests; humans merge them. Agents don't merge their own work, change this constitution without a human asking, or take actions outside the repository (deploys, data deletion, messaging users) without explicit approval.
