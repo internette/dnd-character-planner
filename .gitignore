@@ -1,6 +1,9 @@
 # dependencies
 node_modules/
-.pnp
+**/node_modules/**
+**/.pnp/**
+**/.next/**
+/.pnp
 .pnp.js
 .pnpm-store/
 
@@ -24,6 +27,8 @@ storybook-static/
 # debug
 npm-debug.log*
 pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # local env files
 .env
