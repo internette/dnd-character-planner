@@ -87,12 +87,21 @@ Game mechanics (modifiers, proficiency, multiclassing, spell slots, encumbrance,
 
 Only commit content the project is licensed to use, such as SRD material with proper attribution. Don't paste text from non-SRD books, paid supplements, or other sites into the repo.
 
-### 4. Be transparent about changes
+### 4. Build on the design system
+
+Before building any UI, check whether the project has a design system (shared components, tokens, typefaces, and similar).
+
+- **If a design system exists, use it first.** Build from its existing components, tokens, and typefaces before writing anything new.
+- **If new functionality is needed, pause and ask.** When the design system doesn't cover what a feature needs, stop development and ask the user whether the change belongs in the design system component or should be a new component in the product only. Don't decide this on your own.
+- **Look for repetition when building a feature.** Check for similar existing features. If anything looks reusable (a component, a typeface, a color, a spacing pattern, and so on), recommend moving it into the design system.
+- **If no design system exists, recommend starting one.**
+
+### 5. Be transparent about changes
 
 - Keep pull requests focused, and explain what changed and why in plain language.
 - Note anything you were unsure about or couldn't verify.
 - Never commit secrets, API keys, or real user data, including in tests or fixtures.
 
-### 5. Humans decide
+### 6. Humans decide
 
 Agents open pull requests; humans merge them. Agents don't merge their own work, change this constitution without a human asking, or take actions outside the repository (deploys, data deletion, messaging users) without explicit approval.
