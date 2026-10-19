@@ -1,4 +1,4 @@
-import { CONTRAST_PAIRS, contrastRatio, parseTokenBlocks, type Token } from "../../styles/tokens/test-utils";
+import { parseTokenBlocks, type Token } from "../../styles/tokens/test-utils";
 
 type Variant = "plain" | "color" | "type" | "space" | "radius" | "stroke";
 
@@ -19,22 +19,6 @@ function groupBy(tokens: Token[]): Array<[string, Token[]]> {
     groups.set(key, [...(groups.get(key) ?? []), token]);
   }
   return [...groups];
-}
-
-function ColorPairs({ role, light, dark }: { role: string; light: Map<string, string>; dark: Map<string, string> }) {
-  const pairs = CONTRAST_PAIRS.filter(([text, on]) => text === role || on === role);
-  if (pairs.length === 0) return null;
-  const ratio = (values: Map<string, string>, text: string, on: string) =>
-    contrastRatio(values.get(`--color-${text}`)!, values.get(`--color-${on}`)!).toFixed(1);
-  return (
-    <ul className="cp-doc-pairs">
-      {pairs.map(([text, on]) => (
-        <li key={`${text}-${on}`}>
-          <code>{text}</code> on <code>{on}</code>: {ratio(light, text, on)}:1 light, {ratio(dark, text, on)}:1 dark
-        </li>
-      ))}
-    </ul>
-  );
 }
 
 function Preview({ token, variant }: { token: Token; variant: Variant }) {
@@ -98,7 +82,6 @@ export function TokenTable({ css, variant = "plain", prefix, samples }: TokenTab
                     Light {light.get(token.name)} · Dark {dark.get(token.name)}
                   </span>
                   {token.comment && <p className="cp-doc-comment">{token.comment}</p>}
-                  <ColorPairs role={token.name.replace("--color-", "")} light={light} dark={dark} />
                 </div>
               </div>
             ))}

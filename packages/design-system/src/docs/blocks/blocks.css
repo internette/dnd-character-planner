@@ -129,15 +129,6 @@
   margin: 0;
 }
 
-.cp-doc .cp-doc-pairs {
-  margin: 0;
-  padding-left: var(--space-4);
-}
-
-.cp-doc .cp-doc-pairs li {
-  font: var(--type-caption);
-  color: var(--color-ink-muted);
-}
 
 .cp-doc .cp-doc-specimen {
   margin: 0;
