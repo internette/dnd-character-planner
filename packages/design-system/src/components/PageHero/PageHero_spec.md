@@ -52,7 +52,7 @@ export interface PageHeroProps {
 | Subtitle | `subtitle`, `on-forest-muted` |
 | Tags | flex wrap, gap `space-2`, padding-top `space-2`; each tag padding `space-1` `space-3`, `radius-xl`, `stroke-hairline` `on-forest-muted`, `caption` with `font-weight-semibold`, uppercase |
 
-Phones: below 480px, step the `xl` title down to `display-lg` and padding to `space-6`, so "Ciaccona" fits at 375px. This is new; confirm it with Antoinette in the PR description.
+Phones: below 480px, step the `xl` title down to `display-lg` and padding to `space-6`, so "Ciaccona" fits at 375px. Antoinette confirmed this on 2026-10-19.
 
 ## Stories
 
@@ -69,7 +69,3 @@ Content rules: one `xl` hero per page; supplements use `lg`. Eyebrow names the e
 ## Acceptance criteria
 
 `on-forest` and `on-forest-muted` pass 4.5:1 on `forest` in both themes; the hero matches the mockup at 1440px.
-
-## Open questions
-
-- Phone sizing above is a proposal not in the mockup.
