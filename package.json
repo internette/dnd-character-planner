@@ -6,7 +6,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "pnpm --parallel --filter @dnd/web --filter @dnd/api dev",
+    "dev": "pnpm --parallel --filter @dnd/web --filter @dnd/api --filter @dnd/design-system dev",
     "dev:web": "pnpm --filter @dnd/web dev",
     "dev:api": "pnpm --filter @dnd/api dev",
     "storybook": "pnpm --filter @dnd/design-system storybook",

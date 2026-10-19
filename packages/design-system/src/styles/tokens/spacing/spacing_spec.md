@@ -15,7 +15,7 @@ The spacing scale for padding, gaps, margins and element sizes.
 ## File: `spacing.css`
 
 ```css
-/* Character Planner spacing tokens. --space-N is N x 4px. */
+/* Bag of Holding spacing tokens. --space-N is N x 4px. */
 :root {
   /* Tag padding (vertical), gap between a label and a spell name. */
   --space-1: 4px;

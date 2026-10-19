@@ -16,7 +16,7 @@ Page widths, grid column minimums and fixed element sizes, so no component CSS n
 ## File: `layout.css`
 
 ```css
-/* Character Planner layout and size tokens. Phones are below 480px (written directly in @media). */
+/* Bag of Holding layout and size tokens. Phones are below 480px (written directly in @media). */
 :root {
   /* Page */
   /* Maximum width of the page container. */

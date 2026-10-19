@@ -1,0 +1,46 @@
+/* Shared Bag of Holding classes. Component-specific styles live beside each component. */
+
+/* A wrapping row of inline items such as chips and tags. */
+.cp-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* A vertical stack of blocks. */
+.cp-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Source, level and class meta. */
+.cp-meta {
+  font: var(--type-caption);
+  color: var(--color-ink-muted);
+}
+
+/* Eyebrows, tags and column heads. */
+.cp-label {
+  font: var(--type-label);
+  text-transform: uppercase;
+}
+
+/* A bordered panel on surface. */
+.cp-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: var(--stroke-hairline) solid var(--color-line);
+  border-radius: var(--radius-lg);
+}
+
+/* A panel's title. */
+.cp-panel-title {
+  margin: 0;
+  font: var(--type-heading-sm);
+  color: var(--color-accent-ink);
+}

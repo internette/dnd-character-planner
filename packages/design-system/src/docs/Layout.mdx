@@ -1,0 +1,22 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { DocPage } from "./blocks/DocPage";
+import { DocHero } from "./blocks/DocHero";
+import { TokenTable } from "./blocks/TokenTable";
+import { LayoutDiagram } from "./blocks/LayoutDiagram";
+import layoutCss from "../styles/tokens/layout/layout.css?raw";
+
+<Meta title="Foundations/Layout" name="Docs" />
+
+<DocPage>
+
+<DocHero title="Layout" subtitle="Page widths, grid minimums and element sizes." />
+
+A page is a container of at most `layout-max-width` with `space-8` on each side: a SideNav between `layout-sidenav-min` and `layout-sidenav-max` wide beside a fluid main column, wrapping to one column on phones.
+
+<LayoutDiagram />
+
+Phones are viewports below 480px. CSS custom properties can't be used inside `@media`, so `480px` is written directly in media queries; it's the only raw pixel value allowed in component CSS. Wide tables scroll sideways inside their own box, never the page.
+
+<TokenTable css={layoutCss} />
+
+</DocPage>

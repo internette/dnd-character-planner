@@ -1,0 +1,43 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { DocPage } from "./blocks/DocPage";
+import { DocHero } from "./blocks/DocHero";
+import { TokenTable } from "./blocks/TokenTable";
+import typographyCss from "../styles/tokens/typography/typography.css?raw";
+
+<Meta title="Foundations/Typography" name="Docs" />
+
+<DocPage>
+
+<DocHero title="Typography" subtitle="Lora for display, Public Sans for body, on a 4px scale." />
+
+Two families, both OFL-licensed: **Lora** for headings, names and numerals, and **Public Sans** for running text, labels and captions. Sizes and line heights count 4px steps, like spacing: `--font-size-4` is 16px and `--line-height-6` is 24px.
+
+Use a named text style wherever one fits: `font: var(--type-body)`. Where none does, compose one from the scale tokens. `label` is always uppercase, applied with `text-transform` (the `.cp-label` class), never by uppercasing the text.
+
+## Text styles
+
+<TokenTable
+  css={typographyCss}
+  variant="type"
+  prefix="--type-"
+  samples={{
+    "--type-display-xl": "Ciaccona",
+    "--type-display-lg": "Gather & Strike",
+    "--type-heading-lg": "Roadmap",
+    "--type-heading-md": "The Lingering Note",
+    "--type-heading-sm": "Synaptic Static",
+    "--type-subtitle": "College of Lore Bard — Crowd-Control Roadmap, Levels 9 to 14",
+    "--type-body": "A 20 ft psychic burst that keeps dragging down enemies' attacks and checks afterward.",
+    "--type-body-strong": "Hold Monster",
+    "--type-label": "Recommended · Secret 1",
+    "--type-caption": "XGtE · 5th · Druid · Concentration",
+  }}
+/>
+
+## Families, weights and scale
+
+<TokenTable css={typographyCss} prefix="--font-" />
+
+<TokenTable css={typographyCss} prefix="--line-height-" />
+
+</DocPage>

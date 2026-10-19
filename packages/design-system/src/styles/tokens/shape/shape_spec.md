@@ -16,7 +16,7 @@ Corner radii and stroke widths.
 ## File: `shape.css`
 
 ```css
-/* Character Planner shape tokens: radii and strokes. */
+/* Bag of Holding shape tokens: radii and strokes. */
 :root {
   /* Radii */
   /* Chips and square tags. */

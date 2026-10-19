@@ -1,0 +1,58 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { DocPage } from "./blocks/DocPage";
+import { DocHero } from "./blocks/DocHero";
+import { ThemePair } from "./blocks/ThemePair";
+
+<Meta title="Introduction" name="Docs" />
+
+<DocPage>
+
+<DocHero
+  eyebrow="D&D 5E · Design system"
+  title="Bag of Holding"
+  subtitle="A quiet, rules-first reading surface for planning characters level by level."
+/>
+
+Bag of Holding is the design system for the D&D Character Planner. Like the magic item, it holds everything the planner needs, and it's bigger on the inside than it looks. Every product screen in `apps/web` builds from it first.
+
+## Principles
+
+1. **Everything sits on a 4px grid.** Sizes, line heights, padding, gaps, margins and radii are multiples of 4px and come from tokens. Strokes (1px, 2px) are the only exception.
+2. **The rules are the content.** Every spell, feat or feature shows its source book and level in its meta line (`XGtE · 5th · Druid · Concentration`). Anything the table must decide gets the `dm` chip.
+3. **Phase is a language.** A pick's role in the loop is always shown with its word. Color supports the word and never replaces it.
+4. **The player decides.** Recommendations are marked *Recommended*, with alternatives directly under them. Nothing reads as a requirement.
+
+## How to use
+
+### Install and import
+
+The package lives in this monorepo as `@dnd/design-system`. Add it to a workspace with `"@dnd/design-system": "workspace:*"`, then import the styles once and the components where you need them:
+
+```tsx
+import "@dnd/design-system/styles.css";
+import { PageHero } from "@dnd/design-system";
+```
+
+`styles.css` includes the tokens, the shared `cp-` classes and every component's styles. Use `@dnd/design-system/tokens.css` for the tokens alone. Fonts load from `@dnd/design-system/fonts.css`, unless the app loads Lora and Public Sans itself (the web app uses `next/font`).
+
+### Light and dark
+
+Bag of Holding has two **themes**, light and dark. A theme is a full set of color values; only colors change between them, never type, spacing or shape.
+
+- **Light** is the default. A page with no theme set is light.
+- **Dark** applies to everything inside an element with `data-theme="dark"`. Set it on `<html>` for a whole page, or on any element to theme just that part.
+- `data-theme="light"` switches a part back to light inside a dark page.
+
+Color tokens are named for their **role**, not their look, so the same name is right in both themes. `ink` is the main text color: near-black on a light page and near-white on a dark one. `ground` is the page background, `surface` is a card on top of it, and `forest` is the hero green, which stays dark in both themes.
+
+```html
+<html data-theme="dark">
+  <!-- every color token now uses its dark value -->
+</html>
+```
+
+<ThemePair />
+
+In this Storybook, the **Theme** switch in the toolbar sets the theme for every story and docs page. The Storybook sidebar itself follows your computer's light or dark setting.
+
+</DocPage>
