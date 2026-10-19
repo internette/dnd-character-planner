@@ -121,7 +121,7 @@ Tokens are CSS custom properties, written by hand in one CSS file per group. The
 Rules for every token file:
 
 - Each variable has a one-line usage comment directly above it. Docs pages show these comments, so they are the token's documentation.
-- `tokens.css` imports the five token files in the order above (spacing before layout, because layout refers to spacing).
+- `tokens.css` imports the five token files in the order above. Token files don't refer to each other, except that typography's text styles use its own scale tokens.
 - Themes: light values on `:root`, dark values under `[data-theme="dark"]` on any ancestor. Only color changes between themes.
 
 **How specs refer to tokens.** Component specs name tokens without the prefix or `var()`: a color written `ink` means `var(--color-ink)`, `space-4` means `var(--space-4)`, `radius-lg` means `var(--radius-lg)`, `stroke-hairline` means `var(--stroke-hairline)`, and a text style written `heading-sm` means `font: var(--type-heading-sm)`. Where a component spec gives size/line/weight numbers instead of a style name, compose them from the typography scale tokens as the typography spec describes.

@@ -8,7 +8,7 @@ Page widths, grid column minimums and fixed element sizes, so no component CSS n
 
 ## Rules
 
-- A page is a container of at most `layout-max-width` with a `layout-gutter` on each side: a SideNav between `layout-sidenav-min` and `layout-sidenav-max` wide beside a fluid main column, wrapping to one column on phones.
+- A page is a container of at most `layout-max-width` with `space-8` on each side: a SideNav between `layout-sidenav-min` and `layout-sidenav-max` wide beside a fluid main column, wrapping to one column on phones.
 - Phones are viewports below 480px. CSS custom properties can't be used inside `@media`, so `480px` is written directly in media queries; that's the only raw pixel value allowed in component CSS.
 - Wide tables scroll sideways inside their own box, never the page.
 - Every value is a multiple of 4px.
@@ -21,8 +21,6 @@ Page widths, grid column minimums and fixed element sizes, so no component CSS n
   /* Page */
   /* Maximum width of the page container. */
   --layout-max-width: 1280px;
-  /* Space on each side of the page container. */
-  --layout-gutter: var(--space-8);
   /* Narrowest SideNav column. */
   --layout-sidenav-min: 256px;
   /* Widest SideNav column. */
@@ -44,9 +42,9 @@ Page widths, grid column minimums and fixed element sizes, so no component CSS n
   /* Phase marker in StepCards. */
   --size-dot-lg: 12px;
   /* Minimum height and width of anything tappable. */
-  --size-touch: var(--space-11);
+  --size-touch: 44px;
   /* Level badge diameter. */
-  --size-level-badge: var(--space-14);
+  --size-level-badge: 56px;
 }
 ```
 
