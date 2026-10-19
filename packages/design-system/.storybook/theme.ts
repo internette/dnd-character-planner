@@ -21,7 +21,7 @@ const fonts = {
 };
 
 const brand = {
-  brandTitle: '<span style="font-family: Lora, Georgia, serif; font-weight: 600; font-size: 20px;">Character Planner</span>',
+  brandTitle: '<span style="font-family: Lora, Georgia, serif; font-weight: 600; font-size: 20px;">Bag of Holding</span>',
   brandUrl: "./",
   appBorderRadius: 12,
 };

@@ -1,4 +1,4 @@
-/* Character Planner color tokens. Light is the default; set data-theme="dark" on any ancestor for dark. */
+/* Bag of Holding color tokens. Light is the default; set data-theme="dark" on any ancestor for dark. */
 :root,
 [data-theme="light"] {
   color-scheme: light;

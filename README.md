@@ -10,7 +10,7 @@ This is a [pnpm](https://pnpm.io) workspace monorepo.
 | --- | --- | --- |
 | `apps/web` | `@dnd/web` | React app built with Next.js |
 | `apps/api` | `@dnd/api` | Express API |
-| `packages/design-system` | `@dnd/design-system` | Character Planner design system: tokens, React components and Storybook docs, served by the web app at `/design-system` |
+| `packages/design-system` | `@dnd/design-system` | Bag of Holding design system: tokens, React components and Storybook docs, served by the web app at `/design-system` |
 
 ## Getting started
 

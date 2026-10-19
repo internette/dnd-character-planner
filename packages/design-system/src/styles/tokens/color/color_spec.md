@@ -22,7 +22,7 @@ Every color in the system, for light and dark themes, as CSS custom properties. 
 Create the file with exactly this content:
 
 ```css
-/* Character Planner color tokens. Light is the default; set data-theme="dark" on any ancestor for dark. */
+/* Bag of Holding color tokens. Light is the default; set data-theme="dark" on any ancestor for dark. */
 :root,
 [data-theme="light"] {
   color-scheme: light;

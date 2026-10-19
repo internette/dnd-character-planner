@@ -1,8 +1,8 @@
-# Design system build spec: Character Planner
+# Design system build spec: Bag of Holding
 
-Status: draft 3, 2026-10-19. Audience: an AI coding agent working in `internette/dnd-character-planner`.
+Status: draft 4, 2026-10-19. Audience: an AI coding agent working in `internette/dnd-character-planner`.
 
-Build the Character Planner design system as code in `packages/design-system`, document it in Storybook with themed MDX pages, and publish that Storybook at the `/design-system` route of the web app.
+Build the Bag of Holding design system as code in `packages/design-system`, document it in Storybook with themed MDX pages, and publish that Storybook at the `/design-system` route of the web app.
 
 Read `CONSTITUTION.md` before starting. Part II applies to all of this work; §4 ("Build on the design system") is the reason this package exists.
 
@@ -23,6 +23,10 @@ The specs are self-contained: every value, prop and example you need is written 
 ## 1. Background
 
 The design comes from the Ciaccona Lore Bard roadmap mockup: a quiet, rules-first reading surface with a forest-green hero and a three-color phase language for crowd control (gather, hold, strike). Port it; don't redesign it.
+
+### Name
+
+The design system is called **Bag of Holding**: like the magic item, it holds everything the planner needs, and it's bigger on the inside than it looks. Use the name for the design system only (the Storybook brand title, the docs and code comments). The product is still the D&D Character Planner. The package name stays `@dnd/design-system` and CSS classes keep the `cp-` prefix.
 
 ### Principles
 
@@ -47,7 +51,7 @@ The original design-system bundle and mockup are in the project's shared files (
 
 1. Token CSS files, one per group, each built to its spec (§4).
 2. The 13 components as typed React components with plain CSS, exported from `@dnd/design-system`, each built to its spec (§5).
-3. Storybook with a Character Planner brand theme, a light/dark toolbar switch, and themed MDX pages (§6).
+3. Storybook with a Bag of Holding brand theme, a light/dark toolbar switch, and themed MDX pages (§6).
 4. The Storybook static build served by the web app at `/design-system` (§7).
 5. Tests for tokens and components.
 
@@ -169,7 +173,7 @@ Component tests use Vitest and Testing Library in jsdom, plus an axe check (`vit
 - `main.ts`: `stories: ["../src/docs/**/*.mdx", "../src/**/*.mdx", "../src/**/*.stories.@(ts|tsx)"]`; addons `@storybook/addon-docs` and `@storybook/addon-a11y`; `docs: { defaultName: "Overview" }`.
 - `preview.tsx`: import `../src/styles/tokens/typography/fonts.css` and `../src/styles/index.css`. Add a global `theme` toolbar item (Light, Dark). A decorator sets `data-theme` on the story root and on the docs container, so stories and MDX pages switch together. Turn the backgrounds addon off; the theme provides the ground. Sort the sidebar: Introduction, Foundations, Components, Patterns.
 - `theme.ts` and `manager.ts`: brand the Storybook UI with `create()` from `storybook/theming`:
-  - `brandTitle`: "Character Planner", set in Lora; no logo yet.
+  - `brandTitle`: "Bag of Holding", set in Lora; no logo yet.
   - `colorPrimary` and `colorSecondary`: `accent`. `appBg`: `ground`. `appContentBg`: `surface`. `appBorderColor`: `line`. `textColor`: `ink`. `textMutedColor`: `ink-muted`. `barSelectedColor`: `accent`. `appBorderRadius`: 12.
   - `fontBase`: the body family. `fontCode`: the platform monospace stack.
   - A light and a dark theme. The manager picks one from the OS setting (`matchMedia`) at load; the toolbar switch controls the canvas.
@@ -178,7 +182,7 @@ Component tests use Vitest and Testing Library in jsdom, plus an axe check (`vit
 
 ### 6.2 Themed MDX pages
 
-"Themed" means every MDX page renders in the Character Planner look (fonts, colors and spacing from tokens) and follows the light/dark toolbar. Write a few doc-only React blocks in `src/docs/blocks/` (not exported from the package):
+"Themed" means every MDX page renders in the Bag of Holding look (fonts, colors and spacing from tokens) and follows the light/dark toolbar. Write a few doc-only React blocks in `src/docs/blocks/` (not exported from the package):
 
 - `DocPage`: wrapper that applies `ground`, the body font and `layout-max-width`.
 - `DocHero`: a `PageHero` with `size="lg"` for each page title.
@@ -261,7 +265,7 @@ Serve the Storybook static build from the Next.js app at `/design-system`.
 ## 11. Decisions
 
 1. `/design-system` serves the static Storybook build from the web app, not a Next.js page that re-implements docs.
-2. "Themed pages" means MDX docs styled in the Character Planner theme with light/dark switching, not per-character themes.
+2. "Themed pages" means MDX docs styled in the Bag of Holding theme with light/dark switching, not per-character themes.
 3. Plain CSS with `cp-` classes, not CSS-in-JS or Tailwind.
 4. Tokens are hand-written CSS custom properties, one file per group with its own spec. No JSON or generated files; docs and tests read the CSS.
 5. Color tokens are prefixed `--color-*` so every token's group is clear from its name.

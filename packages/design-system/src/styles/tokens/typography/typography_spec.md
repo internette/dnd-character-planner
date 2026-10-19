@@ -24,7 +24,7 @@ Font families, the type scale and the ten named text styles, as CSS custom prope
 ## File: `typography.css`
 
 ```css
-/* Character Planner typography tokens. Sizes and line heights are named in 4px steps. */
+/* Bag of Holding typography tokens. Sizes and line heights are named in 4px steps. */
 :root {
   /* Families */
   /* Headings, names and numerals. */
