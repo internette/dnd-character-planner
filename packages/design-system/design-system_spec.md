@@ -156,7 +156,7 @@ New components get a spec from [`component-template_spec.md`](./component-templa
 - Server-component safe: no state, effects or browser APIs. None of the 13 components needs interaction.
 - No inline `style` props.
 - Semantic HTML first, ARIA only where HTML can't express it.
-- Tappable elements are at least `space-11` (44px) in both directions. Focus rings: outline `stroke-strong` in `accent`, offset `space-1`.
+- Tappable elements are at least `space-12` (48px) in both directions. Focus rings: outline `stroke-strong` in `accent`, offset `space-1`.
 - Phase is never conveyed by color alone.
 - Shared classes live in `src/styles/base.css`: `.cp-row` (flex wrap, centered, gap `space-2`), `.cp-stack` (flex column, gap `space-4`), `.cp-meta` (`caption`, `ink-muted`), `.cp-label` (`label`, uppercase), `.cp-panel` (`surface`, `stroke-hairline` `line`, `radius-lg`, padding `space-5`, flex column, gap `space-2`) and `.cp-panel-title` (`heading-sm`, `accent-ink`). Everything else goes in the component's own CSS file.
 

@@ -85,4 +85,4 @@ Matches the level 9 and level 10 cards in the Ciaccona mockup at 1440px, and sta
 
 ## Open questions
 
-- At phone width the badge stays beside the card, which narrows the card by 72px. The mockup does not show phones; decide whether the badge moves above the card below 480px. Ask before changing.
+- At phone width the badge stays beside the card, which narrows the card by 80px. The mockup does not show phones; decide whether the badge moves above the card below 480px. Ask before changing.
