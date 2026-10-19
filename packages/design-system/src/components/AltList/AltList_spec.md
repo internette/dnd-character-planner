@@ -22,7 +22,7 @@ export interface AltListProps { items: AltItem[]; className?: string }
 </ul>
 ```
 
-Chevron: 16×16 viewBox, path `M6 4l4 4-4 4`, no fill, `currentColor` stroke 2, round caps and joins. Make it an internal `Chevron` icon component (not exported).
+Chevron: `size-icon` square, 16×16 viewBox, path `M6 4l4 4-4 4`, no fill, `currentColor` stroke 2, round caps and joins. Make it an internal `Chevron` icon component (not exported).
 
 ## Styling
 
@@ -34,7 +34,7 @@ Chevron: 16×16 viewBox, path `M6 4l4 4-4 4`, no fill, `currentColor` stroke 2, 
 
 ## Stories
 
-`Components/AltList`: `Default` from the preview: Otto's Irresistible Dance ("the musician's pick, but it only hits one target."), Mass Suggestion ("no concentration, up to twelve creatures."). `CustomJoiner`: Shatter with joiner ", " and text "upcast: your existing strike option until this arrives."
+`Components/AltList`: `Default` from the mockup: Otto's Irresistible Dance ("the musician's pick, but it only hits one target."), Mass Suggestion ("no concentration, up to twelve creatures."). `CustomJoiner`: Shatter with joiner ", " and text "upcast: your existing strike option until this arrives."
 
 ## MDX docs page
 

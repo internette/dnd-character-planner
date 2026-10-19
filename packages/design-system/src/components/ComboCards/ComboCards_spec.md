@@ -19,11 +19,11 @@ Render as a list: `<ul class="cp-combos"><li class="cp-combo"><h4>…</h4><p>…
 
 ## Styling
 
-Grid `repeat(auto-fit, minmax(208px, 1fr))`, gap `space-3`, no bullets. Card: `gold-tint`, `stroke-hairline` `gold-line`, `radius-lg`, padding `space-5`, flex column, gap `space-2`. Name: display, 20/28, 700, `ink`. Description: `ink`.
+Grid `repeat(auto-fit, minmax(var(--layout-card-min), 1fr))`, gap `space-3`, no bullets. Card: `gold-tint`, `stroke-hairline` `gold-line`, `radius-lg`, padding `space-5`, flex column, gap `space-2`. Name: `heading-sm` with `font-weight-bold`, `ink`. Description: `ink`.
 
 ## Stories
 
-`Components/ComboCards`: `Default` from the preview:
+`Components/ComboCards`: `Default` from the mockup:
 
 - The Vortex: "Maelstrom, then Synaptic Static on the center next turn. Static is instant, so it doesn't break concentration."
 - The Encore: "Upcast Command to call enemies to you, then a teammate's area spell or your own Shatter."

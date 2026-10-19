@@ -35,22 +35,41 @@ The reference uses a CSS grid of divs with ARIA table roles, but puts each group
 | Part | Tokens |
 | --- | --- |
 | Wrapper | `surface`, `stroke-hairline` `line`, `radius-lg`, `overflow-x: auto` |
-| Table | `min-width: 720px`, padding `space-2` `space-6` `space-6` |
+| Table | `min-width: var(--layout-table-min)`, padding `space-2` `space-6` `space-6` |
 | Row | grid `2fr 3fr 2fr`, gap `space-6`, padding `space-3` 0, top `stroke-hairline` `line-subtle` |
-| Header row | no top border, bottom `stroke-hairline` `line`, `label` style, `ink-muted` |
-| Group row | flex baseline, gap `space-3`, padding `space-6` 0 `space-2`; title display 20/28 600 `ink`; note `caption` `ink-muted` |
-| Spell cell | flex column, gap `space-1`; name display 16/24 600 `ink`; meta `caption`; tags in a row with gap `space-1` |
+| Header row | no top border, bottom `stroke-hairline` `line`, `label`, uppercase, `ink-muted` |
+| Group row | flex baseline, gap `space-3`, padding `space-6` 0 `space-2`; title `heading-sm`, `ink`; note `caption` `ink-muted` |
+| Spell cell | flex column, gap `space-1`; name display family, `font-weight-semibold`, `font-size-4`/`line-height-6`, `ink`; meta `caption`; tags in a row with gap `space-1` |
 | When column | `accent-ink` |
 
 ## Stories
 
-`Components/SpellTable`: `Default` from the preview, label "Crowd-control spells", three groups:
+`Components/SpellTable`: `Default`, label "Crowd-control spells", with three groups. "Instant" and "No concentration" use the `instant` tone, "Concentration" the `concentration` tone, "Ask your DM" the `dm` tone):
 
-- True grouping spells (id `grouping`, note "via Magical Secrets"): Maelstrom (XGtE · 5th · Druid; Concentration), Gravity Sinkhole (EGtW · 4th · Wizard; Instant, Ask your DM), Whirlwind (XGtE · 7th · Druid/Wizard; Concentration).
-- Bard-native gathering (id `bard-native`, note "no secrets needed"): Command: "Approach" (PHB · 1st · Bard; Instant), Mass Suggestion (PHB · 6th · Bard; No concentration as instant tone).
-- Pushes & pulls (id `pushes`, note "fine-tuning tools"): Telekinetic (TCoE · feat · +1 CHA), Thorn Whip / Lightning Lure (Cantrips · 10 ft pull), Thunderwave (PHB · 1st · Bard).
+**True grouping spells** (id `grouping`, note "via Magical Secrets")
 
-Take the `does` and `when` text for each row from `/mnt/project-files/design/design-system/components/SpellTable/preview.html`; they are the mockup's own paraphrases. `Narrow`: Default at 375px, showing horizontal scroll inside the box.
+| Name | Meta | Tags | Does | When |
+| --- | --- | --- | --- | --- |
+| Maelstrom | XGtE · 5th · Druid | Concentration | A 30 ft swirling vortex of difficult terrain. Every creature that starts its turn inside takes damage and is dragged 10 ft toward the center on a failed Strength save. | Level 10. The plan's first Secret. |
+| Gravity Sinkhole | EGtW · 4th · Wizard | Instant, Ask your DM | A 20 ft burst of force damage that yanks everyone who fails a Constitution save to the center point. | Level 10, in place of Steel Wind Strike. |
+| Whirlwind | XGtE · 7th · Druid/Wizard | Concentration | A moving tornado that batters enemies, then sucks up and restrains Large or smaller creatures caught inside. | Level 14. The plan's endgame gather. |
+
+**Bard-native gathering** (id `bard-native`, note "no secrets needed")
+
+| Name | Meta | Tags | Does | When |
+| --- | --- | --- | --- | --- |
+| Command: "Approach" | PHB · 1st · Bard | Instant | Each failed Wisdom save sends a target walking straight to you. Every slot level above 1st adds another target, so a 5th-level slot can gather five enemies at once. | Optional extra pick at any level. |
+| Mass Suggestion | PHB · 6th · Bard | No concentration | Up to twelve creatures follow a reasonable suggestion, such as "regroup by the fountain." | Alternative at level 11. |
+
+**Pushes & pulls** (id `pushes`, note "fine-tuning tools")
+
+| Name | Meta | Tags | Does | When |
+| --- | --- | --- | --- | --- |
+| Telekinetic | TCoE · feat · +1 CHA | | A bonus-action shove of 5 ft, toward you or away, every single turn. | Level 12. The plan's pick. |
+| Thorn Whip / Lightning Lure | Cantrips · 10 ft pull | | Drag one straggler 10 ft into the kill zone. | Magic Initiate or a spare Secret. |
+| Thunderwave | PHB · 1st · Bard | | Pushes enemies 10 ft away. It scatters rather than groups. | Use it to peel enemies off allies. |
+
+`Narrow`: Default at 375px, showing horizontal scroll inside the box.
 
 ## MDX docs page
 

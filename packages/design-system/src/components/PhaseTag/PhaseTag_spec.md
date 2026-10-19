@@ -34,7 +34,7 @@ Default words: `gather` → "Gather", `hold` → "Hold", `strike` → "Strike". 
 
 | Part | Tokens |
 | --- | --- |
-| Text | `label` style (12/16, 700, uppercase), body family |
+| Text | `label`, uppercase |
 | `md` | padding `space-1` `space-3`, `radius-xl` (pill) |
 | `sm` | padding `space-1` `space-2`, `radius-sm` (square) |
 | gather | `gather` text on `gather-tint` |
@@ -43,7 +43,7 @@ Default words: `gather` → "Gather", `hold` → "Hold", `strike` → "Strike". 
 
 `white-space: nowrap`.
 
-Also owns the phase dot used by SideNav and StepCards: `.cp-dot` (8×8, `radius-full`) with `.cp-dot-{phase}` filled in the phase color. Put these classes in `PhaseTag.css`.
+Also owns the phase dot used by SideNav and StepCards: `.cp-dot` (`size-dot` square, `radius-full`) with `.cp-dot-{phase}` filled in the phase color. Put these classes in `PhaseTag.css`.
 
 ## Stories
 

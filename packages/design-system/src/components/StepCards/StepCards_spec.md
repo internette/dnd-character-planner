@@ -29,11 +29,11 @@ The `<ol>` already conveys order, so hide the "STEP N" label from assistive tech
 
 ## Styling
 
-List: no bullets or padding, flex wrap, gap `space-3`. Card: `flex: 1 1 208px`, `surface`, `stroke-hairline` `line`, `radius-lg`, padding `space-5`, flex column, gap `space-1`. Label: `label` style, `gold`. Name: display, 24/32, 600, `accent-ink`, flex with gap `space-2`. Dot here is 12×12 with `radius-sm` (square). Description: `ink-body`.
+List: no bullets or padding, flex wrap, gap `space-3`. Card: `flex: 1 1 var(--layout-card-min)`, `surface`, `stroke-hairline` `line`, `radius-lg`, padding `space-5`, flex column, gap `space-1`. Label: `label`, uppercase, `gold`. Name: `heading-md`, `accent-ink`, flex with gap `space-2`. Dot here is `size-dot-lg` square with `radius-sm`. Description: `ink-body`.
 
 ## Stories
 
-`Components/StepCards`: `Default` from the preview:
+`Components/StepCards`: `Default` from the mockup:
 
 1. Gather (gather): "Pull the enemies into one tight cluster with a grouping spell or an upcast Command."
 2. Hold (hold): "Keep them there with difficult terrain, restraints or a nudge from the Telekinetic feat."

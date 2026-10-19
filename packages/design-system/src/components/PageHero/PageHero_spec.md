@@ -46,17 +46,17 @@ export interface PageHeroProps {
 | --- | --- |
 | Band | `forest`, text `on-forest`, `radius-xl`, padding `space-10`, flex column, gap `space-3`, `position: relative`, `overflow: hidden` |
 | Swirl | absolute, top 0, right `-space-10`, opacity 0.32, `on-forest-muted` |
-| Eyebrow | 12/16, 600, uppercase, `on-forest-muted` |
-| Title xl | display 64/72, 600 |
-| Title lg | display 40/48, 600 |
-| Subtitle | display italic 20/28, `on-forest-muted` |
-| Tags | flex wrap, gap `space-2`, padding-top `space-2`; each tag padding `space-1` `space-3`, `radius-xl`, `stroke-hairline` `on-forest-muted`, 12/16 600 uppercase |
+| Eyebrow | `caption` with `font-weight-semibold`, uppercase, `on-forest-muted` |
+| Title xl | `display-xl` |
+| Title lg | `display-lg` |
+| Subtitle | `subtitle`, `on-forest-muted` |
+| Tags | flex wrap, gap `space-2`, padding-top `space-2`; each tag padding `space-1` `space-3`, `radius-xl`, `stroke-hairline` `on-forest-muted`, `caption` with `font-weight-semibold`, uppercase |
 
-Phones: below 480px, step the `xl` title down to 40/48 and padding to `space-6`, so "Ciaccona" fits at 375px. This is new; confirm it with Antoinette in the PR description.
+Phones: below 480px, step the `xl` title down to `display-lg` and padding to `space-6`, so "Ciaccona" fits at 375px. This is new; confirm it with Antoinette in the PR description.
 
 ## Stories
 
-`Components/PageHero`: `Character` from the preview: eyebrow "D&D 5E · Character progression", title "Ciaccona", subtitle "College of Lore Bard — Crowd-Control Roadmap, Levels 9 to 14", tags ["Aero theme", "Wandering performer", "Gather · Hold · Strike"]. `Supplement`: size `lg`, title "Gather & Strike". `NoSwirl`: Character with `swirl={false}`.
+`Components/PageHero`: `Character` from the mockup: eyebrow "D&D 5E · Character progression", title "Ciaccona", subtitle "College of Lore Bard — Crowd-Control Roadmap, Levels 9 to 14", tags ["Aero theme", "Wandering performer", "Gather · Hold · Strike"]. `Supplement`: size `lg`, title "Gather & Strike". `NoSwirl`: Character with `swirl={false}`.
 
 ## MDX docs page
 

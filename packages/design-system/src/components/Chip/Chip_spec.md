@@ -29,7 +29,7 @@ export interface ChipProps {
 
 ## Styling
 
-Padding `space-1` `space-2`, `radius-sm`, caption size (12/16), `nowrap`.
+Padding `space-1` `space-2`, `radius-sm`, `caption` text style, `nowrap`. The `instant`, `concentration` and `dm` tones add `font-weight-semibold` and uppercase.
 
 | Tone | Text | Fill |
 | --- | --- | --- |

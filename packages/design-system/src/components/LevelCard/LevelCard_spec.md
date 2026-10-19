@@ -55,14 +55,14 @@ Composes `LevelBadge`, `Chip` (neutral, one per feature), `PhaseTag` (md), `Pick
 | Outer | flex, gap `space-4`, align start |
 | Card | `surface`, `stroke-hairline` `line`, `radius-lg`, padding `space-6`, flex column, gap `space-4`, `min-width: 0` |
 | Head | flex wrap, space-between, gap `space-3` |
-| Title | display, 24/32, 600, `ink` |
-| Picks | grid `repeat(auto-fit, minmax(256px, 1fr))`, gap `space-3` |
+| Title | `heading-md`, `ink` |
+| Picks | grid `repeat(auto-fit, minmax(var(--layout-pick-min), 1fr))`, gap `space-3` |
 
 No shadow.
 
 ## Stories
 
-`Components/LevelCard`, from the preview:
+`Components/LevelCard`, from the mockup:
 
 - `OnePick`: level 9, "The Lingering Note", phase strike, features ["5th-level spells", "Song of Rest d8"], pick Synaptic Static (meta "XGtE · 5th · Bard", description "A 20 ft psychic burst that keeps dragging down enemies' attacks and checks afterward. It's instant, so it never competes with a concentration spell you already have running."), alternatives Hold Monster ("single-target lockdown for boss fights.") and Shatter (joiner ", ", "upcast: your existing strike option until this arrives.").
 - `TwoPicks`: level 10, "The Vortex Opens", phase gather, features ["Magical Secrets (2 spells)", "Expertise (2 skills)", "Bardic Inspiration d10"], picks "Recommended · Secret 1" Maelstrom ("XGtE · 5th · Druid · Concentration", "A 30 ft swirling vortex of difficult terrain that drags enemies 10 ft toward its center every turn. Gather and hold in a single spell.") and "Recommended · Secret 2" Steel Wind Strike ("XGtE · 5th · Wizard/Ranger", "Hits up to five foes at once. Reflavor the weapon flourish as a gust of pistol shots."), alternatives Gravity Sinkhole (joiner " ", "(EGtW) in place of Steel Wind Strike, if your DM allows Wildemount spells.") and "Expertise:" (joiner " ", "Persuasion and Insight, if not already doubled.").

@@ -25,11 +25,11 @@ Generate the heading id with `useId` only if it stays server-safe (React 19 `use
 
 ## Styling
 
-Panel: `surface-sunken`, `radius-lg`, padding `space-6`, flex column, gap `space-4`, no border. Title: shared panel title (display, 20/28, 600, `accent-ink`). Grid: `repeat(auto-fit, minmax(208px, 1fr))`, gap `space-4`. Each note: padding-top `space-3`, top border `stroke-strong` `line`, `ink`.
+Panel: `surface-sunken`, `radius-lg`, padding `space-6`, flex column, gap `space-4`, no border. Title: the shared `.cp-panel-title` class. Grid: `repeat(auto-fit, minmax(var(--layout-card-min), 1fr))`, gap `space-4`. Each note: padding-top `space-3`, top border `stroke-strong` `line`, `ink`.
 
 ## Stories
 
-`Components/NotePanel`: `Default` from the preview, title "Before you level up", notes:
+`Components/NotePanel`: `Default` from the mockup, title "Before you level up", notes:
 
 1. "Two concentration spells can't run at once. Lead with Maelstrom or Whirlwind, then use instant spells or Forcecage to finish."
 2. "Wood Elf speed and Mask of the Wild fit her \"never where you expect\" style. Lean on Stealth when scouting."

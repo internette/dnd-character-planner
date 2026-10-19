@@ -39,15 +39,15 @@ Omit the meta span and the paragraph when their props are empty. The name is an 
 | Part | Tokens |
 | --- | --- |
 | Block | `gold-tint` fill, `radius-md`, padding `space-4`, flex column, gap `space-1`. No border, no side rule. |
-| Label | `label` style, `gold` |
+| Label | `label`, uppercase, `gold` |
 | Head | flex wrap, baseline aligned, gap `space-2` |
-| Name | display family, 20/28, 600, `ink` |
-| Meta | `caption` style, `ink-muted` (shared `.cp-meta`) |
-| Body | `body` style, `ink` |
+| Name | `heading-sm`, `ink` |
+| Meta | `caption`, `ink-muted` (shared `.cp-meta`) |
+| Body | `body`, `ink` |
 
 ## Stories
 
-`Components/PickCard`: `Default` from the preview (Hypnotic Pattern, meta "PHB · 3rd · Bard · Concentration", description "The best mass lockdown on the bard list. Drop it on a cluster Maelstrom already pulled together and the whole group is out of the fight."), shown at 640px max width. `SecretLabel` with label "Recommended · Secret 1".
+`Components/PickCard`: `Default` from the mockup (Hypnotic Pattern, meta "PHB · 3rd · Bard · Concentration", description "The best mass lockdown on the bard list. Drop it on a cluster Maelstrom already pulled together and the whole group is out of the fight."), shown at 640px max width. `SecretLabel` with label "Recommended · Secret 1".
 
 ## MDX docs page
 

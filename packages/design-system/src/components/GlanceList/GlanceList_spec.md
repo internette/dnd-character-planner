@@ -26,15 +26,15 @@ export interface GlanceListProps { title?: string; items: GlanceItem[]; classNam
 
 - Rows are `<a>` when `href` is set, `<div>` otherwise.
 - Use a `<section aria-labelledby>` for the panel, and a list (`<ul>`/`<li>`) for the rows instead of bare divs. This is a markup improvement over the reference; the look stays the same.
-- Rows are at least `space-11` tall and show the focus ring.
+- Rows are at least `size-touch` tall and show the focus ring.
 
 ## Styling
 
-Panel (shared `.cp-panel` with SideNav-style cards): `surface`, `stroke-hairline` `line`, `radius-lg`, padding `space-5`, gap `space-2`. Title: display, 20/28, 600, `accent-ink`. Row: flex, gap `space-3`, padding `space-2` 0, bottom `stroke-hairline` `line-subtle` (none on the last), no underline, `ink`. Level column: width `space-12`, 600, `ink-muted`. Pick: flexible, `min-width: 0`.
+Panel: the shared `.cp-panel` class. Title: the shared `.cp-panel-title` class. Row: flex, gap `space-3`, padding `space-2` 0, bottom `stroke-hairline` `line-subtle` (none on the last), no underline, `ink`. Level column: width `space-12`, `body-strong`, `ink-muted`. Pick: flexible, `min-width: 0`.
 
 ## Stories
 
-`Components/GlanceList`: `Default` from the preview at 400px max width: Lv 9 Synaptic Static (strike), Lv 10 Maelstrom + Steel Wind Strike (gather), Lv 11 Hypnotic Pattern (hold), Lv 12 Telekinetic feat (gather), Lv 13 Forcecage (hold), Lv 14 Whirlwind + Wind Walk (gather), each with `href="#lvN"`. `WithoutLinks`: same with no `href`.
+`Components/GlanceList`: `Default` from the mockup at 400px max width: Lv 9 Synaptic Static (strike), Lv 10 Maelstrom + Steel Wind Strike (gather), Lv 11 Hypnotic Pattern (hold), Lv 12 Telekinetic feat (gather), Lv 13 Forcecage (hold), Lv 14 Whirlwind + Wind Walk (gather), each with `href="#lvN"`. `WithoutLinks`: same with no `href`.
 
 ## MDX docs page
 

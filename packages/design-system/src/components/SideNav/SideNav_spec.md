@@ -38,15 +38,15 @@ export interface SideNavProps {
 | Part | Tokens |
 | --- | --- |
 | Nav | `surface`, `stroke-hairline` `line`, `radius-lg`, padding `space-3`, flex column, gap `space-1` |
-| Heading | padding `space-3` `space-3` `space-1` (top `space-1` for the first), `label` style, `ink-muted` |
-| Item | flex space-between, gap `space-2`, min-height `space-11`, padding `space-3`, `radius-md`, 16/20, `ink`, no underline |
+| Heading | padding `space-3` `space-3` `space-1` (top `space-1` for the first), `label`, uppercase, `ink-muted` |
+| Item | flex space-between, gap `space-2`, min-height `size-touch`, padding `space-3`, `radius-md`, body family `font-size-4`/`line-height-5`, `ink`, no underline |
 | Hover | `ground` fill |
 | Current | `accent-tint` fill, 600; text `forest` in light, `accent-ink` in dark |
 | Focus | outline `stroke-strong` `accent`, offset `space-1` |
 
 ## Stories
 
-`Components/SideNav` at 320px max width, from the preview: section "Roadmap" with Overview (current), Lv 9 · The Lingering Note (strike), Lv 10 · The Vortex Opens (gather), Lv 11 · The Lullaby (hold), Lv 12 · The Unseen Hand (gather), Lv 13 · The Cage of Wind (hold), Lv 14 · Arrival on the Breeze (gather), Before you level up; section "Supplement" with Gather & Strike, True grouping spells, Bard-native gathering, Pushes & pulls, Combos. Hrefs as `#overview`, `#lv9` … `#combos`. Add `Dark` with the theme global set to dark to show the current-item color swap.
+`Components/SideNav` at 320px max width, from the mockup: section "Roadmap" with Overview (current), Lv 9 · The Lingering Note (strike), Lv 10 · The Vortex Opens (gather), Lv 11 · The Lullaby (hold), Lv 12 · The Unseen Hand (gather), Lv 13 · The Cage of Wind (hold), Lv 14 · Arrival on the Breeze (gather), Before you level up; section "Supplement" with Gather & Strike, True grouping spells, Bard-native gathering, Pushes & pulls, Combos. Hrefs as `#overview`, `#lv9` … `#combos`. Add `Dark` with the theme global set to dark to show the current-item color swap.
 
 ## MDX docs page
 
