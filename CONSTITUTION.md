@@ -125,6 +125,7 @@ Run `pnpm typecheck`, `pnpm test`, and `pnpm build` from the repository root and
 - Keep pull requests focused, and explain what changed and why in plain language.
 - Note anything you were unsure about or couldn't verify.
 - Never commit secrets, API keys, or real user data, including in tests or fixtures.
+- When you create a new branch, tell the user its name and ask whether they'd like to check it out locally. Check it out on their machine only after they say yes, and never discard their uncommitted changes to do it.
 
 ### 8. Humans decide
 
