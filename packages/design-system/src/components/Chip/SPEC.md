@@ -1,6 +1,6 @@
 # Chip component spec
 
-Parent: [root spec](../README.md). The root spec's shared component rules apply; this file adds what is specific to Chip.
+Parent: [root spec](../../../SPEC.md). The root spec's shared component rules apply; this file adds what is specific to Chip.
 
 ## Purpose
 

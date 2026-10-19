@@ -1,6 +1,6 @@
 # Design system build spec: Character Planner
 
-Status: draft 2, 2026-10-19. This is the root spec; each component has its own spec in [`components/`](./components/). Audience: an AI coding agent working in `internette/dnd-character-planner`.
+Status: draft 2, 2026-10-19. This is the root spec; each component has its own `SPEC.md` in its folder under [`src/components/`](./src/components/). Audience: an AI coding agent working in `internette/dnd-character-planner`.
 
 Build the Character Planner design system as real code in `packages/design-system`, document it in Storybook with themed MDX pages, and publish that Storybook at the `/design-system` route of the web app.
 
@@ -50,6 +50,8 @@ Root scripts: `pnpm storybook`, `pnpm build`, `pnpm typecheck`, `pnpm test`. Nod
 
 ```
 packages/design-system/
+  SPEC.md              # this root spec
+  COMPONENT_SPEC_TEMPLATE.md
   .storybook/
     main.ts            # stories + MDX globs, addons, staticDirs
     manager.ts         # applies the brand theme to the Storybook UI
@@ -67,6 +69,7 @@ packages/design-system/
       base.css         # .cp-row, .cp-stack, .cp-meta, .cp-label, resets scoped to cp-
     components/
       <Name>/
+        SPEC.md        # the component spec (already written)
         <Name>.tsx
         <Name>.css
         <Name>.stories.tsx
@@ -111,25 +114,25 @@ Tests (`tokens.test.ts`):
 
 ## 6. Components
 
-Each component has its own spec in [`components/`](./components/). Build them in this order, since later ones compose earlier ones:
+Each component has its own spec at `src/components/<Name>/SPEC.md`, in the same folder as its code. Build them in this order, since later ones compose earlier ones:
 
 | Order | Component | Spec | Composes |
 | --- | --- | --- | --- |
-| 1 | PhaseTag | [PhaseTag.md](./components/PhaseTag.md) | |
-| 2 | Chip | [Chip.md](./components/Chip.md) | |
-| 3 | LevelBadge | [LevelBadge.md](./components/LevelBadge.md) | |
-| 4 | PickCard | [PickCard.md](./components/PickCard.md) | |
-| 5 | AltList | [AltList.md](./components/AltList.md) | |
-| 6 | LevelCard | [LevelCard.md](./components/LevelCard.md) | LevelBadge, Chip, PhaseTag, PickCard, AltList |
-| 7 | GlanceList | [GlanceList.md](./components/GlanceList.md) | PhaseTag |
-| 8 | NotePanel | [NotePanel.md](./components/NotePanel.md) | |
-| 9 | StepCards | [StepCards.md](./components/StepCards.md) | phase dot from PhaseTag |
-| 10 | SpellTable | [SpellTable.md](./components/SpellTable.md) | Chip |
-| 11 | ComboCards | [ComboCards.md](./components/ComboCards.md) | |
-| 12 | PageHero | [PageHero.md](./components/PageHero.md) | |
-| 13 | SideNav | [SideNav.md](./components/SideNav.md) | phase dot from PhaseTag |
+| 1 | PhaseTag | [PhaseTag/SPEC.md](./src/components/PhaseTag/SPEC.md) | |
+| 2 | Chip | [Chip/SPEC.md](./src/components/Chip/SPEC.md) | |
+| 3 | LevelBadge | [LevelBadge/SPEC.md](./src/components/LevelBadge/SPEC.md) | |
+| 4 | PickCard | [PickCard/SPEC.md](./src/components/PickCard/SPEC.md) | |
+| 5 | AltList | [AltList/SPEC.md](./src/components/AltList/SPEC.md) | |
+| 6 | LevelCard | [LevelCard/SPEC.md](./src/components/LevelCard/SPEC.md) | LevelBadge, Chip, PhaseTag, PickCard, AltList |
+| 7 | GlanceList | [GlanceList/SPEC.md](./src/components/GlanceList/SPEC.md) | PhaseTag |
+| 8 | NotePanel | [NotePanel/SPEC.md](./src/components/NotePanel/SPEC.md) | |
+| 9 | StepCards | [StepCards/SPEC.md](./src/components/StepCards/SPEC.md) | phase dot from PhaseTag |
+| 10 | SpellTable | [SpellTable/SPEC.md](./src/components/SpellTable/SPEC.md) | Chip |
+| 11 | ComboCards | [ComboCards/SPEC.md](./src/components/ComboCards/SPEC.md) | |
+| 12 | PageHero | [PageHero/SPEC.md](./src/components/PageHero/SPEC.md) | |
+| 13 | SideNav | [SideNav/SPEC.md](./src/components/SideNav/SPEC.md) | phase dot from PhaseTag |
 
-Each component spec covers purpose, API, markup and accessibility, styling by token, stories with example content, its MDX page, tests, acceptance criteria and open questions. New components get a spec from [`components/_TEMPLATE.md`](./components/_TEMPLATE.md) before any code.
+Each component spec covers purpose, API, markup and accessibility, styling by token, stories with example content, its MDX page, tests, acceptance criteria and open questions. New components get a spec from [`COMPONENT_SPEC_TEMPLATE.md`](./COMPONENT_SPEC_TEMPLATE.md), saved as `SPEC.md` in the component's folder, before any code.
 
 ### 6.1 Shared rules for every component
 
