@@ -1,0 +1,53 @@
+/* PhaseTag: the phase word on its tint. Never color alone. */
+.cp-phase {
+  display: inline-flex;
+  align-items: center;
+  font: var(--type-label);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cp-phase-md {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-xl);
+}
+
+.cp-phase-sm {
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.cp-phase-gather {
+  background: var(--color-gather-tint);
+  color: var(--color-gather);
+}
+
+.cp-phase-hold {
+  background: var(--color-hold-tint);
+  color: var(--color-hold);
+}
+
+.cp-phase-strike {
+  background: var(--color-strike-tint);
+  color: var(--color-strike);
+}
+
+/* Phase dot, used by SideNav and StepCards next to the phase word. */
+.cp-dot {
+  flex: none;
+  width: var(--size-dot);
+  height: var(--size-dot);
+  border-radius: var(--radius-full);
+}
+
+.cp-dot-gather {
+  background: var(--color-gather);
+}
+
+.cp-dot-hold {
+  background: var(--color-hold);
+}
+
+.cp-dot-strike {
+  background: var(--color-strike);
+}
