@@ -36,7 +36,7 @@ The reference uses a CSS grid of divs with ARIA table roles, but puts each group
 | --- | --- |
 | Wrapper | `surface`, `stroke-hairline` `line`, `radius-lg`, `overflow-x: auto` |
 | Table | `min-width: var(--layout-table-min)`, padding `space-2` `space-6` `space-6` |
-| Row | grid `2fr 3fr 2fr`, gap `space-6`, padding `space-3` 0, top `stroke-hairline` `line-subtle` |
+| Row | grid `2fr 3fr 2fr`, gap `space-6`, padding `space-3` 0, top `stroke-hairline` `line` |
 | Header row | no top border, bottom `stroke-hairline` `line`, `label`, uppercase, `ink-muted` |
 | Group row | flex baseline, gap `space-3`, padding `space-6` 0 `space-2`; title `heading-sm`, `ink`; note `caption` `ink-muted` |
 | Spell cell | flex column, gap `space-1`; name display family, `font-weight-semibold`, `font-size-4`/`line-height-6`, `ink`; meta `caption`; tags in a row with gap `space-1` |

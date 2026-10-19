@@ -30,7 +30,7 @@ export interface GlanceListProps { title?: string; items: GlanceItem[]; classNam
 
 ## Styling
 
-Panel: the shared `.cp-panel` class. Title: the shared `.cp-panel-title` class. Row: flex, gap `space-3`, padding `space-2` 0, bottom `stroke-hairline` `line-subtle` (none on the last), no underline, `ink`. Level column: width `space-12`, `body-strong`, `ink-muted`. Pick: flexible, `min-width: 0`.
+Panel: the shared `.cp-panel` class. Title: the shared `.cp-panel-title` class. Row: flex, gap `space-3`, padding `space-2` 0, bottom `stroke-hairline` `line` (none on the last), no underline, `ink`. Level column: width `space-12`, `body-strong`, `ink-muted`. Pick: flexible, `min-width: 0`.
 
 ## Stories
 

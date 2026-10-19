@@ -41,7 +41,7 @@ export interface SideNavProps {
 | Heading | padding `space-3` `space-3` `space-1` (top `space-1` for the first), `label`, uppercase, `ink-muted` |
 | Item | flex space-between, gap `space-2`, min-height `size-touch`, padding `space-3`, `radius-md`, body family `font-size-4`/`line-height-5`, `ink`, no underline |
 | Hover | `ground` fill |
-| Current | `accent-tint` fill, 600; text `forest` in light, `accent-ink` in dark |
+| Current | `surface-sunken` fill, 600; text `forest` in light, `accent-ink` in dark |
 | Focus | outline `stroke-strong` `accent`, offset `space-1` |
 
 ## Stories

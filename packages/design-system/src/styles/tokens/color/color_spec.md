@@ -13,6 +13,7 @@ Every color in the system, for light and dark themes, as CSS custom properties. 
 - No `prefers-color-scheme` here; the app decides the theme and sets the attribute.
 - Each variable in the light block has a one-line comment directly above it saying what it is for. The Color docs page reads these comments, so keep them accurate and on one line.
 - Set `color-scheme` in each block so form controls and scrollbars follow the theme.
+- There is one fill for quiet, set-in areas (`surface-sunken`) and one line color (`line`). Earlier drafts had `accent-tint` and `line-subtle`; they looked the same as these in light mode, so they were merged.
 - `on-forest` and `on-forest-muted` are the same in both themes because `forest` stays dark in both.
 - `gold` is for the RECOMMENDED and STEP labels only, never body text. `hold` also marks CONCENTRATION.
 
@@ -31,7 +32,7 @@ Create the file with exactly this content:
   --color-ground: #f4f6f4;
   /* Cards, tables, nav panels and the app bar. */
   --color-surface: #ffffff;
-  /* Quiet panels set into the page, such as Before you level up. */
+  /* Quiet fills set into the page: the Before you level up panel, feature chips and the current nav item. */
   --color-surface-sunken: #e9f0ec;
 
   /* Text */
@@ -43,10 +44,8 @@ Create the file with exactly this content:
   --color-ink-muted: #4f625b;
 
   /* Lines */
-  /* Card and table borders, the 1px hairline. */
+  /* Every border and divider: cards, tables and rows inside lists and tables. */
   --color-line: #d5e0db;
-  /* Row dividers inside lists and tables. */
-  --color-line-subtle: #e6edea;
 
   /* Brand */
   /* Hero bands and the brand block. Text on it uses on-forest. */
@@ -59,8 +58,6 @@ Create the file with exactly this content:
   --color-accent: #2f6f5a;
   /* Links, chip text, When to take it column, section titles in accent. */
   --color-accent-ink: #24584a;
-  /* Feature chips (5th-level spells), current nav item, INSTANT tags. */
-  --color-accent-tint: #e6efeb;
 
   /* Recommendation */
   /* RECOMMENDED and STEP labels only. Never body text. */
@@ -106,7 +103,6 @@ Create the file with exactly this content:
 
   /* Lines */
   --color-line: #2e3d37;
-  --color-line-subtle: #25332d;
 
   /* Brand */
   --color-forest: #1e4a3d;
@@ -114,7 +110,6 @@ Create the file with exactly this content:
   --color-on-forest-muted: #b8d6c9;
   --color-accent: #6fb79c;
   --color-accent-ink: #8ccbb2;
-  --color-accent-tint: #22362e;
 
   /* Recommendation */
   --color-gold: #d9b26a;
@@ -143,7 +138,7 @@ Every pair below must pass WCAG 4.5:1 in both themes. The token test checks them
 | --- | --- |
 | `ink`, `ink-body`, `ink-muted` | `ground`, `surface`, `surface-sunken` |
 | `on-forest`, `on-forest-muted` | `forest` |
-| `accent-ink` | `surface`, `accent-tint` |
+| `accent-ink` | `surface`, `surface-sunken` |
 | `gold` | `gold-tint` |
 | `gather` | `gather-tint` |
 | `hold` | `hold-tint` |

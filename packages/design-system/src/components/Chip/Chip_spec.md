@@ -33,8 +33,8 @@ Padding `space-1` `space-2`, `radius-sm`, `caption` text style, `nowrap`. The `i
 
 | Tone | Text | Fill |
 | --- | --- | --- |
-| neutral | `accent-ink` | `accent-tint` |
-| instant | `accent-ink` | `accent-tint` |
+| neutral | `accent-ink` | `surface-sunken` |
+| instant | `accent-ink` | `surface-sunken` |
 | concentration | `hold` | `hold-tint` |
 | dm | `arcane` | `arcane-tint` |
 
