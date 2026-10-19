@@ -10,7 +10,7 @@ The spacing scale for padding, gaps, margins and element sizes.
 
 - Everything sits on a 4px grid. `--space-N` is N × 4px.
 - Use only these steps; never hand-type a value between them. There are no 2px or 6px nudges.
-- Spacing is for gaps, padding and margins only. Fixed element sizes, such as the 44px touch target and the level badge, are layout tokens (`size-*`).
+- `space-11` (44px) is the minimum height and width of anything tappable.
 
 ## File: `spacing.css`
 
@@ -33,8 +33,12 @@ The spacing scale for padding, gaps, margins and element sizes.
   --space-8: 32px;
   /* Hero padding. */
   --space-10: 40px;
+  /* Minimum height and width of anything tappable. */
+  --space-11: 44px;
   /* Level column in At a glance; avatar diameter. */
   --space-12: 48px;
+  /* Level badge diameter. */
+  --space-14: 56px;
   /* Largest step: spacing above a new page section. */
   --space-16: 64px;
 }

@@ -41,10 +41,6 @@ Page widths, grid column minimums and fixed element sizes, so no component CSS n
   --size-dot: 8px;
   /* Phase marker in StepCards. */
   --size-dot-lg: 12px;
-  /* Minimum height and width of anything tappable. */
-  --size-touch: 44px;
-  /* Level badge diameter. */
-  --size-level-badge: 56px;
 }
 ```
 

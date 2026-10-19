@@ -26,7 +26,7 @@ export interface GlanceListProps { title?: string; items: GlanceItem[]; classNam
 
 - Rows are `<a>` when `href` is set, `<div>` otherwise.
 - Use a `<section aria-labelledby>` for the panel, and a list (`<ul>`/`<li>`) for the rows instead of bare divs. This is a markup improvement over the reference; the look stays the same.
-- Rows are at least `size-touch` tall and show the focus ring.
+- Rows are at least `space-11` tall and show the focus ring.
 
 ## Styling
 

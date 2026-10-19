@@ -39,7 +39,7 @@ export interface SideNavProps {
 | --- | --- |
 | Nav | `surface`, `stroke-hairline` `line`, `radius-lg`, padding `space-3`, flex column, gap `space-1` |
 | Heading | padding `space-3` `space-3` `space-1` (top `space-1` for the first), `label`, uppercase, `ink-muted` |
-| Item | flex space-between, gap `space-2`, min-height `size-touch`, padding `space-3`, `radius-md`, body family `font-size-4`/`line-height-5`, `ink`, no underline |
+| Item | flex space-between, gap `space-2`, min-height `space-11`, padding `space-3`, `radius-md`, body family `font-size-4`/`line-height-5`, `ink`, no underline |
 | Hover | `ground` fill |
 | Current | `surface-sunken` fill, 600; text `forest` in light, `accent-ink` in dark |
 | Focus | outline `stroke-strong` `accent`, offset `space-1` |
