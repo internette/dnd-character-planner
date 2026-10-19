@@ -193,7 +193,7 @@ Pages:
 
 | Page | Sidebar path | Content |
 | --- | --- | --- |
-| Introduction | Introduction | What the system is, the four principles (§1), how to install and import (`@dnd/design-system`, `@dnd/design-system/styles.css`), a link to CONSTITUTION Part II §4. |
+| Introduction | Introduction | What the system is (its name and what it's for; don't describe the Ciaccona mockup it came from), the four principles (§1), how to install and import (`@dnd/design-system`, `@dnd/design-system/styles.css`), a link to CONSTITUTION Part II §4. |
 | Voice | Foundations/Voice | The voice rules (§1) with example copy. |
 | Color | Foundations/Color | As described in the color spec. |
 | Typography | Foundations/Typography | As described in the typography spec. |
