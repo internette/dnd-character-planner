@@ -1,0 +1,17 @@
+{
+  "name": "dnd-character-planner",
+  "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter @dnd/web --filter @dnd/api dev",
+    "dev:web": "pnpm --filter @dnd/web dev",
+    "dev:api": "pnpm --filter @dnd/api dev",
+    "storybook": "pnpm --filter @dnd/design-system storybook",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test"
+  }
+}
