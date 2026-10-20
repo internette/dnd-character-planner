@@ -6,7 +6,7 @@ export type Phase = "gather" | "hold" | "strike";
 export interface ChipProps {
   /** The color. */
   variant?: ChipVariant;
-  /** rectangle for lists and tables; pill for phases on level cards. */
+  /** Rectangle for lists and tables; pill for phases on level cards. */
   shape?: "rectangle" | "pill";
   /** The text, shown exactly as written. */
   value: string;

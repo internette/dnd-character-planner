@@ -62,11 +62,11 @@ Also owns the phase dot used by SideNav and StepCards: `.cp-dot` (`size-dot` squ
 
 ## Stories
 
-`Components/Chip`: one story per variant (`Green` "5th-level spells", `Amber` "Concentration", `Purple` "Ask your DM", `Blue` "Gather", `Red` "Strike"); `AllFacts` matching the preview: "5th-level spells", "Song of Rest d8", "Instant" (green), "Concentration" (amber), "No concentration" (green), "Ask your DM" (purple); and `AllPhases` (three phase pills, then three rectangles, built from `PHASE_VARIANT` and `PHASE_LABEL`).
+`Components/Chip`: one story per variant (`Green` "5th-level spells", `Amber` "Concentration", `Purple` "Ask your DM", `Blue` "Gather", `Red` "Strike"); `AllVariants` (one chip per variant, labelled with its name); `Shapes` (a rectangle and a pill); `AllFacts` matching the preview: "5th-level spells", "Song of Rest d8", "Instant" (green), "Concentration" (amber), "No concentration" (green), "Ask your DM" (purple); and `AllPhases` (three phase pills, then three rectangles, built from `PHASE_VARIANT` and `PHASE_LABEL`).
 
 ## MDX docs page
 
-Page order: the `Green` story with Controls as a playground; Variants (`AllFacts` and one line per variant); Phases (`AllPhases`, the meaning of each phase, `PHASE_VARIANT` and `PHASE_LABEL`, `pill` on level cards and `rectangle` in lists and tables, link to Patterns/Phases); Content rules; Accessibility. Use lists, not Markdown tables, since Storybook's MDX doesn't render them.
+Page order: the `Green` story with Controls as a playground; Variants (`AllVariants`, one line per variant on when to use it, then `AllFacts` as real examples); Shapes (`Shapes`, rectangle for lists and tables, pill for the phase on a level card); Phases (one sentence on what each phase means, a code example built from `PHASE_VARIANT` and `PHASE_LABEL`, `AllPhases`, link to Patterns/Phases); Content rules; Accessibility. Use lists, not Markdown tables, since Storybook's MDX doesn't render them.
 
 Content rules: the chip never changes the case of `value`; write it in sentence case. Use `purple` whenever the group must approve something (constitution Part I §3). Never show a phase by color alone.
 

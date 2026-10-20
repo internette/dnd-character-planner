@@ -35,6 +35,27 @@ export const Red: Story = {
   args: { variant: "red", value: "Strike" },
 };
 
+export const AllVariants: Story = {
+  render: () => (
+    <div className="cp-row">
+      <Chip variant="green" value="Green" />
+      <Chip variant="amber" value="Amber" />
+      <Chip variant="purple" value="Purple" />
+      <Chip variant="blue" value="Blue" />
+      <Chip variant="red" value="Red" />
+    </div>
+  ),
+};
+
+export const Shapes: Story = {
+  render: () => (
+    <div className="cp-row">
+      <Chip value="Rectangle" />
+      <Chip shape="pill" value="Pill" />
+    </div>
+  ),
+};
+
 export const AllFacts: Story = {
   render: () => (
     <div className="cp-row">

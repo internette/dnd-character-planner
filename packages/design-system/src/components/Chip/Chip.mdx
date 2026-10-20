@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import { Meta, Canvas, Controls, Source } from "@storybook/addon-docs/blocks";
 import * as Stories from "./Chip.stories";
 import { DocPage } from "../../docs/blocks/DocPage";
 import { DocHero } from "../../docs/blocks/DocHero";
@@ -7,7 +7,7 @@ import { DocHero } from "../../docs/blocks/DocHero";
 
 <DocPage>
 
-<DocHero eyebrow="Component" title="Chip" subtitle="Small facts: features a level grants, casting properties of a spell, and the phase a pick serves." />
+<DocHero eyebrow="Component" title="Chip" subtitle="A small label for a fact: a feature gained, a casting property, or the phase a pick serves." />
 
 <Canvas of={Stories.Green} />
 
@@ -15,35 +15,42 @@ import { DocHero } from "../../docs/blocks/DocHero";
 
 ## Variants
 
-Each variant is a color. Set the text with `value`; it shows exactly as you write it.
+Each variant is a color. The text is whatever you pass as `value`, exactly as written.
+
+<Canvas of={Stories.AllVariants} />
+
+- `green`: features gained and casting properties.
+- `amber`: Concentration, and the Hold phase.
+- `purple`: anything the table must approve, such as a non-core source.
+- `blue`: the Gather phase.
+- `red`: the Strike phase.
 
 <Canvas of={Stories.AllFacts} />
 
-- `green`: features gained and casting properties, such as 5th-level spells, Song of Rest d8, Instant and No concentration.
-- `amber`: Concentration, and the Hold phase.
-- `purple`: anything the table must approve, such as non-core sources.
-- `blue` and `red`: the Gather and Strike phases.
+## Shapes
+
+`rectangle` is the default, for lists and tables. Use `pill` for the phase on a level card.
+
+<Canvas of={Stories.Shapes} />
 
 ## Phases
 
-Gather, hold and strike mark which step of the crowd-control loop a pick serves. `PHASE_VARIANT` gives each phase's variant and `PHASE_LABEL` its word, so every phase chip matches.
+Gather pulls enemies together, hold keeps them there, and strike hits the group. Build phase chips from `PHASE_VARIANT` and `PHASE_LABEL` so every one matches.
+
+<Source dark code={`<Chip variant={PHASE_VARIANT.hold} value={PHASE_LABEL.hold} shape="pill" />`} />
 
 <Canvas of={Stories.AllPhases} />
 
-- **Gather** pulls enemies together.
-- **Hold** keeps them there.
-- **Strike** hits the group.
-
-Use `shape="pill"` on level cards (top row) and the default `rectangle` in lists and tables (bottom row). [Phase language](?path=/docs/patterns-phases--docs) shows how the loop works across a page.
+[Phase language](?path=/docs/patterns-phases--docs) shows how the loop works across a page.
 
 ## Content rules
 
-- The chip never changes the case of `value`. Use sentence case, as in the examples.
+- Write `value` in sentence case. The chip never changes it.
 - Use `purple` whenever the group must approve something, because the table has the final word.
-- Never show a phase by color alone. A phase chip's `value` always contains the phase word, for example "Strike" or "Strike · AoE".
+- Never show a phase by color alone. A phase chip's `value` always contains the phase word, such as "Strike" or "Strike · AoE".
 
 ## Accessibility
 
-The text is the content, so chips need no ARIA. They aren't interactive. Every variant's text and fill pass 4.5:1 in both themes.
+The text is the content, so chips need no ARIA, and they aren't interactive. Every variant's text and fill pass 4.5:1 in both themes.
 
 </DocPage>
