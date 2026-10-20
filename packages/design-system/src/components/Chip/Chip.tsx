@@ -3,11 +3,11 @@ import { cx } from "../internal/cx";
 export type Phase = "gather" | "hold" | "strike";
 
 export interface ChipProps {
-  /** Default "neutral". Use "dm" whenever the group must approve something; gather, hold and strike are the phase variants. */
+  /** The color. gather, hold and strike are phases; dm marks anything the table must approve. */
   variant?: "neutral" | "instant" | "concentration" | "dm" | Phase;
-  /** Default "sm" (square). Use "md" (pill) for phases on level cards. */
+  /** sm is the square; md is the pill, for phases on level cards. */
   size?: "sm" | "md";
-  /** The chip's text, in sentence case; uppercase comes from CSS. Phase variants default to the phase word, and a custom value must still contain it. */
+  /** The text, in sentence case. Phases show their word when this is empty. */
   value?: string;
   className?: string;
 }

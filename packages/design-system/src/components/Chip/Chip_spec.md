@@ -70,7 +70,7 @@ Phase variants: `Gather`, `Hold`, `Strike` (md pill), `PhaseSmall` (all three at
 
 Content rules: use `dm` whenever the group must approve something (constitution Part I §3). Uppercase comes from CSS; write `value` in sentence case. The Controls panel shows `variant` as a select and `value` as a text field.
 
-Phase variants section: `md` pill on level cards, `sm` square in lists and tables. Never color alone. Show the three phases with their meaning (gather pulls enemies together, hold keeps them there, strike hits the group) and link to Patterns/Phases.
+Page order: the `Neutral` story with Controls as a playground; Variants (`AllFacts` and one line per fact variant); Phases (`AllPhases`, the meaning of each phase, `md` pill on level cards and `sm` square in lists and tables, link to Patterns/Phases); Content rules; Accessibility. Use lists, not Markdown tables, since Storybook's MDX doesn't render them. Never color alone.
 
 ## Tests
 
