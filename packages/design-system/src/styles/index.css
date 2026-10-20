@@ -2,4 +2,5 @@
 @import "./tokens/tokens.css";
 @import "./base.css";
 @import "../components/Chip/Chip.css";
+@import "../components/LevelBadge/LevelBadge.css";
 @import "../components/PageHero/PageHero.css";

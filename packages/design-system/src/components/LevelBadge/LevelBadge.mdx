@@ -1,0 +1,26 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as Stories from "./LevelBadge.stories";
+import { DocPage } from "../../docs/blocks/DocPage";
+import { DocHero } from "../../docs/blocks/DocHero";
+
+<Meta of={Stories} />
+
+<DocPage>
+
+<DocHero eyebrow="Component" title="LevelBadge" subtitle="The level disc that anchors each level card." />
+
+<Canvas of={Stories.Default} />
+
+<Controls of={Stories.Default} />
+
+## In use
+
+LevelBadge is only used inside LevelCard, where it sits to the left of the card. Two-digit levels fit inside the disc.
+
+<Canvas of={Stories.Range} />
+
+## Accessibility
+
+Screen readers hear the disc as one image named "Level 9". The "LEVEL" label and the numeral are hidden from them so the level isn't read twice.
+
+</DocPage>
