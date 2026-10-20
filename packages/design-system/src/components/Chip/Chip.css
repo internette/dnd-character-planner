@@ -1,0 +1,32 @@
+/* Chip: a small fact, such as a feature gained or a casting property. */
+.cp-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font: var(--type-caption);
+  white-space: nowrap;
+}
+
+.cp-chip-instant,
+.cp-chip-concentration,
+.cp-chip-dm {
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+}
+
+.cp-chip-neutral,
+.cp-chip-instant {
+  background: var(--color-surface-sunken);
+  color: var(--color-accent-ink);
+}
+
+.cp-chip-concentration {
+  background: var(--color-hold-tint);
+  color: var(--color-hold);
+}
+
+.cp-chip-dm {
+  background: var(--color-arcane-tint);
+  color: var(--color-arcane);
+}

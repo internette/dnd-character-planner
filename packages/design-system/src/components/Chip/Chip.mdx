@@ -1,0 +1,40 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as Stories from "./Chip.stories";
+import { DocPage } from "../../docs/blocks/DocPage";
+import { DocHero } from "../../docs/blocks/DocHero";
+
+<Meta of={Stories} />
+
+<DocPage>
+
+<DocHero eyebrow="Component" title="Chip" subtitle="Small facts: features a level grants, and casting properties of a spell." />
+
+<Canvas of={Stories.AllTones} />
+
+<Controls of={Stories.Neutral} />
+
+## Tones
+
+| Tone | Use |
+| --- | --- |
+| `neutral` | Features gained, such as 5th-level spells or Song of Rest d8 |
+| `instant` | Casting properties: Instant, No concentration |
+| `concentration` | Casting property: Concentration |
+| `dm` | Table-dependent content, such as non-core sources or Ask your DM |
+
+<Canvas of={Stories.Neutral} />
+
+<Canvas of={Stories.Concentration} />
+
+<Canvas of={Stories.Dm} />
+
+## Content rules
+
+- Use `dm` whenever the group must approve something. The table has the final word (constitution Part I §3).
+- Write children in sentence case. The `instant`, `concentration` and `dm` tones are uppercased by CSS.
+
+## Accessibility
+
+The text is the content. Chips aren't interactive.
+
+</DocPage>
