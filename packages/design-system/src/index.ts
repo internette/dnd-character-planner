@@ -3,5 +3,7 @@ export { Chip, PHASE_LABEL, PHASE_VARIANT } from "./components/Chip";
 export type { ChipProps, ChipVariant, Phase } from "./components/Chip";
 export { LevelBadge } from "./components/LevelBadge";
 export type { LevelBadgeProps } from "./components/LevelBadge";
+export { PickCard } from "./components/PickCard";
+export type { PickCardProps } from "./components/PickCard";
 export { PageHero } from "./components/PageHero";
 export type { PageHeroProps } from "./components/PageHero";
