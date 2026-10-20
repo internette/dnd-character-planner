@@ -18,7 +18,10 @@
 
 .cp-chip-instant,
 .cp-chip-concentration,
-.cp-chip-dm {
+.cp-chip-dm,
+.cp-chip-gather,
+.cp-chip-hold,
+.cp-chip-strike {
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
 }
@@ -39,14 +42,7 @@
   color: var(--color-arcane);
 }
 
-/* Phase variant: the phase word on its tint. Never color alone. */
-.cp-chip-gather,
-.cp-chip-hold,
-.cp-chip-strike {
-  font: var(--type-label);
-  text-transform: uppercase;
-}
-
+/* Phase variants: the phase word on its tint. Never color alone. */
 .cp-chip-gather {
   background: var(--color-gather-tint);
   color: var(--color-gather);

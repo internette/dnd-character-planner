@@ -26,9 +26,9 @@ export interface ChipProps {
 | `instant` | Casting property: Instant, No concentration | uppercase, 600 |
 | `concentration` | Casting property: Concentration | uppercase, 600, hold colors |
 | `dm` | Table-dependent content (non-core sources, Ask your DM) | uppercase, 600, arcane colors |
-| `gather` | Phase: pulls enemies together | `label`, uppercase, gather colors |
-| `hold` | Phase: keeps them there | `label`, uppercase, hold colors |
-| `strike` | Phase: hits the group | `label`, uppercase, strike colors |
+| `gather` | Phase: pulls enemies together | uppercase, 600, gather colors |
+| `hold` | Phase: keeps them there | uppercase, 600, hold colors |
+| `strike` | Phase: hits the group | uppercase, 600, strike colors |
 
 Default words for phase variants: `gather` → "Gather", `hold` → "Hold", `strike` → "Strike". Export a `PHASE_LABEL` record with these, and the `Phase` type, so other components (SideNav, StepCards, GlanceList, LevelCard) share them.
 
@@ -46,8 +46,7 @@ Every chip: `caption` text style, `nowrap`, inline flex, centered.
 | --- | --- |
 | `sm` | padding `space-1` `space-2`, `radius-sm` (square) |
 | `md` | padding `space-1` `space-3`, `radius-xl` (pill) |
-| `instant`, `concentration`, `dm` | add `font-weight-semibold` and uppercase |
-| `gather`, `hold`, `strike` | `label` text style instead of `caption`, uppercase |
+| every variant except `neutral` | add `font-weight-semibold` and uppercase |
 
 | Variant | Text | Fill |
 | --- | --- | --- |
@@ -81,7 +80,7 @@ Phase variants section: `md` pill on level cards, `sm` square in lists and table
 
 ## Acceptance criteria
 
-Matches the Chip and PhaseTag previews in both themes: fact chips as before, phase chips as three pills then three squares.
+Matches the Chip and PhaseTag previews in both themes: fact chips as before, phase chips as three pills then three squares. Phase text is semibold like the other uppercase variants, not the bold of the old PhaseTag preview (Antoinette, 2026-10-20), so the variants differ only in color, case and the phase word default.
 
 ## Open questions
 
