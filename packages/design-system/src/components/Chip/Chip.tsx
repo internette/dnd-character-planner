@@ -4,11 +4,11 @@ export type ChipVariant = "plain" | "green" | "amber" | "purple" | "blue" | "red
 export type Phase = "gather" | "hold" | "strike";
 
 export interface ChipProps {
-  /** The color. plain is sentence case; every other variant is uppercase. */
+  /** The color. plain is regular weight; every other variant is semibold. */
   variant?: ChipVariant;
   /** sm is the square; md is the pill, for phases on level cards. */
   size?: "sm" | "md";
-  /** The text, in sentence case. */
+  /** The text, shown exactly as written. */
   value: string;
   className?: string;
 }

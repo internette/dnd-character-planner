@@ -16,19 +16,19 @@ export type Phase = "gather" | "hold" | "strike";
 export interface ChipProps {
   variant?: ChipVariant; // default "plain"
   size?: "sm" | "md";    // default "sm" (square); "md" is the pill
-  value: string;         // the chip's text, in sentence case
+  value: string;         // the chip's text, shown exactly as written
   className?: string;
 }
 ```
 
 | Variant | Use | Look |
 | --- | --- | --- |
-| `plain` | Features gained (5th-level spells, Song of Rest d8) | sentence case |
-| `green` | Casting properties: Instant, No concentration | uppercase, 600 |
-| `amber` | Concentration; the Hold phase | uppercase, 600 |
-| `purple` | Table-dependent content (non-core sources, Ask your DM) | uppercase, 600 |
-| `blue` | The Gather phase | uppercase, 600 |
-| `red` | The Strike phase | uppercase, 600 |
+| `plain` | Features gained (5th-level spells, Song of Rest d8) | 400 |
+| `green` | Casting properties: Instant, No concentration | 600 |
+| `amber` | Concentration; the Hold phase | 600 |
+| `purple` | Table-dependent content (non-core sources, Ask your DM) | 600 |
+| `blue` | The Gather phase | 600 |
+| `red` | The Strike phase | 600 |
 
 Export two records so every phase chip matches (SideNav, StepCards, GlanceList and LevelCard use them):
 
@@ -44,7 +44,7 @@ A phase chip is `<Chip variant={PHASE_VARIANT[phase]} value={PHASE_LABEL[phase]}
 
 ## Styling
 
-Every chip: `caption` text style with `font-weight-semibold`, uppercase, `nowrap`, inline flex, centered. `plain` resets to `font-weight-regular` and no text transform.
+Every chip: `caption` text style with `font-weight-semibold`, `nowrap`, inline flex, centered. `plain` resets to `font-weight-regular`. No text transform: the chip shows `value` exactly as written (Antoinette, 2026-10-20).
 
 | Part | Tokens |
 | --- | --- |
@@ -70,7 +70,7 @@ Also owns the phase dot used by SideNav and StepCards: `.cp-dot` (`size-dot` squ
 
 Page order: the `Plain` story with Controls as a playground; Variants (`AllFacts` and one line per variant); Phases (`AllPhases`, the meaning of each phase, `PHASE_VARIANT` and `PHASE_LABEL`, `md` pill on level cards and `sm` square in lists and tables, link to Patterns/Phases); Content rules; Accessibility. Use lists, not Markdown tables, since Storybook's MDX doesn't render them.
 
-Content rules: write `value` in sentence case; CSS uppercases every variant except `plain`. Use `purple` whenever the group must approve something (constitution Part I §3). Never show a phase by color alone.
+Content rules: the chip never changes the case of `value`; write it in sentence case. Use `purple` whenever the group must approve something (constitution Part I §3). Never show a phase by color alone.
 
 ## Tests
 
@@ -80,7 +80,7 @@ Content rules: write `value` in sentence case; CSS uppercases every variant exce
 
 ## Acceptance criteria
 
-Matches the Chip and PhaseTag previews in both themes, except that phase text is semibold like the other uppercase chips (Antoinette, 2026-10-20).
+Matches the Chip and PhaseTag previews in both themes in color, size and shape. Two deliberate differences (Antoinette, 2026-10-20): text keeps the case it was written in instead of being uppercased, and phase text is semibold like the other colored chips.
 
 ## Open questions
 

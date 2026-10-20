@@ -15,7 +15,7 @@ import { DocHero } from "../../docs/blocks/DocHero";
 
 ## Variants
 
-Each variant is a color. `plain` is sentence case; the rest are uppercase. Set the text with `value`.
+Each variant is a color. `plain` is regular weight; the rest are semibold. Set the text with `value`; it shows exactly as you write it.
 
 <Canvas of={Stories.AllFacts} />
 
@@ -39,7 +39,7 @@ Use the `md` pill on level cards (top row) and the default `sm` square in lists 
 
 ## Content rules
 
-- Write `value` in sentence case. CSS uppercases every variant except `plain`.
+- The chip never changes the case of `value`. Use sentence case, as in the examples.
 - Use `purple` whenever the group must approve something, because the table has the final word.
 - Never show a phase by color alone. A phase chip's `value` always contains the phase word, for example "Strike" or "Strike · AoE".
 

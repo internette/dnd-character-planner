@@ -4,7 +4,6 @@
   align-items: center;
   font: var(--type-caption);
   font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
   white-space: nowrap;
 }
 
@@ -20,7 +19,6 @@
 
 .cp-chip-plain {
   font-weight: var(--font-weight-regular);
-  text-transform: none;
 }
 
 .cp-chip-plain,
