@@ -1,5 +1,5 @@
 /* Everything a consumer needs: tokens, shared classes and every component's styles. */
 @import "./tokens/tokens.css";
 @import "./base.css";
-@import "../components/PhaseTag/PhaseTag.css";
+@import "../components/Chip/Chip.css";
 @import "../components/PageHero/PageHero.css";

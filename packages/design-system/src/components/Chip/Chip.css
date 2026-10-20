@@ -1,33 +1,43 @@
-/* PhaseTag: the phase word on its tint. Never color alone. */
-.cp-phase {
+/* Chip: a small fact, such as a feature gained, a casting property or a phase. */
+.cp-chip {
   display: inline-flex;
   align-items: center;
-  font: var(--type-label);
-  text-transform: uppercase;
+  font: var(--type-caption);
+  font-weight: var(--font-weight-semibold);
   white-space: nowrap;
 }
 
-.cp-phase-md {
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-xl);
-}
-
-.cp-phase-sm {
+.cp-chip-rectangle {
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-sm);
 }
 
-.cp-phase-gather {
-  background: var(--color-gather-tint);
-  color: var(--color-gather);
+.cp-chip-pill {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-xl);
 }
 
-.cp-phase-hold {
+.cp-chip-green {
+  background: var(--color-surface-sunken);
+  color: var(--color-accent-ink);
+}
+
+.cp-chip-amber {
   background: var(--color-hold-tint);
   color: var(--color-hold);
 }
 
-.cp-phase-strike {
+.cp-chip-purple {
+  background: var(--color-arcane-tint);
+  color: var(--color-arcane);
+}
+
+.cp-chip-blue {
+  background: var(--color-gather-tint);
+  color: var(--color-gather);
+}
+
+.cp-chip-red {
   background: var(--color-strike-tint);
   color: var(--color-strike);
 }
