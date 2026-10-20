@@ -200,7 +200,7 @@ Pages:
 | Spacing and shape | Foundations/Spacing | As described in the spacing and shape specs. |
 | Layout | Foundations/Layout | As described in the layout spec. |
 | Iconography | Foundations/Iconography | The icon rules (§1), the chevron and the wind swirl. |
-| Phase language | Patterns/Phases | Gather, hold, strike: what each means, their colors, and "never color alone". |
+| Phase language | Patterns/Phases | Gather, hold, strike: what each means, their colors, "never color alone", and how to build a phase chip from `PHASE_VARIANT` and `PHASE_LABEL` (with an example in both shapes). |
 | Roadmap page | Patterns/Roadmap page | A composed page using every component, with the example content from the component specs, and a short note on how they fit together. |
 
 Each component also gets an MDX page next to its story (`<Name>.mdx`) using `<Meta of={Stories} />`, `<Canvas>`, `<Controls>`, and the usage and content rules in its spec. Import `Meta`, `Canvas`, `Controls` and `Stories` from `@storybook/addon-docs/blocks`.

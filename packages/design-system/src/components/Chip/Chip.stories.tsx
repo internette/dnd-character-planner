@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Chip, PHASE_LABEL, PHASE_VARIANT, type Phase } from "./Chip";
+import { Chip } from "./Chip";
 
 const meta = {
   title: "Components/Chip",
@@ -14,8 +14,6 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-const phases = Object.keys(PHASE_LABEL) as Phase[];
 
 export const Green: Story = {};
 
@@ -65,23 +63,6 @@ export const AllFacts: Story = {
       <Chip variant="amber" value="Concentration" />
       <Chip variant="green" value="No concentration" />
       <Chip variant="purple" value="Ask your DM" />
-    </div>
-  ),
-};
-
-export const AllPhases: Story = {
-  render: () => (
-    <div className="cp-stack">
-      <div className="cp-row">
-        {phases.map((phase) => (
-          <Chip key={phase} variant={PHASE_VARIANT[phase]} shape="pill" value={PHASE_LABEL[phase]} />
-        ))}
-      </div>
-      <div className="cp-row">
-        {phases.map((phase) => (
-          <Chip key={phase} variant={PHASE_VARIANT[phase]} value={PHASE_LABEL[phase]} />
-        ))}
-      </div>
     </div>
   ),
 };

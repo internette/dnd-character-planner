@@ -1,4 +1,4 @@
-import { Meta, Canvas, Controls, Source } from "@storybook/addon-docs/blocks";
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
 import * as Stories from "./Chip.stories";
 import { DocPage } from "../../docs/blocks/DocPage";
 import { DocHero } from "../../docs/blocks/DocHero";
@@ -33,21 +33,10 @@ Each variant is a color. The text is whatever you pass as `value`, exactly as wr
 
 <Canvas of={Stories.Shapes} />
 
-## Phases
-
-Gather pulls enemies together, hold keeps them there, and strike hits the group. Build phase chips from `PHASE_VARIANT` and `PHASE_LABEL` so every one matches.
-
-<Source dark code={`<Chip variant={PHASE_VARIANT.hold} value={PHASE_LABEL.hold} shape="pill" />`} />
-
-<Canvas of={Stories.AllPhases} />
-
-[Phase language](?path=/docs/patterns-phases--docs) shows how the loop works across a page.
-
 ## Content rules
 
 - Write `value` in sentence case. The chip never changes it.
 - Use `purple` whenever the group must approve something, because the table has the final word.
-- Never show a phase by color alone. A phase chip's `value` always contains the phase word, such as "Strike" or "Strike · AoE".
 
 ## Accessibility
 

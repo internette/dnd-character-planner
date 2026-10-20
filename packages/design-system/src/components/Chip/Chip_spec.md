@@ -39,7 +39,7 @@ A phase chip is `<Chip variant={PHASE_VARIANT[phase]} value={PHASE_LABEL[phase]}
 ## Markup and accessibility
 
 - Renders `<span class="cp-chip cp-chip-{variant} cp-chip-{shape}">`. `value` is the content. No interactivity, no ARIA.
-- A phase chip's `value` must contain the phase word. Document this in the MDX page; do not enforce it in code.
+- A phase chip's `value` must contain the phase word. Document this on the Patterns/Phases page; do not enforce it in code.
 
 ## Styling
 
@@ -62,13 +62,13 @@ Also owns the phase dot used by SideNav and StepCards: `.cp-dot` (`size-dot` squ
 
 ## Stories
 
-`Components/Chip`: one story per variant (`Green` "5th-level spells", `Amber` "Concentration", `Purple` "Ask your DM", `Blue` "Gather", `Red` "Strike"); `AllVariants` (one chip per variant, labelled with its name); `Shapes` (a rectangle and a pill); `AllFacts` matching the preview: "5th-level spells", "Song of Rest d8", "Instant" (green), "Concentration" (amber), "No concentration" (green), "Ask your DM" (purple); and `AllPhases` (three phase pills, then three rectangles, built from `PHASE_VARIANT` and `PHASE_LABEL`).
+`Components/Chip`: one story per variant (`Green` "5th-level spells", `Amber` "Concentration", `Purple` "Ask your DM", `Blue` "Gather", `Red` "Strike"); `AllVariants` (one chip per variant, labelled with its name); `Shapes` (a rectangle and a pill); `AllFacts` matching the preview: "5th-level spells", "Song of Rest d8", "Instant" (green), "Concentration" (amber), "No concentration" (green), "Ask your DM" (purple).
 
 ## MDX docs page
 
-Page order: the `Green` story with Controls as a playground; Variants (`AllVariants`, one line per variant on when to use it, then `AllFacts` as real examples); Shapes (`Shapes`, rectangle for lists and tables, pill for the phase on a level card); Phases (one sentence on what each phase means, a code example built from `PHASE_VARIANT` and `PHASE_LABEL`, `AllPhases`, link to Patterns/Phases); Content rules; Accessibility. Use lists, not Markdown tables, since Storybook's MDX doesn't render them.
+Page order: the `Green` story with Controls as a playground; Variants (`AllVariants`, one line per variant on when to use it, then `AllFacts` as real examples); Shapes (`Shapes`, rectangle for lists and tables, pill for the phase on a level card); Content rules; Accessibility. No Phases section: phase meaning, `PHASE_VARIANT` and `PHASE_LABEL` are documented on the Patterns/Phases page (Antoinette, 2026-10-20). Use lists, not Markdown tables, since Storybook's MDX doesn't render them.
 
-Content rules: the chip never changes the case of `value`; write it in sentence case. Use `purple` whenever the group must approve something (constitution Part I §3). Never show a phase by color alone.
+Content rules: the chip never changes the case of `value`; write it in sentence case. Use `purple` whenever the group must approve something (constitution Part I §3).
 
 ## Tests
 
