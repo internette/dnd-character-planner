@@ -29,7 +29,7 @@ export interface LevelBadgeProps { level: number; className?: string }
 
 | Part | Tokens |
 | --- | --- |
-| Disc | `space-16` square, `radius-full`, `stroke-strong` solid `accent`, `surface` fill, `box-sizing: border-box`, flex column centered, `flex: none` |
+| Disc | `space-16` square, `radius-full`, `stroke-strong` solid `accent`, `surface` fill, `box-sizing: border-box`, flex column centered, `flex: none`, padding-top `space-1` so the label and numeral sit at the disc's vertical center (Antoinette, 2026-10-20) |
 | Label | body family, `font-weight-semibold`, `font-size-3`/`line-height-3`, `ink-muted` |
 | Numeral | display family, `font-weight-semibold`, `font-size-5`/`line-height-6`, `accent-ink` |
 
@@ -47,7 +47,7 @@ Accessible name is "Level N"; numeral renders; label and numeral are hidden from
 
 ## Acceptance criteria
 
-Two-digit levels fit inside the disc without overflow.
+Two-digit levels fit inside the disc without overflow. The ink of the label and numeral together is vertically centered in the disc, within 1px.
 
 ## Open questions
 

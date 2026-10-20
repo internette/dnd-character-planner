@@ -6,6 +6,8 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  /* Optical centering: the glyphs sit high in their line boxes, so push them down 2px. */
+  padding-top: var(--space-1);
   width: var(--space-16);
   height: var(--space-16);
   border: var(--stroke-strong) solid var(--color-accent);
