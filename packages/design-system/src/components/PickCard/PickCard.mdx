@@ -1,0 +1,31 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as Stories from "./PickCard.stories";
+import { DocPage } from "../../docs/blocks/DocPage";
+import { DocHero } from "../../docs/blocks/DocHero";
+
+<Meta of={Stories} />
+
+<DocPage>
+
+<DocHero eyebrow="Component" title="PickCard" subtitle="A recommended spell or feat inside a level card." />
+
+<Canvas of={Stories.Default} />
+
+<Controls of={Stories.Default} />
+
+## Labels
+
+The label shows exactly as written, usually "Recommended". When a level grants more than one pick, number them: "Recommended · Secret 1".
+
+<Canvas of={Stories.SecretLabel} />
+
+## Content rules
+
+- The meta line always names the source book and edition first. For a spell, follow with spell level and class list, such as "PHB 2014 · 3rd · Bard · Concentration". For a feat, write "PHB 2014 · Feat".
+- The description says what the pick does at the table, then why it fits the character, in one or two sentences of your own. Never paste text from the book.
+
+## Accessibility
+
+The name is an `h4`, because PickCard sits under a level card's `h3`. The gold label, the name, the meta line and the description all pass 4.5:1 on the gold tint in both themes.
+
+</DocPage>
