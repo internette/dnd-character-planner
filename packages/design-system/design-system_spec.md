@@ -74,11 +74,11 @@ packages/design-system/
       index.css         # imports tokens.css, base.css and every component CSS
       base.css          # shared classes: .cp-row, .cp-stack, .cp-meta, .cp-label, .cp-panel, .cp-panel-title
       tokens/
-        color/        color.css       color_spec.md       color.test.ts
-        typography/   typography.css  fonts.css  typography_spec.md  typography.test.ts
-        spacing/      spacing.css     spacing_spec.md     spacing.test.ts
+        color/        color.css       color_spec.md       color.test.ts       Color.mdx
+        typography/   typography.css  fonts.css  typography_spec.md  typography.test.ts  Typography.mdx
+        spacing/      spacing.css     spacing_spec.md     spacing.test.ts     Spacing.mdx (spacing and shape)
         shape/        shape.css       shape_spec.md       shape.test.ts
-        layout/       layout.css      layout_spec.md      layout.test.ts
+        layout/       layout.css      layout_spec.md      layout.test.ts      Layout.mdx
         tokens.css      # imports every token file except fonts.css
         test-utils.ts   # reads a token file and returns { name, value, comment } per variable; WCAG contrast helper
     components/
@@ -92,8 +92,7 @@ packages/design-system/
         index.ts
     docs/
       blocks/           # doc-only React blocks, not exported
-      Introduction.mdx
-      ...
+      Introduction.mdx  # pages with no spec of their own: Introduction, Voice, Iconography
     index.ts            # public exports
 ```
 
@@ -188,6 +187,8 @@ Component tests use Vitest and Testing Library in jsdom, plus an axe check (`vit
 - `TokenTable`: takes a token file's raw text (imported with Vite's `?raw` suffix), parses it with the same helper the tests use, and lists every variable with its name, value and usage comment. Variants render a color swatch (light and dark side by side), a type specimen, a spacing bar or a radius box. Because the blocks read the CSS files themselves, the docs can't drift from the tokens.
 - `DoDont`: two panels side by side for usage rules.
 - `ThemePair`: the same panel rendered in the light and dark themes side by side, for the Introduction page.
+
+Every MDX page sits next to the spec it documents: a component's page in its component folder, a token group's page in its token folder. Only pages with no spec of their own (Introduction, Voice, Iconography) live in `src/docs/`. Shape has no page of its own; the Spacing page covers it.
 
 Pages:
 
