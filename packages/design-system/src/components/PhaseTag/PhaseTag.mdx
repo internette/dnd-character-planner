@@ -1,0 +1,43 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as Stories from "./PhaseTag.stories";
+import { DocPage } from "../../docs/blocks/DocPage";
+import { DocHero } from "../../docs/blocks/DocHero";
+
+<Meta of={Stories} />
+
+<DocPage>
+
+<DocHero eyebrow="Component" title="PhaseTag" subtitle="Marks which step of the crowd-control loop a pick serves." />
+
+<Canvas of={Stories.AllPhases} />
+
+<Controls of={Stories.Gather} />
+
+## The three phases
+
+- **Gather** pulls enemies together.
+- **Hold** keeps them there.
+- **Strike** hits the group.
+
+See [Phase language](?path=/docs/patterns-phases--docs) for how the loop works across a page.
+
+## Sizes
+
+Use the `md` pill on level cards.
+
+<Canvas of={Stories.Gather} />
+
+Use the `sm` square in lists and tables.
+
+<Canvas of={Stories.Small} />
+
+## Content rules
+
+- Never color alone. The phase word is always shown; color supports it.
+- If you pass `children` to change the text, it must still contain the phase word, for example "Strike · AoE". The component doesn't check this, so check it in review.
+
+## Accessibility
+
+The text is the tag's accessible name, so it needs no ARIA. Each phase's text and tint pass 4.5:1 in both themes.
+
+</DocPage>
