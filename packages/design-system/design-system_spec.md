@@ -271,4 +271,4 @@ Serve the Storybook static build from the Next.js app at `/design-system`.
 5. Color tokens are prefixed `--color-*` so every token's group is clear from its name.
 6. Layout widths and element sizes are tokens too (`--layout-*`, `--size-*`), so component CSS has no raw pixel values.
 7. Component props stay as designed. Accessibility fixes change markup only (lists instead of divs, a valid ARIA table in SpellTable); any new prop is asked about first.
-8. PhaseTag is part of Chip, not its own component (Antoinette, 2026-10-20). Chip's `variant` names are generic colors (plain, green, amber, purple, blue, red), its text prop is `value`, and `PHASE_VARIANT` maps each phase to a color. See the Chip spec.
+8. PhaseTag is part of Chip, not its own component (Antoinette, 2026-10-20). Chip's `variant` names are generic colors (green, amber, purple, blue, red), its text prop is `value`, and `PHASE_VARIANT` maps each phase to a color. See the Chip spec.

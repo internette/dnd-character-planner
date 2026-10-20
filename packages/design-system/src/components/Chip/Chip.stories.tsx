@@ -4,9 +4,9 @@ import { Chip, PHASE_LABEL, PHASE_VARIANT, type Phase } from "./Chip";
 const meta = {
   title: "Components/Chip",
   component: Chip,
-  args: { variant: "plain", value: "5th-level spells" },
+  args: { variant: "green", value: "5th-level spells" },
   argTypes: {
-    variant: { control: "select", options: ["plain", "green", "amber", "purple", "blue", "red"] },
+    variant: { control: "select", options: ["green", "amber", "purple", "blue", "red"] },
     size: { control: "inline-radio", options: ["sm", "md"] },
     value: { control: "text" },
   },
@@ -17,11 +17,7 @@ type Story = StoryObj<typeof meta>;
 
 const phases = Object.keys(PHASE_LABEL) as Phase[];
 
-export const Plain: Story = {};
-
-export const Green: Story = {
-  args: { variant: "green", value: "Instant" },
-};
+export const Green: Story = {};
 
 export const Amber: Story = {
   args: { variant: "amber", value: "Concentration" },

@@ -13,12 +13,12 @@ describe("Chip", () => {
     expect(screen.getByText("Song of Rest d8")).toHaveClass("cp-chip");
   });
 
-  it("defaults to plain and sm", () => {
+  it("defaults to green and sm", () => {
     render(<Chip value="5th-level spells" />);
-    expect(screen.getByText("5th-level spells")).toHaveClass("cp-chip-plain", "cp-chip-sm");
+    expect(screen.getByText("5th-level spells")).toHaveClass("cp-chip-green", "cp-chip-sm");
   });
 
-  it.each<ChipVariant>(["plain", "green", "amber", "purple", "blue", "red"])("applies the %s variant class", (variant) => {
+  it.each<ChipVariant>(["green", "amber", "purple", "blue", "red"])("applies the %s variant class", (variant) => {
     render(<Chip variant={variant} value="Fact" />);
     expect(screen.getByText("Fact")).toHaveClass(`cp-chip-${variant}`);
   });

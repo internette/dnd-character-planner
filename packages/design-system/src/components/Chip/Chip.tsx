@@ -1,10 +1,10 @@
 import { cx } from "../internal/cx";
 
-export type ChipVariant = "plain" | "green" | "amber" | "purple" | "blue" | "red";
+export type ChipVariant = "green" | "amber" | "purple" | "blue" | "red";
 export type Phase = "gather" | "hold" | "strike";
 
 export interface ChipProps {
-  /** The color. plain is regular weight; every other variant is semibold. */
+  /** The color. */
   variant?: ChipVariant;
   /** sm is the square; md is the pill, for phases on level cards. */
   size?: "sm" | "md";
@@ -28,6 +28,6 @@ export const PHASE_VARIANT: Record<Phase, ChipVariant> = {
 };
 
 /** A small fact: a feature a level grants, a casting property of a spell, or the phase a pick serves. */
-export function Chip({ variant = "plain", size = "sm", value, className }: ChipProps) {
+export function Chip({ variant = "green", size = "sm", value, className }: ChipProps) {
   return <span className={cx("cp-chip", `cp-chip-${variant}`, `cp-chip-${size}`, className)}>{value}</span>;
 }

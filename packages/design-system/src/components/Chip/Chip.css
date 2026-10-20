@@ -17,11 +17,6 @@
   border-radius: var(--radius-xl);
 }
 
-.cp-chip-plain {
-  font-weight: var(--font-weight-regular);
-}
-
-.cp-chip-plain,
 .cp-chip-green {
   background: var(--color-surface-sunken);
   color: var(--color-accent-ink);

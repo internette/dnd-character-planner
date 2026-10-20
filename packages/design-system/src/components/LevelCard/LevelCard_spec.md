@@ -26,7 +26,7 @@ export interface LevelCardProps {
 }
 ```
 
-Composes `LevelBadge`, `Chip` (plain, one per feature, and one phase chip at `size="md"`), `PickCard`, `AltList`.
+Composes `LevelBadge`, `Chip` (green, one per feature, and one phase chip at `size="md"`), `PickCard`, `AltList`.
 
 ## Markup and accessibility
 
