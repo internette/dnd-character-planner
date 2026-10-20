@@ -19,7 +19,7 @@ export interface GlanceListProps { title?: string; items: GlanceItem[]; classNam
 <div class="cp-panel">
   <h2 class="cp-panel-title">At a glance</h2>
   <div>
-    <a class="cp-glance-row" href="#lv9"><span class="cp-glance-lv">Lv 9</span><span class="cp-glance-pick">Synaptic Static</span><Chip variant="{phase}"/></a>
+    <a class="cp-glance-row" href="#lv9"><span class="cp-glance-lv">Lv 9</span><span class="cp-glance-pick">Synaptic Static</span><Chip variant={PHASE_VARIANT[phase]} value={PHASE_LABEL[phase]}/></a>
   </div>
 </div>
 ```

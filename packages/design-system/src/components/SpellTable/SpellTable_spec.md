@@ -44,7 +44,7 @@ The reference uses a CSS grid of divs with ARIA table roles, but puts each group
 
 ## Stories
 
-`Components/SpellTable`: `Default`, label "Crowd-control spells", with three groups. "Instant" and "No concentration" use the `instant` variant, "Concentration" the `concentration` variant, "Ask your DM" the `dm` variant):
+`Components/SpellTable`: `Default`, label "Crowd-control spells", with three groups. "Instant" and "No concentration" use the `green` variant, "Concentration" the `amber` variant, "Ask your DM" the `purple` variant):
 
 **True grouping spells** (id `grouping`, note "via Magical Secrets")
 
@@ -73,7 +73,7 @@ The reference uses a CSS grid of divs with ARIA table roles, but puts each group
 
 ## MDX docs page
 
-Content rules: each row's meta names source, spell level and class; tags carry casting properties; the third column is advice tied to the roadmap's levels. Spells from non-core books get the `dm` tag. Never reproduce a spell's full rules text (constitution Part I §4).
+Content rules: each row's meta names source, spell level and class; tags carry casting properties; the third column is advice tied to the roadmap's levels. Spells from non-core books get the `purple` "Ask your DM" tag. Never reproduce a spell's full rules text (constitution Part I §4).
 
 ## Tests
 

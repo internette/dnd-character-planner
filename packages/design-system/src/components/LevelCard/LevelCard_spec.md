@@ -26,7 +26,7 @@ export interface LevelCardProps {
 }
 ```
 
-Composes `LevelBadge`, `Chip` (neutral, one per feature, and one phase chip at `size="md"`), `PickCard`, `AltList`.
+Composes `LevelBadge`, `Chip` (plain, one per feature, and one phase chip at `size="md"`), `PickCard`, `AltList`.
 
 ## Markup and accessibility
 
@@ -36,7 +36,7 @@ Composes `LevelBadge`, `Chip` (neutral, one per feature, and one phase chip at `
   <div class="cp-card">
     <div class="cp-card-head">
       <div class="cp-stack" style="gap: space-2"><h3 class="cp-card-title">…</h3><div class="cp-row">chips</div></div>
-      <Chip variant="{phase}" size="md"/>
+      <Chip variant={PHASE_VARIANT[phase]} value={PHASE_LABEL[phase]} size="md"/>
     </div>
     picks (wrapped in .cp-picks when there are two or more)
     <AltList/>

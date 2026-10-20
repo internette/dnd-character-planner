@@ -2,7 +2,7 @@ import { composeStories } from "@storybook/react-vite";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { axe } from "vitest-axe";
-import { Chip, PHASE_LABEL, type ChipProps, type Phase } from "./Chip";
+import { Chip, PHASE_VARIANT, type ChipVariant } from "./Chip";
 import * as stories from "./Chip.stories";
 
 const all = composeStories(stories);
@@ -13,34 +13,24 @@ describe("Chip", () => {
     expect(screen.getByText("Song of Rest d8")).toHaveClass("cp-chip");
   });
 
-  it("defaults to neutral and sm", () => {
+  it("defaults to plain and sm", () => {
     render(<Chip value="5th-level spells" />);
-    expect(screen.getByText("5th-level spells")).toHaveClass("cp-chip-neutral", "cp-chip-sm");
+    expect(screen.getByText("5th-level spells")).toHaveClass("cp-chip-plain", "cp-chip-sm");
   });
 
-  it.each<NonNullable<ChipProps["variant"]>>(["neutral", "instant", "concentration", "dm", "gather", "hold", "strike"])(
-    "applies the %s variant class",
-    (variant) => {
-      render(<Chip variant={variant} value="Fact" />);
-      expect(screen.getByText("Fact")).toHaveClass(`cp-chip-${variant}`);
-    },
-  );
+  it.each<ChipVariant>(["plain", "green", "amber", "purple", "blue", "red"])("applies the %s variant class", (variant) => {
+    render(<Chip variant={variant} value="Fact" />);
+    expect(screen.getByText("Fact")).toHaveClass(`cp-chip-${variant}`);
+  });
 
   it("applies the md size class", () => {
-    render(<Chip variant="hold" size="md" />);
+    render(<Chip variant="amber" size="md" value="Hold" />);
     expect(screen.getByText("Hold")).toHaveClass("cp-chip-md");
     expect(screen.getByText("Hold")).not.toHaveClass("cp-chip-sm");
   });
 
-  it.each(Object.entries(PHASE_LABEL))("renders the default word for %s", (phase, word) => {
-    render(<Chip variant={phase as Phase} />);
-    expect(screen.getByText(word)).toHaveClass(`cp-chip-${phase}`);
-  });
-
-  it("replaces the phase word with value", () => {
-    render(<Chip variant="strike" value="Strike · AoE" />);
-    expect(screen.getByText("Strike · AoE")).toHaveClass("cp-chip-strike");
-    expect(screen.queryByText("Strike")).toBeNull();
+  it("maps each phase to its own variant", () => {
+    expect(PHASE_VARIANT).toEqual({ gather: "blue", hold: "amber", strike: "red" });
   });
 
   it("merges className onto the root", () => {

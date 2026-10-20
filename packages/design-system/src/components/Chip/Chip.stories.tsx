@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Chip } from "./Chip";
+import { Chip, PHASE_LABEL, PHASE_VARIANT, type Phase } from "./Chip";
 
 const meta = {
   title: "Components/Chip",
   component: Chip,
-  args: { variant: "neutral", value: "5th-level spells" },
+  args: { variant: "plain", value: "5th-level spells" },
   argTypes: {
-    variant: { control: "select", options: ["neutral", "instant", "concentration", "dm", "gather", "hold", "strike"] },
+    variant: { control: "select", options: ["plain", "green", "amber", "purple", "blue", "red"] },
     size: { control: "inline-radio", options: ["sm", "md"] },
     value: { control: "text" },
   },
@@ -15,31 +15,28 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Neutral: Story = {};
+const phases = Object.keys(PHASE_LABEL) as Phase[];
 
-export const Instant: Story = {
-  args: { variant: "instant", value: "Instant" },
+export const Plain: Story = {};
+
+export const Green: Story = {
+  args: { variant: "green", value: "Instant" },
 };
 
-export const Concentration: Story = {
-  args: { variant: "concentration", value: "Concentration" },
+export const Amber: Story = {
+  args: { variant: "amber", value: "Concentration" },
 };
 
-export const Dm: Story = {
-  name: "DM",
-  args: { variant: "dm", value: "Ask your DM" },
+export const Purple: Story = {
+  args: { variant: "purple", value: "Ask your DM" },
 };
 
-export const Gather: Story = {
-  args: { variant: "gather", size: "md", value: "Gather" },
+export const Blue: Story = {
+  args: { variant: "blue", value: "Gather" },
 };
 
-export const Hold: Story = {
-  args: { variant: "hold", size: "md", value: "Hold" },
-};
-
-export const Strike: Story = {
-  args: { variant: "strike", size: "md", value: "Strike" },
+export const Red: Story = {
+  args: { variant: "red", value: "Strike" },
 };
 
 export const AllFacts: Story = {
@@ -47,20 +44,10 @@ export const AllFacts: Story = {
     <div className="cp-row">
       <Chip value="5th-level spells" />
       <Chip value="Song of Rest d8" />
-      <Chip variant="instant" value="Instant" />
-      <Chip variant="concentration" value="Concentration" />
-      <Chip variant="instant" value="No concentration" />
-      <Chip variant="dm" value="Ask your DM" />
-    </div>
-  ),
-};
-
-export const PhaseSmall: Story = {
-  render: () => (
-    <div className="cp-row">
-      <Chip variant="gather" />
-      <Chip variant="hold" />
-      <Chip variant="strike" />
+      <Chip variant="green" value="Instant" />
+      <Chip variant="amber" value="Concentration" />
+      <Chip variant="green" value="No concentration" />
+      <Chip variant="purple" value="Ask your DM" />
     </div>
   ),
 };
@@ -69,14 +56,14 @@ export const AllPhases: Story = {
   render: () => (
     <div className="cp-stack">
       <div className="cp-row">
-        <Chip variant="gather" size="md" />
-        <Chip variant="hold" size="md" />
-        <Chip variant="strike" size="md" />
+        {phases.map((phase) => (
+          <Chip key={phase} variant={PHASE_VARIANT[phase]} size="md" value={PHASE_LABEL[phase]} />
+        ))}
       </div>
       <div className="cp-row">
-        <Chip variant="gather" />
-        <Chip variant="hold" />
-        <Chip variant="strike" />
+        {phases.map((phase) => (
+          <Chip key={phase} variant={PHASE_VARIANT[phase]} value={PHASE_LABEL[phase]} />
+        ))}
       </div>
     </div>
   ),

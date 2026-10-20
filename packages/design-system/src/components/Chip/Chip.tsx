@@ -1,33 +1,33 @@
 import { cx } from "../internal/cx";
 
+export type ChipVariant = "plain" | "green" | "amber" | "purple" | "blue" | "red";
 export type Phase = "gather" | "hold" | "strike";
 
 export interface ChipProps {
-  /** The color. gather, hold and strike are phases; dm marks anything the table must approve. */
-  variant?: "neutral" | "instant" | "concentration" | "dm" | Phase;
+  /** The color. plain is sentence case; every other variant is uppercase. */
+  variant?: ChipVariant;
   /** sm is the square; md is the pill, for phases on level cards. */
   size?: "sm" | "md";
-  /** The text, in sentence case. Phases show their word when this is empty. */
-  value?: string;
+  /** The text, in sentence case. */
+  value: string;
   className?: string;
 }
 
-/** The default word for each phase, shared with SideNav, StepCards, GlanceList and LevelCard. */
+/** The word for each phase, shared with SideNav, StepCards, GlanceList and LevelCard. */
 export const PHASE_LABEL: Record<Phase, string> = {
   gather: "Gather",
   hold: "Hold",
   strike: "Strike",
 };
 
-function isPhase(variant: NonNullable<ChipProps["variant"]>): variant is Phase {
-  return variant in PHASE_LABEL;
-}
+/** The chip variant for each phase. Always show the phase word with it. */
+export const PHASE_VARIANT: Record<Phase, ChipVariant> = {
+  gather: "blue",
+  hold: "amber",
+  strike: "red",
+};
 
 /** A small fact: a feature a level grants, a casting property of a spell, or the phase a pick serves. */
-export function Chip({ variant = "neutral", size = "sm", value, className }: ChipProps) {
-  return (
-    <span className={cx("cp-chip", `cp-chip-${variant}`, `cp-chip-${size}`, className)}>
-      {value ?? (isPhase(variant) ? PHASE_LABEL[variant] : null)}
-    </span>
-  );
+export function Chip({ variant = "plain", size = "sm", value, className }: ChipProps) {
+  return <span className={cx("cp-chip", `cp-chip-${variant}`, `cp-chip-${size}`, className)}>{value}</span>;
 }

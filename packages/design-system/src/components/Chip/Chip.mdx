@@ -9,24 +9,25 @@ import { DocHero } from "../../docs/blocks/DocHero";
 
 <DocHero eyebrow="Component" title="Chip" subtitle="Small facts: features a level grants, casting properties of a spell, and the phase a pick serves." />
 
-<Canvas of={Stories.Neutral} />
+<Canvas of={Stories.Plain} />
 
-<Controls of={Stories.Neutral} />
+<Controls of={Stories.Plain} />
 
 ## Variants
 
-Every color is a variant. Set the text with `value`.
+Each variant is a color. `plain` is sentence case; the rest are uppercase. Set the text with `value`.
 
 <Canvas of={Stories.AllFacts} />
 
-- `neutral`: features gained, such as 5th-level spells or Song of Rest d8.
-- `instant`: casting properties such as Instant and No concentration.
-- `concentration`: the Concentration casting property.
-- `dm`: anything the table must approve, such as non-core sources.
+- `plain`: features gained, such as 5th-level spells or Song of Rest d8.
+- `green`: casting properties such as Instant and No concentration.
+- `amber`: Concentration, and the Hold phase.
+- `purple`: anything the table must approve, such as non-core sources.
+- `blue` and `red`: the Gather and Strike phases.
 
 ## Phases
 
-The `gather`, `hold` and `strike` variants mark which step of the crowd-control loop a pick serves. Leave `value` empty and the chip shows the phase word.
+Gather, hold and strike mark which step of the crowd-control loop a pick serves. `PHASE_VARIANT` gives each phase's variant and `PHASE_LABEL` its word, so every phase chip matches.
 
 <Canvas of={Stories.AllPhases} />
 
@@ -38,9 +39,9 @@ Use the `md` pill on level cards (top row) and the default `sm` square in lists 
 
 ## Content rules
 
-- Write `value` in sentence case. Every variant except `neutral` is uppercased by CSS.
-- Use `dm` whenever the group must approve something, because the table has the final word.
-- Never show a phase by color alone. A custom `value` on a phase chip must still contain the phase word, for example "Strike · AoE".
+- Write `value` in sentence case. CSS uppercases every variant except `plain`.
+- Use `purple` whenever the group must approve something, because the table has the final word.
+- Never show a phase by color alone. A phase chip's `value` always contains the phase word, for example "Strike" or "Strike · AoE".
 
 ## Accessibility
 

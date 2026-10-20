@@ -31,7 +31,7 @@ The design system is called **Bag of Holding**: like the magic item, it holds ev
 ### Principles
 
 1. **Everything sits on a 4px grid.** Sizes, line heights, padding, gaps, margins and radii are multiples of 4px and come from tokens. Strokes (1px, 2px) are the only exception.
-2. **The rules are the content.** Every spell, feat or feature shows its source book and level in its meta line (`XGtE · 5th · Druid · Concentration`). Anything the table must decide gets the `dm` chip.
+2. **The rules are the content.** Every spell, feat or feature shows its source book and level in its meta line (`XGtE · 5th · Druid · Concentration`). Anything the table must decide gets a `purple` "Ask your DM" chip.
 3. **Phase is a language.** A pick's role in the loop is always shown with its word. Color supports the word and never replaces it.
 4. **The player decides.** Recommendations are marked *Recommended*, with alternatives directly under them. Nothing reads as a requirement.
 
@@ -271,4 +271,4 @@ Serve the Storybook static build from the Next.js app at `/design-system`.
 5. Color tokens are prefixed `--color-*` so every token's group is clear from its name.
 6. Layout widths and element sizes are tokens too (`--layout-*`, `--size-*`), so component CSS has no raw pixel values.
 7. Component props stay as designed. Accessibility fixes change markup only (lists instead of divs, a valid ARIA table in SpellTable); any new prop is asked about first.
-8. PhaseTag is a variant of Chip, not its own component: the `gather`, `hold` and `strike` variants plus a `size` prop (Antoinette, 2026-10-20). Chip's color prop is `variant` and its text prop is `value`. See the Chip spec.
+8. PhaseTag is part of Chip, not its own component (Antoinette, 2026-10-20). Chip's `variant` names are generic colors (plain, green, amber, purple, blue, red), its text prop is `value`, and `PHASE_VARIANT` maps each phase to a color. See the Chip spec.

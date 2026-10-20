@@ -3,6 +3,8 @@
   display: inline-flex;
   align-items: center;
   font: var(--type-caption);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
@@ -16,44 +18,33 @@
   border-radius: var(--radius-xl);
 }
 
-.cp-chip-instant,
-.cp-chip-concentration,
-.cp-chip-dm,
-.cp-chip-gather,
-.cp-chip-hold,
-.cp-chip-strike {
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
+.cp-chip-plain {
+  font-weight: var(--font-weight-regular);
+  text-transform: none;
 }
 
-.cp-chip-neutral,
-.cp-chip-instant {
+.cp-chip-plain,
+.cp-chip-green {
   background: var(--color-surface-sunken);
   color: var(--color-accent-ink);
 }
 
-.cp-chip-concentration {
+.cp-chip-amber {
   background: var(--color-hold-tint);
   color: var(--color-hold);
 }
 
-.cp-chip-dm {
+.cp-chip-purple {
   background: var(--color-arcane-tint);
   color: var(--color-arcane);
 }
 
-/* Phase variants: the phase word on its tint. Never color alone. */
-.cp-chip-gather {
+.cp-chip-blue {
   background: var(--color-gather-tint);
   color: var(--color-gather);
 }
 
-.cp-chip-hold {
-  background: var(--color-hold-tint);
-  color: var(--color-hold);
-}
-
-.cp-chip-strike {
+.cp-chip-red {
   background: var(--color-strike-tint);
   color: var(--color-strike);
 }
