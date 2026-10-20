@@ -10,7 +10,6 @@
 
 .cp-pick-label {
   font: var(--type-label);
-  text-transform: uppercase;
   color: var(--color-gold);
 }
 

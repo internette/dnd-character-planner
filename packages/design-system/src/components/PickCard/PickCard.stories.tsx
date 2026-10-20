@@ -6,9 +6,9 @@ const meta = {
   component: PickCard,
   args: {
     name: "Hypnotic Pattern",
-    meta: "PHB · 3rd · Bard · Concentration",
+    meta: "PHB 2014 · 3rd · Bard · Concentration",
     children:
-      "The best mass lockdown on the bard list. Drop it on a cluster Maelstrom already pulled together and the whole group is out of the fight.",
+      "Stops everyone in a 30 ft cube who fails the save. Drop it on a cluster Maelstrom already pulled together and the whole group is out of the fight.",
   },
   argTypes: {
     children: { control: "text" },

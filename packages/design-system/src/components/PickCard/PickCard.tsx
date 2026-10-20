@@ -2,10 +2,11 @@ import type { ReactNode } from "react";
 import { cx } from "../internal/cx";
 
 export interface PickCardProps {
-  /** Default "Recommended". Use "Recommended · Secret N" when a level grants several picks. */
+  /** Shown exactly as written. Use "Recommended · Secret N" when a level grants several picks. */
   label?: string;
+  /** The spell or feat name, as printed in its source book. */
   name: string;
-  /** Source · spell level · class list, for example "PHB · 3rd · Bard · Concentration". */
+  /** Source edition · spell level · class list, for example "PHB 2014 · 3rd · Bard · Concentration". For a feat, "PHB 2014 · Feat". */
   meta?: string;
   /** The description: what the pick does at the table, then why it fits. */
   children?: ReactNode;
