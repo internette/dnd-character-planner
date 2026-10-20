@@ -7,7 +7,7 @@ const meta = {
   args: { variant: "green", value: "5th-level spells" },
   argTypes: {
     variant: { control: "select", options: ["green", "amber", "purple", "blue", "red"] },
-    size: { control: "inline-radio", options: ["sm", "md"] },
+    shape: { control: "inline-radio", options: ["rectangle", "pill"] },
     value: { control: "text" },
   },
 } satisfies Meta<typeof Chip>;
@@ -53,7 +53,7 @@ export const AllPhases: Story = {
     <div className="cp-stack">
       <div className="cp-row">
         {phases.map((phase) => (
-          <Chip key={phase} variant={PHASE_VARIANT[phase]} size="md" value={PHASE_LABEL[phase]} />
+          <Chip key={phase} variant={PHASE_VARIANT[phase]} shape="pill" value={PHASE_LABEL[phase]} />
         ))}
       </div>
       <div className="cp-row">

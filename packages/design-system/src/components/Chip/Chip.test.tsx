@@ -13,9 +13,9 @@ describe("Chip", () => {
     expect(screen.getByText("Song of Rest d8")).toHaveClass("cp-chip");
   });
 
-  it("defaults to green and sm", () => {
+  it("defaults to green and rectangle", () => {
     render(<Chip value="5th-level spells" />);
-    expect(screen.getByText("5th-level spells")).toHaveClass("cp-chip-green", "cp-chip-sm");
+    expect(screen.getByText("5th-level spells")).toHaveClass("cp-chip-green", "cp-chip-rectangle");
   });
 
   it.each<ChipVariant>(["green", "amber", "purple", "blue", "red"])("applies the %s variant class", (variant) => {
@@ -23,10 +23,10 @@ describe("Chip", () => {
     expect(screen.getByText("Fact")).toHaveClass(`cp-chip-${variant}`);
   });
 
-  it("applies the md size class", () => {
-    render(<Chip variant="amber" size="md" value="Hold" />);
-    expect(screen.getByText("Hold")).toHaveClass("cp-chip-md");
-    expect(screen.getByText("Hold")).not.toHaveClass("cp-chip-sm");
+  it("applies the pill shape class", () => {
+    render(<Chip variant="amber" shape="pill" value="Hold" />);
+    expect(screen.getByText("Hold")).toHaveClass("cp-chip-pill");
+    expect(screen.getByText("Hold")).not.toHaveClass("cp-chip-rectangle");
   });
 
   it("maps each phase to its own variant", () => {

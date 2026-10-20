@@ -6,8 +6,8 @@ export type Phase = "gather" | "hold" | "strike";
 export interface ChipProps {
   /** The color. */
   variant?: ChipVariant;
-  /** sm is the square; md is the pill, for phases on level cards. */
-  size?: "sm" | "md";
+  /** rectangle for lists and tables; pill for phases on level cards. */
+  shape?: "rectangle" | "pill";
   /** The text, shown exactly as written. */
   value: string;
   className?: string;
@@ -28,6 +28,6 @@ export const PHASE_VARIANT: Record<Phase, ChipVariant> = {
 };
 
 /** A small fact: a feature a level grants, a casting property of a spell, or the phase a pick serves. */
-export function Chip({ variant = "green", size = "sm", value, className }: ChipProps) {
-  return <span className={cx("cp-chip", `cp-chip-${variant}`, `cp-chip-${size}`, className)}>{value}</span>;
+export function Chip({ variant = "green", shape = "rectangle", value, className }: ChipProps) {
+  return <span className={cx("cp-chip", `cp-chip-${variant}`, `cp-chip-${shape}`, className)}>{value}</span>;
 }

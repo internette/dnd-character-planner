@@ -7,12 +7,12 @@
   white-space: nowrap;
 }
 
-.cp-chip-sm {
+.cp-chip-rectangle {
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-sm);
 }
 
-.cp-chip-md {
+.cp-chip-pill {
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-xl);
 }
