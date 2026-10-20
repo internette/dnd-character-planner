@@ -7,20 +7,21 @@ import { DocHero } from "../../docs/blocks/DocHero";
 
 <DocPage>
 
-<DocHero eyebrow="Component" title="Chip" subtitle="Small facts: features a level grants, and casting properties of a spell." />
+<DocHero eyebrow="Component" title="Chip" subtitle="Small facts: features a level grants, casting properties of a spell, and the phase a pick serves." />
 
-<Canvas of={Stories.AllTones} />
+<Canvas of={Stories.AllFacts} />
 
 <Controls of={Stories.Neutral} />
 
-## Tones
+## Variants
 
-| Tone | Use |
+| Variant | Use |
 | --- | --- |
 | `neutral` | Features gained, such as 5th-level spells or Song of Rest d8 |
 | `instant` | Casting properties: Instant, No concentration |
 | `concentration` | Casting property: Concentration |
 | `dm` | Table-dependent content, such as non-core sources or Ask your DM |
+| `gather`, `hold`, `strike` | Phases, below |
 
 <Canvas of={Stories.Neutral} />
 
@@ -28,13 +29,32 @@ import { DocHero } from "../../docs/blocks/DocHero";
 
 <Canvas of={Stories.Dm} />
 
+## Phase variants
+
+The `gather`, `hold` and `strike` variants mark which step of the crowd-control loop a pick serves. They show the phase word when `value` is left empty.
+
+<Canvas of={Stories.AllPhases} />
+
+- **Gather** pulls enemies together.
+- **Hold** keeps them there.
+- **Strike** hits the group.
+
+Use the `md` pill on level cards and the default `sm` square in lists and tables.
+
+<Canvas of={Stories.Gather} />
+
+<Canvas of={Stories.PhaseSmall} />
+
+See [Phase language](?path=/docs/patterns-phases--docs) for how the loop works across a page.
+
 ## Content rules
 
 - Use `dm` whenever the group must approve something. The table has the final word (constitution Part I §3).
-- Write children in sentence case. The `instant`, `concentration` and `dm` tones are uppercased by CSS.
+- Write `value` in sentence case. Every variant except `neutral` is uppercased by CSS.
+- Never show a phase by color alone. If you set `value` on a phase chip, it must still contain the phase word, for example "Strike · AoE". The component doesn't check this, so check it in review.
 
 ## Accessibility
 
-The text is the content. Chips aren't interactive.
+The text is the content. Chips aren't interactive and need no ARIA. Each variant's text and fill pass 4.5:1 in both themes.
 
 </DocPage>

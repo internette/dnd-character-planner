@@ -8,7 +8,7 @@ The core unit of a roadmap: what a level grants, what to pick, and the alternati
 
 ## Anatomy
 
-LevelBadge on the left; a card on the right holding a head (title, feature chips, PhaseTag), one or two PickCards, and an optional AltList.
+LevelBadge on the left; a card on the right holding a head (title, feature chips, phase chip), one or two PickCards, and an optional AltList.
 
 ## API
 
@@ -26,7 +26,7 @@ export interface LevelCardProps {
 }
 ```
 
-Composes `LevelBadge`, `Chip` (neutral, one per feature), `PhaseTag` (md), `PickCard`, `AltList`.
+Composes `LevelBadge`, `Chip` (neutral, one per feature, and one phase chip at `size="md"`), `PickCard`, `AltList`.
 
 ## Markup and accessibility
 
@@ -36,7 +36,7 @@ Composes `LevelBadge`, `Chip` (neutral, one per feature), `PhaseTag` (md), `Pick
   <div class="cp-card">
     <div class="cp-card-head">
       <div class="cp-stack" style="gap: space-2"><h3 class="cp-card-title">…</h3><div class="cp-row">chips</div></div>
-      <PhaseTag/>
+      <Chip variant="{phase}" size="md"/>
     </div>
     picks (wrapped in .cp-picks when there are two or more)
     <AltList/>

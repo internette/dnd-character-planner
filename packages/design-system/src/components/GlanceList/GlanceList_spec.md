@@ -19,7 +19,7 @@ export interface GlanceListProps { title?: string; items: GlanceItem[]; classNam
 <div class="cp-panel">
   <h2 class="cp-panel-title">At a glance</h2>
   <div>
-    <a class="cp-glance-row" href="#lv9"><span class="cp-glance-lv">Lv 9</span><span class="cp-glance-pick">Synaptic Static</span><PhaseTag size="sm"/></a>
+    <a class="cp-glance-row" href="#lv9"><span class="cp-glance-lv">Lv 9</span><span class="cp-glance-pick">Synaptic Static</span><Chip variant="{phase}"/></a>
   </div>
 </div>
 ```
@@ -42,7 +42,7 @@ Content rules: one row per level in level order; `pick` is the recommended pick 
 
 ## Tests
 
-Rows are links only when `href` is set; default title; each row has a PhaseTag.
+Rows are links only when `href` is set; default title; each row has a phase chip.
 
 ## Acceptance criteria
 

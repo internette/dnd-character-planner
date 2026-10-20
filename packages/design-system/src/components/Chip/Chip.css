@@ -1,11 +1,19 @@
-/* Chip: a small fact, such as a feature gained or a casting property. */
+/* Chip: a small fact, such as a feature gained, a casting property or a phase. */
 .cp-chip {
   display: inline-flex;
   align-items: center;
-  padding: var(--space-1) var(--space-2);
-  border-radius: var(--radius-sm);
   font: var(--type-caption);
   white-space: nowrap;
+}
+
+.cp-chip-sm {
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.cp-chip-md {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-xl);
 }
 
 .cp-chip-instant,
@@ -29,4 +37,47 @@
 .cp-chip-dm {
   background: var(--color-arcane-tint);
   color: var(--color-arcane);
+}
+
+/* Phase variant: the phase word on its tint. Never color alone. */
+.cp-chip-gather,
+.cp-chip-hold,
+.cp-chip-strike {
+  font: var(--type-label);
+  text-transform: uppercase;
+}
+
+.cp-chip-gather {
+  background: var(--color-gather-tint);
+  color: var(--color-gather);
+}
+
+.cp-chip-hold {
+  background: var(--color-hold-tint);
+  color: var(--color-hold);
+}
+
+.cp-chip-strike {
+  background: var(--color-strike-tint);
+  color: var(--color-strike);
+}
+
+/* Phase dot, used by SideNav and StepCards next to the phase word. */
+.cp-dot {
+  flex: none;
+  width: var(--size-dot);
+  height: var(--size-dot);
+  border-radius: var(--radius-full);
+}
+
+.cp-dot-gather {
+  background: var(--color-gather);
+}
+
+.cp-dot-hold {
+  background: var(--color-hold);
+}
+
+.cp-dot-strike {
+  background: var(--color-strike);
 }

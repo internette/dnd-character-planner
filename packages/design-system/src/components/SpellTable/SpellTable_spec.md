@@ -9,7 +9,7 @@ Grouped spell comparison: what each spell does and when to take it.
 ## API
 
 ```ts
-export interface SpellTag { label: string; tone?: ChipProps["tone"] }
+export interface SpellTag { label: string; variant?: ChipProps["variant"] }
 export interface SpellRow { name: string; meta?: string; tags?: SpellTag[]; does: React.ReactNode; when: React.ReactNode }
 export interface SpellGroup { id?: string; title: string; note?: string; rows: SpellRow[] }
 export interface SpellTableProps {
@@ -44,7 +44,7 @@ The reference uses a CSS grid of divs with ARIA table roles, but puts each group
 
 ## Stories
 
-`Components/SpellTable`: `Default`, label "Crowd-control spells", with three groups. "Instant" and "No concentration" use the `instant` tone, "Concentration" the `concentration` tone, "Ask your DM" the `dm` tone):
+`Components/SpellTable`: `Default`, label "Crowd-control spells", with three groups. "Instant" and "No concentration" use the `instant` variant, "Concentration" the `concentration` variant, "Ask your DM" the `dm` variant):
 
 **True grouping spells** (id `grouping`, note "via Magical Secrets")
 

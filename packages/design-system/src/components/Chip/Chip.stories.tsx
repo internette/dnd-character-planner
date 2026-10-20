@@ -4,7 +4,12 @@ import { Chip } from "./Chip";
 const meta = {
   title: "Components/Chip",
   component: Chip,
-  args: { children: "5th-level spells" },
+  args: { variant: "neutral", value: "5th-level spells" },
+  argTypes: {
+    variant: { control: "select", options: ["neutral", "instant", "concentration", "dm", "gather", "hold", "strike"] },
+    size: { control: "inline-radio", options: ["sm", "md"] },
+    value: { control: "text" },
+  },
 } satisfies Meta<typeof Chip>;
 
 export default meta;
@@ -13,27 +18,66 @@ type Story = StoryObj<typeof meta>;
 export const Neutral: Story = {};
 
 export const Instant: Story = {
-  args: { tone: "instant", children: "Instant" },
+  args: { variant: "instant", value: "Instant" },
 };
 
 export const Concentration: Story = {
-  args: { tone: "concentration", children: "Concentration" },
+  args: { variant: "concentration", value: "Concentration" },
 };
 
 export const Dm: Story = {
   name: "DM",
-  args: { tone: "dm", children: "Ask your DM" },
+  args: { variant: "dm", value: "Ask your DM" },
 };
 
-export const AllTones: Story = {
+export const Gather: Story = {
+  args: { variant: "gather", size: "md", value: "Gather" },
+};
+
+export const Hold: Story = {
+  args: { variant: "hold", size: "md", value: "Hold" },
+};
+
+export const Strike: Story = {
+  args: { variant: "strike", size: "md", value: "Strike" },
+};
+
+export const AllFacts: Story = {
   render: () => (
     <div className="cp-row">
-      <Chip>5th-level spells</Chip>
-      <Chip>Song of Rest d8</Chip>
-      <Chip tone="instant">Instant</Chip>
-      <Chip tone="concentration">Concentration</Chip>
-      <Chip tone="instant">No concentration</Chip>
-      <Chip tone="dm">Ask your DM</Chip>
+      <Chip value="5th-level spells" />
+      <Chip value="Song of Rest d8" />
+      <Chip variant="instant" value="Instant" />
+      <Chip variant="concentration" value="Concentration" />
+      <Chip variant="instant" value="No concentration" />
+      <Chip variant="dm" value="Ask your DM" />
+    </div>
+  ),
+};
+
+export const PhaseSmall: Story = {
+  render: () => (
+    <div className="cp-row">
+      <Chip variant="gather" />
+      <Chip variant="hold" />
+      <Chip variant="strike" />
+    </div>
+  ),
+};
+
+export const AllPhases: Story = {
+  render: () => (
+    <div className="cp-stack">
+      <div className="cp-row">
+        <Chip variant="gather" size="md" />
+        <Chip variant="hold" size="md" />
+        <Chip variant="strike" size="md" />
+      </div>
+      <div className="cp-row">
+        <Chip variant="gather" />
+        <Chip variant="hold" />
+        <Chip variant="strike" />
+      </div>
     </div>
   ),
 };
