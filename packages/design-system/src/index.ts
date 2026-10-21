@@ -5,5 +5,7 @@ export { LevelBadge } from "./components/LevelBadge";
 export type { LevelBadgeProps } from "./components/LevelBadge";
 export { PickCard } from "./components/PickCard";
 export type { PickCardProps } from "./components/PickCard";
+export { AltList } from "./components/AltList";
+export type { AltItem, AltListProps } from "./components/AltList";
 export { PageHero } from "./components/PageHero";
 export type { PageHeroProps } from "./components/PageHero";
