@@ -6,6 +6,10 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 A one-panel summary of every level's headline pick and its phase. Sits beside the roadmap intro.
 
+## Anatomy
+
+A panel with a title, then one row per level: level number, pick, phase chip.
+
 ## API
 
 ```ts
@@ -14,6 +18,8 @@ export interface GlanceListProps { title?: string; items: GlanceItem[]; classNam
 ```
 
 Composes `Chip` for each row's phase.
+
+## Markup
 
 ```html
 <section class="cp-panel" aria-labelledby="…">
@@ -51,9 +57,13 @@ None. Rows look the same with or without links.
 
 ## Examples
 
+### Stories
+
 `Components/GlanceList`: `Default` from the mockup at 400px max width: Lv 9 Synaptic Static (strike), Lv 10 Maelstrom + Steel Wind Strike (gather), Lv 11 Hypnotic Pattern (hold), Lv 12 Telekinetic feat (gather), Lv 13 Forcecage (hold), Lv 14 Whirlwind + Wind Walk (gather), each with `href="#lvN"`. `WithoutLinks`: same with no `href`.
 
-MDX docs page order: `Default` with Controls; Without links (`WithoutLinks`); Content rules; Accessibility.
+### MDX docs page
+
+Page order: `Default` with Controls; Without links (`WithoutLinks`); Content rules; Accessibility.
 
 ## Styling
 

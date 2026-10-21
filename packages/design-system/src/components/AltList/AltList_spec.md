@@ -6,6 +6,10 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 Alternatives under a pick: each a bold name and a short reason behind an accent chevron. Keeps "the player decides" visible.
 
+## Anatomy
+
+A list of items. Each item is an accent chevron beside the text: bold name, joiner, reason.
+
 ## API
 
 ```ts
@@ -13,6 +17,8 @@ Alternatives under a pick: each a bold name and a short reason behind an accent 
 export interface AltItem { name: string; text: string; joiner?: string }
 export interface AltListProps { items: AltItem[]; className?: string }
 ```
+
+## Markup
 
 ```html
 <ul class="cp-alts">
@@ -44,9 +50,13 @@ Long text wraps under the text column, not under the chevron.
 
 ## Examples
 
+### Stories
+
 `Components/AltList`: `Default` from the mockup: Otto's Irresistible Dance ("the musician's pick, but it only hits one target."), Mass Suggestion ("no concentration, up to twelve creatures."). `CustomJoiner`: Shatter with joiner ", " and text "upcast: your existing strike option until this arrives."
 
-MDX docs page order: `Default` with Controls; Joiners (`CustomJoiner`); Content rules; Accessibility.
+### MDX docs page
+
+Page order: `Default` with Controls; Joiners (`CustomJoiner`); Content rules; Accessibility.
 
 ## Styling
 

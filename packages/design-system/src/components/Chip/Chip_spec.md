@@ -8,6 +8,10 @@ Small facts: features a level grants, casting properties of a spell in tables, a
 
 Chip replaced the separate PhaseTag component on 2026-10-20 at Antoinette's request. Its variants are generic and named by color, so the same chip serves facts and phases. Phase is a language in this system: a phase chip always shows the phase word, and color supports it.
 
+## Anatomy
+
+One part: the text on a colored fill. Chip.css also owns the phase dot (`.cp-dot`), a separate part that SideNav and StepCards use.
+
 ## API
 
 ```ts
@@ -27,6 +31,8 @@ Also exports two records so every phase chip matches (SideNav, StepCards, Glance
 - `PHASE_VARIANT`: `gather` → `blue`, `hold` → `amber`, `strike` → `red`.
 
 A phase chip is `<Chip variant={PHASE_VARIANT[phase]} value={PHASE_LABEL[phase]} />`.
+
+## Markup
 
 Renders `<span class="cp-chip cp-chip-{variant} cp-chip-{shape}">`, with `value` as the content.
 
@@ -62,9 +68,13 @@ Static: no interactivity, no hover or focus state. The text never wraps or chang
 
 ## Examples
 
+### Stories
+
 `Components/Chip`: one story per variant (`Green` "5th-level spells", `Amber` "Concentration", `Purple` "Ask your DM", `Blue` "Gather", `Red` "Strike"); `AllVariants` (one chip per variant, labelled with its name); `Shapes` (a rectangle and a pill); `AllFacts` matching the preview: "5th-level spells", "Song of Rest d8", "Instant" (green), "Concentration" (amber), "No concentration" (green), "Ask your DM" (purple).
 
-MDX docs page order: the `Green` story with Controls as a playground; Variants (`AllVariants`, one line per variant on when to use it, then `AllFacts` as real examples); Shapes (`Shapes`); Content rules; Accessibility. No Phases section: phase meaning, `PHASE_VARIANT` and `PHASE_LABEL` are documented on the Patterns/Phases page (Antoinette, 2026-10-20). Use lists, not Markdown tables, since Storybook's MDX doesn't render them.
+### MDX docs page
+
+Page order: the `Green` story with Controls as a playground; Variants (`AllVariants`, one line per variant on when to use it, then `AllFacts` as real examples); Shapes (`Shapes`); Content rules; Accessibility. No Phases section: phase meaning, `PHASE_VARIANT` and `PHASE_LABEL` are documented on the Patterns/Phases page (Antoinette, 2026-10-20). Use lists, not Markdown tables, since Storybook's MDX doesn't render them.
 
 ## Styling
 

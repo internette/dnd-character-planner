@@ -4,13 +4,19 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 ## Purpose
 
-The level disc that anchors each LevelCard: a `space-16` (64px) circle with an accent ring, holding a small "LEVEL" label above a display numeral.
+The level disc that anchors each LevelCard.
+
+## Anatomy
+
+A `space-16` (64px) circle with an accent ring, holding a small "LEVEL" label above a display numeral.
 
 ## API
 
 ```ts
 export interface LevelBadgeProps { level: number; className?: string }
 ```
+
+## Markup
 
 ```html
 <div class="cp-level" role="img" aria-label="Level 9">
@@ -38,9 +44,13 @@ Static, with no interaction. The disc keeps its size (`flex: none`) when its row
 
 ## Examples
 
+### Stories
+
 `Components/LevelBadge`: `Default` (level 9) and `Range` (levels 9 to 14 in a row, as in the preview). Control `level` as a number 1 to 20.
 
-MDX docs page: note that the badge is only used inside LevelCard in the current system.
+### MDX docs page
+
+Note that the badge is only used inside LevelCard in the current system.
 
 ## Styling
 

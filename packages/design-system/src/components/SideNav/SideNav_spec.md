@@ -6,6 +6,10 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 In-page navigation for a roadmap. Level items carry a phase dot so the gather, hold, strike rhythm reads down the rail.
 
+## Anatomy
+
+A bordered rail holding sections. Each section has an optional heading and a list of items; each item has its label and an optional phase dot.
+
 ## API
 
 ```ts
@@ -18,6 +22,8 @@ export interface SideNavProps {
 ```
 
 Uses the phase dot classes from Chip.
+
+## Markup
 
 ```html
 <nav class="cp-nav" aria-label="On this page">
@@ -56,9 +62,13 @@ States, not props: default, hover, current and focus (see Styling).
 
 ## Examples
 
+### Stories
+
 `Components/SideNav` at 320px max width, from the mockup: section "Roadmap" with Overview (current), Lv 9 · The Lingering Note (strike), Lv 10 · The Vortex Opens (gather), Lv 11 · The Lullaby (hold), Lv 12 · The Unseen Hand (gather), Lv 13 · The Cage of Wind (hold), Lv 14 · Arrival on the Breeze (gather), Before you level up; section "Supplement" with Gather & Strike, True grouping spells, Bard-native gathering, Pushes & pulls, Combos. Hrefs as `#overview`, `#lv9` … `#combos`. Add `Dark` with the theme global set to dark to show the current-item color swap.
 
-MDX docs page order: `Default` with Controls; Dark theme (`Dark`); Content rules; Accessibility.
+### MDX docs page
+
+Page order: `Default` with Controls; Dark theme (`Dark`); Content rules; Accessibility.
 
 ## Styling
 

@@ -6,11 +6,17 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 A sunken panel of short cautions that apply to the whole plan, such as "Before you level up".
 
+## Anatomy
+
+A sunken panel with a title, then a grid of notes, each with a rule above it.
+
 ## API
 
 ```ts
 export interface NotePanelProps { id?: string; title: string; notes: React.ReactNode[]; className?: string }
 ```
+
+## Markup
 
 ```html
 <section id="before" class="cp-notes" aria-labelledby="…">
@@ -40,13 +46,17 @@ Notes sit in a grid that fills as many columns as fit, down to one column on pho
 
 ## Examples
 
+### Stories
+
 `Components/NotePanel`: `Default` from the mockup, title "Before you level up", notes:
 
 1. "Two concentration spells can't run at once. Lead with Maelstrom or Whirlwind, then use instant spells or Forcecage to finish."
 2. "Wood Elf speed and Mask of the Wild fit her \"never where you expect\" style. Lean on Stealth when scouting."
 3. "On the 2024 rules, Magical Secrets and the Lore subclass work differently, so re-check these picks."
 
-MDX docs page order: `Default` with Controls; Content rules; Accessibility.
+### MDX docs page
+
+Page order: `Default` with Controls; Content rules; Accessibility.
 
 ## Styling
 

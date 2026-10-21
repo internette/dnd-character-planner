@@ -6,12 +6,18 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 Named spell combinations, each a short recipe in one or two sentences.
 
+## Anatomy
+
+A grid of gold cards, each with a name and a description.
+
 ## API
 
 ```ts
 export interface Combo { name: string; description: React.ReactNode }
 export interface ComboCardsProps { combos: Combo[]; className?: string }
 ```
+
+## Markup
 
 ```html
 <ul class="cp-combos">
@@ -40,13 +46,17 @@ Cards sit in a grid that fills as many columns as fit, down to one column on pho
 
 ## Examples
 
+### Stories
+
 `Components/ComboCards`: `Default` from the mockup:
 
 - The Vortex: "Maelstrom, then Synaptic Static on the center next turn. Static is instant, so it doesn't break concentration."
 - The Encore: "Upcast Command to call enemies to you, then a teammate's area spell or your own Shatter."
 - The Lullaby: "Gravity Sinkhole into Hypnotic Pattern. The whole pack is down for the fight."
 
-MDX docs page order: `Default` with Controls; Content rules; Accessibility.
+### MDX docs page
+
+Page order: `Default` with Controls; Content rules; Accessibility.
 
 ## Styling
 

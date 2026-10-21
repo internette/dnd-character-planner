@@ -4,7 +4,11 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 ## Purpose
 
-The core unit of a roadmap: what a level grants, what to pick, and the alternatives. A LevelBadge sits on the left; a card on the right holds a head (title, feature chips, phase chip), one or two PickCards, and an optional AltList.
+The core unit of a roadmap: what a level grants, what to pick, and the alternatives.
+
+## Anatomy
+
+LevelBadge on the left; a card on the right holding a head (title, feature chips, phase chip), one or two PickCards, and an optional AltList.
 
 ## API
 
@@ -23,6 +27,8 @@ export interface LevelCardProps {
 ```
 
 Composes `LevelBadge`, `Chip` (green, one per feature, and one phase chip with `shape="pill"`), `PickCard`, `AltList`.
+
+## Markup
 
 ```html
 <article id="lv9" class="cp-levelcard" aria-labelledby="…">
@@ -68,6 +74,8 @@ None set by a prop. The layout changes with content: one pick spans the card; tw
 
 ## Examples
 
+### Stories
+
 `Components/LevelCard`, from the mockup:
 
 - `OnePick`: level 9, "The Lingering Note", phase strike, features ["5th-level spells", "Song of Rest d8"], pick Synaptic Static (meta "XGtE · 5th · Bard", description "A 20 ft psychic burst that keeps dragging down enemies' attacks and checks afterward. It's instant, so it never competes with a concentration spell you already have running."), alternatives Hold Monster ("single-target lockdown for boss fights.") and Shatter (joiner ", ", "upcast: your existing strike option until this arrives.").
@@ -75,7 +83,9 @@ None set by a prop. The layout changes with content: one pick spans the card; tw
 - `NoAlternatives`: OnePick without alternatives.
 - `Narrow`: TwoPicks in a 375px viewport (picks stack).
 
-MDX docs page order: `OnePick` with Controls; Two picks (`TwoPicks`); Without alternatives (`NoAlternatives`); Phones (`Narrow`); Content rules (from Configuration); Accessibility.
+### MDX docs page
+
+Page order: `OnePick` with Controls; Two picks (`TwoPicks`); Without alternatives (`NoAlternatives`); Phones (`Narrow`); Content rules (from Configuration); Accessibility.
 
 ## Styling
 

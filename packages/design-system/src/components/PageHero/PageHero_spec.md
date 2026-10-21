@@ -6,6 +6,10 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 The forest band that opens a character page or a supplement. The Storybook MDX pages also use it (at `lg`) as their page title.
 
+## Anatomy
+
+A forest band holding the swirl (decorative, top right), eyebrow, title, subtitle and tag list.
+
 ## API
 
 ```ts
@@ -20,6 +24,8 @@ export interface PageHeroProps {
   className?: string;
 }
 ```
+
+## Markup
 
 ```html
 <section id="overview" class="cp-hero">
@@ -68,9 +74,13 @@ Swirl SVG: 480×200 viewBox, three round-capped strokes of width 4 in `currentCo
 
 ## Examples
 
+### Stories
+
 `Components/PageHero`: `Character` from the mockup: eyebrow "D&D 5E · Character progression", title "Ciaccona", subtitle "College of Lore Bard — Crowd-Control Roadmap, Levels 9 to 14", tags ["Aero theme", "Wandering performer", "Gather · Hold · Strike"]. `Supplement`: size `lg`, title "Gather & Strike". `NoSwirl`: Character with `swirl={false}`.
 
-MDX docs page order: `Character` with Controls; Variants (`Supplement`, then `NoSwirl`); Content rules; Accessibility; Phones.
+### MDX docs page
+
+Page order: `Character` with Controls; Variants (`Supplement`, then `NoSwirl`); Content rules; Accessibility; Phones.
 
 ## Styling
 

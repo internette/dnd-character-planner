@@ -6,6 +6,10 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 A numbered sequence. Use only when order matters, like the Gather, Hold, Strike loop.
 
+## Anatomy
+
+A row of cards. Each card has a "STEP N" label, a name with an optional phase dot, and a description.
+
 ## API
 
 ```ts
@@ -14,6 +18,8 @@ export interface StepCardsProps { steps: Step[]; className?: string }
 ```
 
 Uses the phase dot classes from Chip.
+
+## Markup
 
 ```html
 <ol class="cp-steps">
@@ -48,6 +54,8 @@ With or without phase dots, set by each step's `phase`.
 
 ## Examples
 
+### Stories
+
 `Components/StepCards`: `Default` from the mockup:
 
 1. Gather (gather): "Pull the enemies into one tight cluster with a grouping spell or an upcast Command."
@@ -56,7 +64,9 @@ With or without phase dots, set by each step's `phase`.
 
 `WithoutPhases`: same steps without `phase`.
 
-MDX docs page order: `Default` with Controls; Without phases (`WithoutPhases`); Content rules; Accessibility.
+### MDX docs page
+
+Page order: `Default` with Controls; Without phases (`WithoutPhases`); Content rules; Accessibility.
 
 ## Styling
 

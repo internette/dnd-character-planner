@@ -2,15 +2,23 @@
 
 Parent: [root spec](../../../design-system_spec.md). Read the root spec's shared component rules first; this file only adds what is specific to <Name>.
 
-Every component spec has these sections in this order. The first seven describe the component; the last four guide the build. When a section doesn't apply, write "None." and one line on why.
+Every component spec has these sections in this order. Purpose through Examples describe the component; Styling through Open questions guide the build. When a section doesn't apply, write "None." and one line on why.
 
 ## Purpose
 
-What the component is for and when to use it, in a sentence or two. Name its parts when it has more than one.
+What the component is for and when to use it, in a sentence or two.
+
+## Anatomy
+
+Its parts, in reading order.
 
 ## API
 
-The props as a TypeScript interface with defaults, any other exports, the components it composes, and the HTML it renders.
+The props as a TypeScript interface with defaults, any other exports, and the components it composes.
+
+## Markup
+
+The HTML it renders, with its `cp-` classes, and any change from the reference markup.
 
 ## Configuration
 
@@ -30,7 +38,13 @@ Semantics, ARIA, heading level, keyboard focus, touch target size and contrast.
 
 ## Examples
 
-Each story, with its example content written out in full, then the order of the MDX docs page.
+### Stories
+
+Each story, with its example content written out in full.
+
+### MDX docs page
+
+The order of the page's sections and stories.
 
 ## Styling
 

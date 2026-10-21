@@ -6,6 +6,10 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 A recommended spell or feat inside a LevelCard: gold label, display name, source meta, and one or two sentences on why.
 
+## Anatomy
+
+A gold-tint block holding the label, a head (name, then meta) and the description.
+
 ## API
 
 ```ts
@@ -18,6 +22,8 @@ export interface PickCardProps {
   className?: string;
 }
 ```
+
+## Markup
 
 ```html
 <div class="cp-pick">
@@ -53,9 +59,13 @@ None. The label text is the only thing that changes between picks.
 
 ## Examples
 
+### Stories
+
 `Components/PickCard`, shown at 640px max width: `Default` from the mockup (Hypnotic Pattern, meta "PHB 2014 · 3rd · Bard · Concentration", description "Stops everyone in a 30 ft cube who fails the save. Drop it on a cluster Maelstrom already pulled together and the whole group is out of the fight."). `SecretLabel` with label "Recommended · Secret 1".
 
-MDX docs page order: `Default` with Controls; Labels (`SecretLabel`); Content rules; Accessibility.
+### MDX docs page
+
+Page order: `Default` with Controls; Labels (`SecretLabel`); Content rules; Accessibility.
 
 ## Styling
 

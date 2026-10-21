@@ -6,6 +6,10 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 Grouped spell comparison: what each spell does and when to take it.
 
+## Anatomy
+
+A bordered scroll box holding a header row, then groups. Each group has a heading row (title and note) and spell rows with three cells: spell (name, meta, tags), what it does, and when to take it.
+
 ## API
 
 ```ts
@@ -20,7 +24,11 @@ export interface SpellTableProps {
 }
 ```
 
-Composes `Chip` for each row's tags. Renders a CSS grid of divs with ARIA table roles inside a scroll wrapper; see Accessibility for the structure.
+Composes `Chip` for each row's tags.
+
+## Markup
+
+A CSS grid of divs with ARIA table roles inside a scroll wrapper. Accessibility gives the row and group structure.
 
 ## Configuration
 
@@ -53,6 +61,8 @@ The reference puts each group heading directly inside the table, which breaks th
 
 ## Examples
 
+### Stories
+
 `Components/SpellTable`: `Default`, label "Crowd-control spells", with three groups. "Instant" and "No concentration" use the `green` variant, "Concentration" the `amber` variant, "Ask your DM" the `purple` variant:
 
 **True grouping spells** (id `grouping`, note "via Magical Secrets")
@@ -80,7 +90,9 @@ The reference puts each group heading directly inside the table, which breaks th
 
 `Narrow`: Default at 375px, showing horizontal scroll inside the box.
 
-MDX docs page order: `Default`; Phones (`Narrow`); Content rules; Accessibility.
+### MDX docs page
+
+Page order: `Default`; Phones (`Narrow`); Content rules; Accessibility.
 
 ## Styling
 
