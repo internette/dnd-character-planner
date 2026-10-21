@@ -8,6 +8,10 @@ Small facts: features a level grants, casting properties of a spell in tables, a
 
 Chip replaced the separate PhaseTag component on 2026-10-20 at Antoinette's request. Its variants are generic and named by color, so the same chip serves facts and phases. Phase is a language in this system: a phase chip always shows the phase word, and color supports it.
 
+## Anatomy
+
+One part: the text on a colored fill. Chip.css also owns the phase dot (`.cp-dot`), a separate part that SideNav and StepCards use.
+
 ## API
 
 ```ts
@@ -21,6 +25,27 @@ export interface ChipProps {
 }
 ```
 
+Also exports two records so every phase chip matches (SideNav, StepCards, GlanceList and LevelCard use them):
+
+- `PHASE_LABEL`: `gather` → "Gather", `hold` → "Hold", `strike` → "Strike".
+- `PHASE_VARIANT`: `gather` → `blue`, `hold` → `amber`, `strike` → `red`.
+
+A phase chip is `<Chip variant={PHASE_VARIANT[phase]} value={PHASE_LABEL[phase]} />`.
+
+## Markup
+
+Renders `<span class="cp-chip cp-chip-{variant} cp-chip-{shape}">`, with `value` as the content.
+
+## Configuration
+
+- `value` (required): the chip's text. The chip never changes its case, so write it in sentence case. A phase chip's `value` must contain the phase word; document this on the Patterns/Phases page and don't enforce it in code.
+- `variant`: the color, default `green`. Use `purple` whenever the group must approve something (constitution Part I §3).
+- `shape`: default `rectangle`.
+
+## Variants
+
+Color, set by `variant`:
+
 | Variant | Use |
 | --- | --- |
 | `green` | Features gained (5th-level spells, Song of Rest d8) and casting properties (Instant, No concentration) |
@@ -29,17 +54,27 @@ export interface ChipProps {
 | `blue` | The Gather phase |
 | `red` | The Strike phase |
 
-Export two records so every phase chip matches (SideNav, StepCards, GlanceList and LevelCard use them):
+Shape, set by `shape`: `rectangle` for lists and tables, `pill` for the phase on a level card.
 
-- `PHASE_LABEL`: `gather` → "Gather", `hold` → "Hold", `strike` → "Strike".
-- `PHASE_VARIANT`: `gather` → `blue`, `hold` → `amber`, `strike` → `red`.
+## Behavior
 
-A phase chip is `<Chip variant={PHASE_VARIANT[phase]} value={PHASE_LABEL[phase]} />`.
+Static: no interactivity, no hover or focus state. The text never wraps or changes case.
 
-## Markup and accessibility
+## Accessibility
 
-- Renders `<span class="cp-chip cp-chip-{variant} cp-chip-{shape}">`. `value` is the content. No interactivity, no ARIA.
-- A phase chip's `value` must contain the phase word. Document this on the Patterns/Phases page; do not enforce it in code.
+- The text is the content, so the chip needs no ARIA.
+- Each variant's text and fill pass 4.5:1 in both themes.
+- Color never carries meaning alone: a phase chip always shows the phase word.
+
+## Examples
+
+### Stories
+
+`Components/Chip`: one story per variant (`Green` "5th-level spells", `Amber` "Concentration", `Purple` "Ask your DM", `Blue` "Gather", `Red` "Strike"); `AllVariants` (one chip per variant, labelled with its name); `Shapes` (a rectangle and a pill); `AllFacts` matching the preview: "5th-level spells", "Song of Rest d8", "Instant" (green), "Concentration" (amber), "No concentration" (green), "Ask your DM" (purple).
+
+### MDX docs page
+
+Page order: the `Green` story with Controls as a playground; Variants (`AllVariants`, one line per variant on when to use it, then `AllFacts` as real examples); Shapes (`Shapes`); Content rules; Accessibility. No Phases section: phase meaning, `PHASE_VARIANT` and `PHASE_LABEL` are documented on the Patterns/Phases page (Antoinette, 2026-10-20). Use lists, not Markdown tables, since Storybook's MDX doesn't render them.
 
 ## Styling
 
@@ -59,16 +94,6 @@ Every chip: `caption` text style with `font-weight-semibold`, `nowrap`, inline f
 | red | `strike` | `strike-tint` |
 
 Also owns the phase dot used by SideNav and StepCards: `.cp-dot` (`size-dot` square, `radius-full`, `flex: none`) with `.cp-dot-{phase}` filled in the phase color. Put these classes in `Chip.css`.
-
-## Stories
-
-`Components/Chip`: one story per variant (`Green` "5th-level spells", `Amber` "Concentration", `Purple` "Ask your DM", `Blue` "Gather", `Red` "Strike"); `AllVariants` (one chip per variant, labelled with its name); `Shapes` (a rectangle and a pill); `AllFacts` matching the preview: "5th-level spells", "Song of Rest d8", "Instant" (green), "Concentration" (amber), "No concentration" (green), "Ask your DM" (purple).
-
-## MDX docs page
-
-Page order: the `Green` story with Controls as a playground; Variants (`AllVariants`, one line per variant on when to use it, then `AllFacts` as real examples); Shapes (`Shapes`, rectangle for lists and tables, pill for the phase on a level card); Content rules; Accessibility. No Phases section: phase meaning, `PHASE_VARIANT` and `PHASE_LABEL` are documented on the Patterns/Phases page (Antoinette, 2026-10-20). Use lists, not Markdown tables, since Storybook's MDX doesn't render them.
-
-Content rules: the chip never changes the case of `value`; write it in sentence case. Use `purple` whenever the group must approve something (constitution Part I §3).
 
 ## Tests
 

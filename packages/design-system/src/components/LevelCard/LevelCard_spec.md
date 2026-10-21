@@ -28,14 +28,14 @@ export interface LevelCardProps {
 
 Composes `LevelBadge`, `Chip` (green, one per feature, and one phase chip with `shape="pill"`), `PickCard`, `AltList`.
 
-## Markup and accessibility
+## Markup
 
 ```html
-<article id="lv9" class="cp-levelcard">
+<article id="lv9" class="cp-levelcard" aria-labelledby="…">
   <LevelBadge/>
   <div class="cp-card">
     <div class="cp-card-head">
-      <div class="cp-stack" style="gap: space-2"><h3 class="cp-card-title">…</h3><div class="cp-row">chips</div></div>
+      <div class="cp-card-titles"><h3 class="cp-card-title">…</h3><div class="cp-row">chips</div></div>
       <Chip variant={PHASE_VARIANT[phase]} value={PHASE_LABEL[phase]} shape="pill"/>
     </div>
     picks (wrapped in .cp-picks when there are two or more)
@@ -44,23 +44,37 @@ Composes `LevelBadge`, `Chip` (green, one per feature, and one phase chip with `
 </article>
 ```
 
-- `id` is the anchor target for SideNav and GlanceList links.
-- Replace the reference's inline `style` gap with a class (`cp-card-titles`).
-- Label the article with its title via `aria-labelledby`.
+The reference sets the titles gap with an inline `style`; use the `cp-card-titles` class instead.
 
-## Styling
+## Configuration
 
-| Part | Tokens |
-| --- | --- |
-| Outer | flex, gap `space-4`, align start |
-| Card | `surface`, `stroke-hairline` `line`, `radius-lg`, padding `space-6`, flex column, gap `space-4`, `min-width: 0` |
-| Head | flex wrap, space-between, gap `space-3` |
-| Title | `heading-md`, `ink` |
-| Picks | grid `repeat(auto-fit, minmax(var(--layout-pick-min), 1fr))`, gap `space-3` |
+- `id`: the anchor target for SideNav and GlanceList links, such as `lv9`.
+- `level` (required): passed to LevelBadge.
+- `title` (required): an evocative name for the level.
+- `phase`: one phase per level.
+- `features`: the level's class features, one green chip each.
+- `picks`: one pick, or two side by side on Magical Secrets levels. Every pick names its source (see PickCard).
+- `alternatives`: at most three (see AltList).
 
-No shadow.
+## Variants
 
-## Stories
+None set by a prop. The layout changes with content: one pick spans the card; two or more sit side by side.
+
+## Behavior
+
+- Features, phase and alternatives are omitted when empty.
+- One pick renders without the `.cp-picks` wrapper; two or more render inside it, in a grid that stacks when there isn't room for each pick's minimum width.
+- The head wraps, so the phase chip drops below the title on narrow cards.
+
+## Accessibility
+
+- An `<article>` labelled by its title (`aria-labelledby`).
+- The title is an `h3`; PickCard names are `h4` under it.
+- The phase chip carries the phase word, so color is never the only signal.
+
+## Examples
+
+### Stories
 
 `Components/LevelCard`, from the mockup:
 
@@ -69,9 +83,22 @@ No shadow.
 - `NoAlternatives`: OnePick without alternatives.
 - `Narrow`: TwoPicks in a 375px viewport (picks stack).
 
-## MDX docs page
+### MDX docs page
 
-Content rules from the component README: the title is an evocative name for the level; features are class features as chips; one phase per level; two picks side by side on Magical Secrets levels; every pick names its source; at most three alternatives.
+Page order: `OnePick` with Controls; Two picks (`TwoPicks`); Without alternatives (`NoAlternatives`); Phones (`Narrow`); Content rules (from Configuration); Accessibility.
+
+## Styling
+
+| Part | Tokens |
+| --- | --- |
+| Outer | flex, gap `space-4`, align start |
+| Card | `surface`, `stroke-hairline` `line`, `radius-lg`, padding `space-6`, flex column, gap `space-4`, `min-width: 0` |
+| Head | flex wrap, space-between, gap `space-3` |
+| Titles | flex column, gap `space-2` |
+| Title | `heading-md`, `ink` |
+| Picks | grid `repeat(auto-fit, minmax(var(--layout-pick-min), 1fr))`, gap `space-3` |
+
+No shadow.
 
 ## Tests
 

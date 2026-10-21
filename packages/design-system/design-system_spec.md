@@ -150,6 +150,8 @@ Build them in this order, since later ones compose earlier ones:
 
 New components get a spec from [`component-template_spec.md`](./component-template_spec.md), saved as `<Name>_spec.md` in the component's folder, before any code.
 
+Every component spec has the same sections in the same order (Antoinette, 2026-10-21): Purpose, Anatomy, API, Markup, Configuration, Variants, Behavior, Accessibility and Examples (with Stories and MDX docs page subsections) describe the component; Styling, Tests, Acceptance criteria and Open questions guide the build.
+
 ### 5.1 Rules for every component
 
 - Keep the props in the component spec exactly. Export the component and its props types by name from `src/index.ts`. Where a spec changes markup for accessibility, the props and the look stay the same.

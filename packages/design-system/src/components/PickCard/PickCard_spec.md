@@ -6,6 +6,10 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 A recommended spell or feat inside a LevelCard: gold label, display name, source meta, and one or two sentences on why.
 
+## Anatomy
+
+A gold-tint block holding the label, a head (name, then meta) and the description.
+
 ## API
 
 ```ts
@@ -19,7 +23,7 @@ export interface PickCardProps {
 }
 ```
 
-## Markup and accessibility
+## Markup
 
 ```html
 <div class="cp-pick">
@@ -32,26 +36,47 @@ export interface PickCardProps {
 </div>
 ```
 
-Omit the meta span and the paragraph when their props are empty. The name is an `h4` because PickCard sits under LevelCard's `h3` (see open questions).
+## Configuration
+
+- `label`: default "Recommended". Use "Recommended · Secret N" when a level grants several picks. Shown exactly as written, never uppercased (matches Chip).
+- `name` (required): the spell or feat name, as printed in its source book.
+- `meta`: always names the source book and edition (constitution Part I §2): "PHB 2014 · 3rd · Bard · Concentration" for a spell, "PHB 2014 · Feat" for a feat.
+- `children`: the description. Say what the pick does at the table, then why it fits, in your own words; never paste book text.
+
+## Variants
+
+None. The label text is the only thing that changes between picks.
+
+## Behavior
+
+- Omit the meta span and the paragraph when their props are empty.
+- The meta wraps under the name when the card is narrow.
+
+## Accessibility
+
+- The name is an `h4`, because PickCard sits under LevelCard's `h3` (see open questions).
+- The gold label, `ink` name and body, and `ink-muted` meta all pass 4.5:1 on `gold-tint` in both themes.
+
+## Examples
+
+### Stories
+
+`Components/PickCard`, shown at 640px max width: `Default` from the mockup (Hypnotic Pattern, meta "PHB 2014 · 3rd · Bard · Concentration", description "Stops everyone in a 30 ft cube who fails the save. Drop it on a cluster Maelstrom already pulled together and the whole group is out of the fight."). `SecretLabel` with label "Recommended · Secret 1".
+
+### MDX docs page
+
+Page order: `Default` with Controls; Labels (`SecretLabel`); Content rules; Accessibility.
 
 ## Styling
 
 | Part | Tokens |
 | --- | --- |
 | Block | `gold-tint` fill, `radius-md`, padding `space-4`, flex column, gap `space-1`. No border, no side rule. |
-| Label | `label`, `gold`. Text shows exactly as passed, never uppercased (matches Chip). |
+| Label | `label`, `gold`, no text transform |
 | Head | flex wrap, baseline aligned, gap `space-2` |
 | Name | `heading-sm`, `ink` |
 | Meta | `caption`, `ink-muted` (shared `.cp-meta`) |
 | Body | `body`, `ink` |
-
-## Stories
-
-`Components/PickCard`: `Default` from the mockup (Hypnotic Pattern, meta "PHB 2014 · 3rd · Bard · Concentration", description "Stops everyone in a 30 ft cube who fails the save. Drop it on a cluster Maelstrom already pulled together and the whole group is out of the fight."), shown at 640px max width. `SecretLabel` with label "Recommended · Secret 1".
-
-## MDX docs page
-
-Content rules: label is "Recommended" or "Recommended · Secret N". Meta always names source book and edition (constitution Part I §2): "PHB 2014 · 3rd · Bard · Concentration" for a spell, "PHB 2014 · Feat" for a feat. Description says what the pick does at the table, then why it fits, in the mockup's own words; never paste book text.
 
 ## Tests
 

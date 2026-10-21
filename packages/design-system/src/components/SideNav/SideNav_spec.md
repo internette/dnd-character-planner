@@ -6,6 +6,10 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 In-page navigation for a roadmap. Level items carry a phase dot so the gather, hold, strike rhythm reads down the rail.
 
+## Anatomy
+
+A bordered rail holding sections. Each section has an optional heading and a list of items; each item has its label and an optional phase dot.
+
 ## API
 
 ```ts
@@ -17,7 +21,9 @@ export interface SideNavProps {
 }
 ```
 
-## Markup and accessibility
+Uses the phase dot classes from Chip.
+
+## Markup
 
 ```html
 <nav class="cp-nav" aria-label="On this page">
@@ -28,10 +34,41 @@ export interface SideNavProps {
 </nav>
 ```
 
-- Group items in a `<ul>` per section (the reference renders a flat list of links and spans).
+Group items in a `<ul>` per section (the reference renders a flat list of links and spans).
+
+## Configuration
+
+- `label`: the nav's accessible name, default "On this page".
+- `sections` (required): two or three, each with a heading.
+- `href`: an item without one falls back to `#`; prefer requiring `href` in docs.
+- `phase`: adds a phase dot to level items.
+- `current`: mark the section in view. Scroll-spy (setting `current` from scroll position) is the app's job, not the component's.
+
+## Variants
+
+States, not props: default, hover, current and focus (see Styling).
+
+## Behavior
+
+- Hover fills the item with `ground`.
+- On phones it stacks above the content. It is never sticky.
+
+## Accessibility
+
 - `current` sets `aria-current="location"` (in-page navigation); style `[aria-current]` generally so `page` and `true` also work.
 - Phase dots have `role="img"` and the phase word as label.
-- An item without `href` falls back to `#`; prefer requiring `href` in docs.
+- Each section's list is labelled by its heading.
+- Every item is at least `space-12` (48px) tall, and keyboard focus is visible in both themes.
+
+## Examples
+
+### Stories
+
+`Components/SideNav` at 320px max width, from the mockup: section "Roadmap" with Overview (current), Lv 9 · The Lingering Note (strike), Lv 10 · The Vortex Opens (gather), Lv 11 · The Lullaby (hold), Lv 12 · The Unseen Hand (gather), Lv 13 · The Cage of Wind (hold), Lv 14 · Arrival on the Breeze (gather), Before you level up; section "Supplement" with Gather & Strike, True grouping spells, Bard-native gathering, Pushes & pulls, Combos. Hrefs as `#overview`, `#lv9` … `#combos`. Add `Dark` with the theme global set to dark to show the current-item color swap.
+
+### MDX docs page
+
+Page order: `Default` with Controls; Dark theme (`Dark`); Content rules; Accessibility.
 
 ## Styling
 
@@ -43,14 +80,6 @@ export interface SideNavProps {
 | Hover | `ground` fill |
 | Current | `surface-sunken` fill, 600; text `forest` in light, `accent-ink` in dark |
 | Focus | outline `stroke-strong` `accent`, offset `space-1` |
-
-## Stories
-
-`Components/SideNav` at 320px max width, from the mockup: section "Roadmap" with Overview (current), Lv 9 · The Lingering Note (strike), Lv 10 · The Vortex Opens (gather), Lv 11 · The Lullaby (hold), Lv 12 · The Unseen Hand (gather), Lv 13 · The Cage of Wind (hold), Lv 14 · Arrival on the Breeze (gather), Before you level up; section "Supplement" with Gather & Strike, True grouping spells, Bard-native gathering, Pushes & pulls, Combos. Hrefs as `#overview`, `#lv9` … `#combos`. Add `Dark` with the theme global set to dark to show the current-item color swap.
-
-## MDX docs page
-
-Content rules: two or three section headings; mark the section in view with `current`; on phones it stacks above the content; never sticky. Scroll-spy (setting `current` from scroll position) is the app's job, not the component's.
 
 ## Tests
 

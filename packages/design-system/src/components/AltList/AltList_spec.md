@@ -6,6 +6,10 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 Alternatives under a pick: each a bold name and a short reason behind an accent chevron. Keeps "the player decides" visible.
 
+## Anatomy
+
+A list of items. Each item is an accent chevron beside the text: bold name, joiner, reason.
+
 ## API
 
 ```ts
@@ -14,7 +18,7 @@ export interface AltItem { name: string; text: string; joiner?: string }
 export interface AltListProps { items: AltItem[]; className?: string }
 ```
 
-## Markup and accessibility
+## Markup
 
 ```html
 <ul class="cp-alts">
@@ -24,6 +28,36 @@ export interface AltListProps { items: AltItem[]; className?: string }
 
 Chevron: `size-icon` square, 16×16 viewBox, path `M6 4l4 4-4 4`, no fill, `currentColor` stroke 2, round caps and joins. Make it an internal `Chevron` icon component (not exported).
 
+## Configuration
+
+- `items` (required): at most three alternatives. Each says what makes it a different choice, not why it is worse.
+- `name`: the alternative's name, shown bold.
+- `text`: the short reason.
+- `joiner`: default ": ". Use ", " or " " when the text reads on from the name, such as "Shatter, upcast: …".
+
+## Variants
+
+None. Every item looks the same.
+
+## Behavior
+
+Long text wraps under the text column, not under the chevron.
+
+## Accessibility
+
+- A `<ul>`, so screen readers announce how many alternatives there are.
+- The chevron is decorative and hidden from assistive tech.
+
+## Examples
+
+### Stories
+
+`Components/AltList`: `Default` from the mockup: Otto's Irresistible Dance ("the musician's pick, but it only hits one target."), Mass Suggestion ("no concentration, up to twelve creatures."). `CustomJoiner`: Shatter with joiner ", " and text "upcast: your existing strike option until this arrives."
+
+### MDX docs page
+
+Page order: `Default` with Controls; Joiners (`CustomJoiner`); Content rules; Accessibility.
+
 ## Styling
 
 | Part | Tokens |
@@ -31,14 +65,6 @@ Chevron: `size-icon` square, 16×16 viewBox, path `M6 4l4 4-4 4`, no fill, `curr
 | List | no bullets, no padding, flex column, gap `space-2` |
 | Item | flex, gap `space-2`, `ink` |
 | Chevron | `accent`, `margin-top: space-1`, `flex: none` |
-
-## Stories
-
-`Components/AltList`: `Default` from the mockup: Otto's Irresistible Dance ("the musician's pick, but it only hits one target."), Mass Suggestion ("no concentration, up to twelve creatures."). `CustomJoiner`: Shatter with joiner ", " and text "upcast: your existing strike option until this arrives."
-
-## MDX docs page
-
-Content rule: at most three alternatives. Each says what makes it a different choice, not why it is worse.
 
 ## Tests
 

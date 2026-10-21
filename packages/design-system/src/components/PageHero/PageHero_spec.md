@@ -6,6 +6,10 @@ Parent: [root spec](../../../design-system_spec.md). The root spec's shared comp
 
 The forest band that opens a character page or a supplement. The Storybook MDX pages also use it (at `lg`) as their page title.
 
+## Anatomy
+
+A forest band holding the swirl (decorative, top right), eyebrow, title, subtitle and tag list.
+
 ## API
 
 ```ts
@@ -21,7 +25,7 @@ export interface PageHeroProps {
 }
 ```
 
-## Markup and accessibility
+## Markup
 
 ```html
 <section id="overview" class="cp-hero">
@@ -33,12 +37,50 @@ export interface PageHeroProps {
 </section>
 ```
 
+Swirl SVG: 480×200 viewBox, three round-capped strokes of width 4 in `currentColor`. Paths:
+
+- `M0 92c120 0 200-4 280-12s120-40 92-64-60 4-40 28 72 8 108-20`
+- `M60 140c140-8 240-4 320-24 48-12 72-40 48-56s-48 8-28 28 48 12 76-4`
+- `M120 184c120-4 220-4 320-12`
+
+## Configuration
+
+- `id`: the anchor target, such as `overview`, for SideNav links.
+- `size`: default `xl`. One `xl` hero per page; supplements use `lg`.
+- `eyebrow`: names the edition and kind of page.
+- `title` (required): the character's name, never a slogan.
+- `subtitle`: one italic line: subclass, purpose, level range.
+- `tags`: two or three identity tags, shown uppercase.
+- `swirl`: default `true`. The swirl is decoration for Aero-themed characters; turn it off otherwise.
+
+## Variants
+
+- `xl`: the page's opening hero, with a `display-xl` title.
+- `lg`: supplements and docs page titles, with a `display-lg` title.
+- With or without the swirl.
+
+## Behavior
+
+- The eyebrow, subtitle and tags are omitted when empty.
+- Phones: below 480px, the `xl` title steps down to `display-lg` and the padding to `space-6`, so "Ciaccona" fits at 375px (Antoinette, 2026-10-19).
+- The swirl is clipped at the band's edge.
+
+## Accessibility
+
 - `xl` renders `h1`, `lg` renders `h2`.
-- Render tags as a list (the reference uses spans).
-- Swirl SVG, 480×200 viewBox, three round-capped strokes of width 4 in `currentColor`. Paths:
-  - `M0 92c120 0 200-4 280-12s120-40 92-64-60 4-40 28 72 8 108-20`
-  - `M60 140c140-8 240-4 320-24 48-12 72-40 48-56s-48 8-28 28 48 12 76-4`
-  - `M120 184c120-4 220-4 320-12`
+- Tags render as a list (the reference uses spans).
+- The swirl is hidden from assistive tech.
+- `on-forest` and `on-forest-muted` pass 4.5:1 on `forest` in both themes.
+
+## Examples
+
+### Stories
+
+`Components/PageHero`: `Character` from the mockup: eyebrow "D&D 5E · Character progression", title "Ciaccona", subtitle "College of Lore Bard — Crowd-Control Roadmap, Levels 9 to 14", tags ["Aero theme", "Wandering performer", "Gather · Hold · Strike"]. `Supplement`: size `lg`, title "Gather & Strike". `NoSwirl`: Character with `swirl={false}`.
+
+### MDX docs page
+
+Page order: `Character` with Controls; Variants (`Supplement`, then `NoSwirl`); Content rules; Accessibility; Phones.
 
 ## Styling
 
@@ -52,16 +94,6 @@ export interface PageHeroProps {
 | Subtitle | `subtitle`, `on-forest-muted` |
 | Tags | flex wrap, gap `space-2`, padding-top `space-2`; each tag padding `space-1` `space-3`, `radius-xl`, `stroke-hairline` `on-forest-muted`, `caption` with `font-weight-semibold`, uppercase |
 
-Phones: below 480px, step the `xl` title down to `display-lg` and padding to `space-6`, so "Ciaccona" fits at 375px. Antoinette confirmed this on 2026-10-19.
-
-## Stories
-
-`Components/PageHero`: `Character` from the mockup: eyebrow "D&D 5E · Character progression", title "Ciaccona", subtitle "College of Lore Bard — Crowd-Control Roadmap, Levels 9 to 14", tags ["Aero theme", "Wandering performer", "Gather · Hold · Strike"]. `Supplement`: size `lg`, title "Gather & Strike". `NoSwirl`: Character with `swirl={false}`.
-
-## MDX docs page
-
-Content rules: one `xl` hero per page; supplements use `lg`. Eyebrow names the edition and kind of page. Title is the character's name, never a slogan. Subtitle is one italic line: subclass, purpose, level range. Two or three uppercase identity tags. The swirl is decoration for Aero-themed characters; turn it off otherwise.
-
 ## Tests
 
 `xl` renders `h1`, `lg` renders `h2`; swirl hidden from assistive tech and removed with `swirl={false}`; optional parts omitted when empty.
@@ -69,3 +101,7 @@ Content rules: one `xl` hero per page; supplements use `lg`. Eyebrow names the e
 ## Acceptance criteria
 
 `on-forest` and `on-forest-muted` pass 4.5:1 on `forest` in both themes; the hero matches the mockup at 1440px.
+
+## Open questions
+
+None.
