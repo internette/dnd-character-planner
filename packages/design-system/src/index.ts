@@ -7,5 +7,7 @@ export { PickCard } from "./components/PickCard";
 export type { PickCardProps } from "./components/PickCard";
 export { AltList } from "./components/AltList";
 export type { AltItem, AltListProps } from "./components/AltList";
+export { LevelCard } from "./components/LevelCard";
+export type { LevelCardProps, Pick } from "./components/LevelCard";
 export { PageHero } from "./components/PageHero";
 export type { PageHeroProps } from "./components/PageHero";
