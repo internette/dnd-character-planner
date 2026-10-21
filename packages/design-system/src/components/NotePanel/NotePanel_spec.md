@@ -12,8 +12,6 @@ A sunken panel of short cautions that apply to the whole plan, such as "Before y
 export interface NotePanelProps { id?: string; title: string; notes: React.ReactNode[]; className?: string }
 ```
 
-## Markup and accessibility
-
 ```html
 <section id="before" class="cp-notes" aria-labelledby="…">
   <h2 class="cp-panel-title">Before you level up</h2>
@@ -21,13 +19,26 @@ export interface NotePanelProps { id?: string; title: string; notes: React.React
 </section>
 ```
 
-Generate the heading id with `useId` only if it stays server-safe (React 19 `useId` is); otherwise derive it from `id`.
+## Configuration
 
-## Styling
+- `id`: the anchor target for SideNav links, such as `before`.
+- `title` (required): names when the notes apply, such as "Before you level up".
+- `notes` (required): two to four cautions, not advice already given in level cards. Edition notes (2014 vs 2024) belong here, per constitution Part I §2.
 
-Panel: `surface-sunken`, `radius-lg`, padding `space-6`, flex column, gap `space-4`, no border. Title: the shared `.cp-panel-title` class. Grid: `repeat(auto-fit, minmax(var(--layout-card-min), 1fr))`, gap `space-4`. Each note: padding-top `space-3`, top border `stroke-strong` `line`, `ink`.
+## Variants
 
-## Stories
+None.
+
+## Behavior
+
+Notes sit in a grid that fills as many columns as fit, down to one column on phones.
+
+## Accessibility
+
+- A `<section>` labelled by its `h2`, with one paragraph per note.
+- Generate the heading id with `useId` only if it stays server-safe (React 19 `useId` is); otherwise derive it from `id`.
+
+## Examples
 
 `Components/NotePanel`: `Default` from the mockup, title "Before you level up", notes:
 
@@ -35,9 +46,11 @@ Panel: `surface-sunken`, `radius-lg`, padding `space-6`, flex column, gap `space
 2. "Wood Elf speed and Mask of the Wild fit her \"never where you expect\" style. Lean on Stealth when scouting."
 3. "On the 2024 rules, Magical Secrets and the Lore subclass work differently, so re-check these picks."
 
-## MDX docs page
+MDX docs page order: `Default` with Controls; Content rules; Accessibility.
 
-Content rules: two to four notes; cautions, not advice already given in level cards. Edition notes (2014 vs 2024) belong here, per constitution Part I §2.
+## Styling
+
+Panel: `surface-sunken`, `radius-lg`, padding `space-6`, flex column, gap `space-4`, no border. Title: the shared `.cp-panel-title` class. Grid: `repeat(auto-fit, minmax(var(--layout-card-min), 1fr))`, gap `space-4`. Each note: padding-top `space-3`, top border `stroke-strong` `line`, `ink`.
 
 ## Tests
 

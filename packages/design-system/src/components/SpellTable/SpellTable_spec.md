@@ -20,9 +20,30 @@ export interface SpellTableProps {
 }
 ```
 
-## Markup and accessibility
+Composes `Chip` for each row's tags. Renders a CSS grid of divs with ARIA table roles inside a scroll wrapper; see Accessibility for the structure.
 
-The reference uses a CSS grid of divs with ARIA table roles, but puts each group heading directly inside the table, which breaks the ARIA table structure. Fix this:
+## Configuration
+
+- `label`: the table's accessible name, default "Spells".
+- `columns`: default ["Spell", "What it does", "When to take it"].
+- `groups` (required): each with a `title`, an optional `note` and an `id` for SideNav links.
+- `meta`: names source, spell level and class.
+- `tags`: casting properties, as chips. Spells from non-core books get the `purple` "Ask your DM" tag.
+- `does`: what the spell does, in your own words. Never reproduce a spell's full rules text (constitution Part I §4).
+- `when`: advice tied to the roadmap's levels.
+
+## Variants
+
+None. Tags use Chip's variants.
+
+## Behavior
+
+- Below the table's minimum width, the table scrolls sideways inside its box; the page never does.
+- Group notes and row meta and tags are omitted when empty.
+
+## Accessibility
+
+The reference puts each group heading directly inside the table, which breaks the ARIA table structure. Fix this:
 
 - Keep the grid layout and ARIA roles (`table`, `rowgroup`, `row`, `columnheader`, `cell`), so rows can lay out with CSS grid.
 - Header row in its own `rowgroup`. Each group is a `rowgroup` labelled by its heading. The group heading row is a `row` with one `cell` spanning three columns (`aria-colspan="3"`, `grid-column: 1 / -1`) containing the `<h3>` and the note.
@@ -30,21 +51,9 @@ The reference uses a CSS grid of divs with ARIA table roles, but puts each group
 - The group `id` goes on the heading row so SideNav can link to it.
 - The scroll wrapper gets `tabindex="0"`, `role="region"` and the same `aria-label`, so keyboard users can scroll it.
 
-## Styling
+## Examples
 
-| Part | Tokens |
-| --- | --- |
-| Wrapper | `surface`, `stroke-hairline` `line`, `radius-lg`, `overflow-x: auto` |
-| Table | `min-width: var(--layout-table-min)`, padding `space-2` `space-6` `space-6` |
-| Row | grid `2fr 3fr 2fr`, gap `space-6`, padding `space-3` 0, top `stroke-hairline` `line` |
-| Header row | no top border, bottom `stroke-hairline` `line`, `label`, uppercase, `ink-muted` |
-| Group row | flex baseline, gap `space-3`, padding `space-6` 0 `space-2`; title `heading-sm`, `ink`; note `caption` `ink-muted` |
-| Spell cell | flex column, gap `space-1`; name display family, `font-weight-semibold`, `font-size-4`/`line-height-6`, `ink`; meta `caption`; tags in a row with gap `space-1` |
-| When column | `accent-ink` |
-
-## Stories
-
-`Components/SpellTable`: `Default`, label "Crowd-control spells", with three groups. "Instant" and "No concentration" use the `green` variant, "Concentration" the `amber` variant, "Ask your DM" the `purple` variant):
+`Components/SpellTable`: `Default`, label "Crowd-control spells", with three groups. "Instant" and "No concentration" use the `green` variant, "Concentration" the `amber` variant, "Ask your DM" the `purple` variant:
 
 **True grouping spells** (id `grouping`, note "via Magical Secrets")
 
@@ -71,9 +80,19 @@ The reference uses a CSS grid of divs with ARIA table roles, but puts each group
 
 `Narrow`: Default at 375px, showing horizontal scroll inside the box.
 
-## MDX docs page
+MDX docs page order: `Default`; Phones (`Narrow`); Content rules; Accessibility.
 
-Content rules: each row's meta names source, spell level and class; tags carry casting properties; the third column is advice tied to the roadmap's levels. Spells from non-core books get the `purple` "Ask your DM" tag. Never reproduce a spell's full rules text (constitution Part I §4).
+## Styling
+
+| Part | Tokens |
+| --- | --- |
+| Wrapper | `surface`, `stroke-hairline` `line`, `radius-lg`, `overflow-x: auto` |
+| Table | `min-width: var(--layout-table-min)`, padding `space-2` `space-6` `space-6` |
+| Row | grid `2fr 3fr 2fr`, gap `space-6`, padding `space-3` 0, top `stroke-hairline` `line` |
+| Header row | no top border, bottom `stroke-hairline` `line`, `label`, uppercase, `ink-muted` |
+| Group row | flex baseline, gap `space-3`, padding `space-6` 0 `space-2`; title `heading-sm`, `ink`; note `caption` `ink-muted` |
+| Spell cell | flex column, gap `space-1`; name display family, `font-weight-semibold`, `font-size-4`/`line-height-6`, `ink`; meta `caption`; tags in a row with gap `space-1` |
+| When column | `accent-ink` |
 
 ## Tests
 

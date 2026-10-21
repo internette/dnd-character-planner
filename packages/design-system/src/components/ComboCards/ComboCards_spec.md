@@ -13,15 +13,32 @@ export interface Combo { name: string; description: React.ReactNode }
 export interface ComboCardsProps { combos: Combo[]; className?: string }
 ```
 
-## Markup and accessibility
+```html
+<ul class="cp-combos">
+  <li class="cp-combo"><h4>…</h4><p>…</p></li>
+</ul>
+```
 
-Render as a list: `<ul class="cp-combos"><li class="cp-combo"><h4>…</h4><p>…</p></li></ul>` (the reference uses divs; a list tells screen readers how many combos there are). Heading stays `h4` under a section `h3`; see open questions.
+## Configuration
 
-## Styling
+- `combos` (required): one card each.
+- `name`: a short evocative name.
+- `description`: names the spells in order and why they work together. Combos that rely on a non-core spell say so.
 
-Grid `repeat(auto-fit, minmax(var(--layout-card-min), 1fr))`, gap `space-3`, no bullets. Card: `gold-tint`, `stroke-hairline` `gold-line`, `radius-lg`, padding `space-5`, flex column, gap `space-2`. Name: `heading-sm` with `font-weight-bold`, `ink`. Description: `ink`.
+## Variants
 
-## Stories
+None.
+
+## Behavior
+
+Cards sit in a grid that fills as many columns as fit, down to one column on phones.
+
+## Accessibility
+
+- A list, so screen readers announce how many combos there are (the reference uses divs).
+- The name is an `h4` under a section `h3`; see open questions.
+
+## Examples
 
 `Components/ComboCards`: `Default` from the mockup:
 
@@ -29,9 +46,11 @@ Grid `repeat(auto-fit, minmax(var(--layout-card-min), 1fr))`, gap `space-3`, no 
 - The Encore: "Upcast Command to call enemies to you, then a teammate's area spell or your own Shatter."
 - The Lullaby: "Gravity Sinkhole into Hypnotic Pattern. The whole pack is down for the fight."
 
-## MDX docs page
+MDX docs page order: `Default` with Controls; Content rules; Accessibility.
 
-Content rules: give each combo a short evocative name; the recipe names the spells in order and why they work together. Combos that rely on a non-core spell say so.
+## Styling
+
+Grid `repeat(auto-fit, minmax(var(--layout-card-min), 1fr))`, gap `space-3`, no bullets. Card: `gold-tint`, `stroke-hairline` `gold-line`, `radius-lg`, padding `space-5`, flex column, gap `space-2`. Name: `heading-sm` with `font-weight-bold`, `ink`. Description: `ink`.
 
 ## Tests
 

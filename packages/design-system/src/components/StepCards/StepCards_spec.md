@@ -13,25 +13,40 @@ export interface Step { name: string; phase?: Phase; description: React.ReactNod
 export interface StepCardsProps { steps: Step[]; className?: string }
 ```
 
-## Markup and accessibility
+Uses the phase dot classes from Chip.
 
 ```html
 <ol class="cp-steps">
   <li class="cp-step">
-    <span class="cp-step-label">STEP 1</span>
+    <span class="cp-step-label" aria-hidden="true">STEP 1</span>
     <h3 class="cp-step-name"><span class="cp-dot cp-dot-gather" aria-hidden="true"></span>Gather</h3>
     <p>…</p>
   </li>
 </ol>
 ```
 
-The `<ol>` already conveys order, so hide the "STEP N" label from assistive tech (`aria-hidden`) to avoid "1. Step 1". The phase dot is decorative; the step name carries the word.
+## Configuration
 
-## Styling
+- `steps` (required): in the order they happen. The "STEP N" labels number from 1.
+- `name`: if a step has a phase, its name should be the phase word or include it, so the dot is never the only signal.
+- `phase`: adds a phase dot before the name.
+- `description`: what to do in that step.
 
-List: no bullets or padding, flex wrap, gap `space-3`. Card: `flex: 1 1 var(--layout-card-min)`, `surface`, `stroke-hairline` `line`, `radius-lg`, padding `space-5`, flex column, gap `space-1`. Label: `label`, uppercase, `gold`. Name: `heading-md`, `accent-ink`, flex with gap `space-2`. Dot here is `size-dot-lg` square with `radius-sm`. Description: `ink-body`.
+## Variants
 
-## Stories
+With or without phase dots, set by each step's `phase`.
+
+## Behavior
+
+- The dot renders only when a step has a phase.
+- Cards sit in a row and wrap, so they stack on phones.
+
+## Accessibility
+
+- An `<ol>`, which already conveys order, so the "STEP N" label is hidden from assistive tech (`aria-hidden`) to avoid "1. Step 1".
+- The phase dot is decorative; the step name carries the word.
+
+## Examples
 
 `Components/StepCards`: `Default` from the mockup:
 
@@ -41,9 +56,11 @@ List: no bullets or padding, flex wrap, gap `space-3`. Card: `flex: 1 1 var(--la
 
 `WithoutPhases`: same steps without `phase`.
 
-## MDX docs page
+MDX docs page order: `Default` with Controls; Without phases (`WithoutPhases`); Content rules; Accessibility.
 
-Content rule: only when order matters. If a step has a phase, its name should be the phase word or include it, so the dot is never the only signal.
+## Styling
+
+List: no bullets or padding, flex wrap, gap `space-3`. Card: `flex: 1 1 var(--layout-card-min)`, `surface`, `stroke-hairline` `line`, `radius-lg`, padding `space-5`, flex column, gap `space-1`. Label: `label`, uppercase, `gold`. Name: `heading-md`, `accent-ink`, flex with gap `space-2`. Dot here is `size-dot-lg` square with `radius-sm`. Description: `ink-body`.
 
 ## Tests
 
