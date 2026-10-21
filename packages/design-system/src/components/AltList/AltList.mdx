@@ -1,0 +1,31 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as Stories from "./AltList.stories";
+import { DocPage } from "../../docs/blocks/DocPage";
+import { DocHero } from "../../docs/blocks/DocHero";
+
+<Meta of={Stories} />
+
+<DocPage>
+
+<DocHero eyebrow="Component" title="AltList" subtitle="Alternatives under a pick, so the player always sees their other options." />
+
+<Canvas of={Stories.Default} />
+
+<Controls of={Stories.Default} />
+
+## Joiners
+
+The name and reason are joined with ": " by default. When the reason reads on from the name, pass a different `joiner`, such as ", ".
+
+<Canvas of={Stories.CustomJoiner} />
+
+## Content rules
+
+- List at most three alternatives.
+- Each reason says what makes it a different choice, not why it is worse than the pick.
+
+## Accessibility
+
+The alternatives are a list, so screen readers announce how many there are. The chevron is decorative and hidden from assistive tech. Long reasons wrap under the text, not under the chevron.
+
+</DocPage>
