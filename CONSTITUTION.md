@@ -126,6 +126,7 @@ Run `pnpm typecheck`, `pnpm test`, and `pnpm build` from the repository root and
 - Note anything you were unsure about or couldn't verify.
 - Never commit secrets, API keys, or real user data, including in tests or fixtures.
 - Whenever you create a new branch, tell the user its name and ask whether they'd like to check it out locally. If they say yes, check for uncommitted changes first and don't discard them: stop and tell the user what they are.
+- After a pull request is merged, delete its branch, on GitHub and in any checkout you work in. Never reuse a merged branch: if there's more work to do, start it on a new branch from the latest `main`, with a branch name and PR title that describe that work.
 
 ### 8. Humans decide
 
