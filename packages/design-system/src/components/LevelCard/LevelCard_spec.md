@@ -93,10 +93,10 @@ Page order: `OnePick` with Controls; Two picks (`TwoPicks`); Without alternative
 | --- | --- |
 | Outer | flex, gap `space-4`, align start |
 | Card | `surface`, `stroke-hairline` `line`, `radius-lg`, padding `space-6`, flex column, gap `space-4`, `min-width: 0` |
-| Head | flex wrap, space-between, gap `space-3` |
+| Head | flex wrap, align start (so the phase pill keeps its height), space-between, gap `space-3` |
 | Titles | flex column, gap `space-2` |
 | Title | `heading-md`, `ink` |
-| Picks | grid `repeat(auto-fit, minmax(var(--layout-pick-min), 1fr))`, gap `space-3` |
+| Picks | grid `repeat(auto-fit, minmax(min(var(--layout-pick-min), 100%), 1fr))`, gap `space-3`. The `min()` lets a pick shrink when the card is narrower than `layout-pick-min`, as it is at 375px, so picks never overflow the card. |
 
 No shadow.
 

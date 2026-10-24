@@ -1,0 +1,47 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as Stories from "./LevelCard.stories";
+import { DocPage } from "../../docs/blocks/DocPage";
+import { DocHero } from "../../docs/blocks/DocHero";
+
+<Meta of={Stories} />
+
+<DocPage>
+
+<DocHero eyebrow="Component" title="LevelCard" subtitle="The core unit of a roadmap: what a level grants, what to pick, and the alternatives." />
+
+<Canvas of={Stories.OnePick} />
+
+<Controls of={Stories.OnePick} />
+
+## Two picks
+
+On Magical Secrets levels, two picks sit side by side, each labelled with its Secret number.
+
+<Canvas of={Stories.TwoPicks} />
+
+## Without alternatives
+
+The alternatives list is optional. Leave it out when there's no real other choice.
+
+<Canvas of={Stories.NoAlternatives} />
+
+## Phones
+
+When there isn't room for both picks side by side, they stack.
+
+<Canvas of={Stories.Narrow} />
+
+## Content rules
+
+- The title is an evocative name for the level.
+- Features are the level's class features, one chip each.
+- Give each level one phase.
+- Use two picks side by side only on Magical Secrets levels.
+- Every pick names its source book and edition.
+- List at most three alternatives.
+
+## Accessibility
+
+Each level card is an `article` labelled by its title, which is an `h3`; pick names are `h4` under it. The level badge reads as "Level N". The phase chip shows the phase word, so color is never the only signal.
+
+</DocPage>
