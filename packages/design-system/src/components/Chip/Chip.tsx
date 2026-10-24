@@ -13,7 +13,7 @@ export interface ChipProps {
   className?: string;
 }
 
-/** The word for each phase, shared with SideNav, StepCards, GlanceList and LevelCard. */
+/** The word for each phase, shared with SideNav, CardList, GlanceList and LevelCard. */
 export const PHASE_LABEL: Record<Phase, string> = {
   gather: "Gather",
   hold: "Hold",

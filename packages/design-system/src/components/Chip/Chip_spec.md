@@ -10,7 +10,7 @@ Chip replaced the separate PhaseTag component on 2026-10-20 at Antoinette's requ
 
 ## Anatomy
 
-One part: the text on a colored fill. Chip.css also owns the phase dot (`.cp-dot`), a separate part that SideNav and StepCards use.
+One part: the text on a colored fill. Chip.css also owns the phase dot (`.cp-dot`), a separate part that SideNav and CardList use.
 
 ## API
 
@@ -25,7 +25,7 @@ export interface ChipProps {
 }
 ```
 
-Also exports two records so every phase chip matches (SideNav, StepCards, GlanceList and LevelCard use them):
+Also exports two records so every phase chip matches (SideNav, CardList, GlanceList and LevelCard use them):
 
 - `PHASE_LABEL`: `gather` → "Gather", `hold` → "Hold", `strike` → "Strike".
 - `PHASE_VARIANT`: `gather` → `blue`, `hold` → `amber`, `strike` → `red`.
@@ -93,7 +93,7 @@ Every chip: `caption` text style with `font-weight-semibold`, `nowrap`, inline f
 | blue | `gather` | `gather-tint` |
 | red | `strike` | `strike-tint` |
 
-Also owns the phase dot used by SideNav and StepCards: `.cp-dot` (`size-dot` square, `radius-full`, `flex: none`) with `.cp-dot-{phase}` filled in the phase color. Put these classes in `Chip.css`.
+Also owns the phase dot used by SideNav and CardList: `.cp-dot` (`size-dot` square, `radius-full`, `flex: none`) with `.cp-dot-{phase}` filled in the phase color. Put these classes in `Chip.css`.
 
 ## Tests
 

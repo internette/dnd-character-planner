@@ -17,12 +17,12 @@ export interface GlanceItem { level: number; pick: string; phase: Phase; href?: 
 export interface GlanceListProps { title?: string; items: GlanceItem[]; className?: string } // title defaults to "At a glance"
 ```
 
-Composes `Chip` for each row's phase.
+Composes `Panel` (surface variant) for the panel and title, and `Chip` for each row's phase.
 
 ## Markup
 
 ```html
-<section class="cp-panel" aria-labelledby="…">
+<section class="cp-panel cp-panel-surface" aria-labelledby="…">   <!-- rendered by Panel -->
   <h2 class="cp-panel-title">At a glance</h2>
   <ul>
     <li><a class="cp-glance-row" href="#lv9"><span class="cp-glance-lv">Lv 9</span><span class="cp-glance-pick">Synaptic Static</span><Chip variant={PHASE_VARIANT[phase]} value={PHASE_LABEL[phase]}/></a></li>
@@ -67,7 +67,7 @@ Page order: `Default` with Controls; Without links (`WithoutLinks`); Content rul
 
 ## Styling
 
-Panel: the shared `.cp-panel` class. Title: the shared `.cp-panel-title` class. Row: flex, gap `space-3`, padding `space-2` 0, bottom `stroke-hairline` `line` (none on the last), no underline, `ink`. Level column: width `space-12`, `body-strong`, `ink-muted`. Pick: flexible, `min-width: 0`.
+Panel and title: from `Panel`. Row: flex, gap `space-3`, padding `space-2` 0, bottom `stroke-hairline` `line` (none on the last), no underline, `ink`. Level column: width `space-12`, `body-strong`, `ink-muted`. Pick: flexible, `min-width: 0`.
 
 ## Tests
 

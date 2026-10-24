@@ -50,7 +50,7 @@ The original design-system bundle and mockup are in the project's shared files (
 ## 2. Deliverables
 
 1. Token CSS files, one per group, each built to its spec (§4).
-2. The 12 components as typed React components with plain CSS, exported from `@dnd/design-system`, each built to its spec (§5).
+2. The 11 components as typed React components with plain CSS, exported from `@dnd/design-system`, each built to its spec (§5).
 3. Storybook with a Bag of Holding brand theme, a light/dark toolbar switch, and themed MDX pages (§6).
 4. The Storybook static build served by the web app at `/design-system` (§7).
 5. Tests for tokens and components.
@@ -140,13 +140,14 @@ Build them in this order, since later ones compose earlier ones:
 | 3 | PickCard | [PickCard_spec.md](./src/components/PickCard/PickCard_spec.md) | |
 | 4 | AltList | [AltList_spec.md](./src/components/AltList/AltList_spec.md) | |
 | 5 | LevelCard | [LevelCard_spec.md](./src/components/LevelCard/LevelCard_spec.md) | LevelBadge, Chip, PickCard, AltList |
-| 6 | GlanceList | [GlanceList_spec.md](./src/components/GlanceList/GlanceList_spec.md) | Chip |
-| 7 | NotePanel | [NotePanel_spec.md](./src/components/NotePanel/NotePanel_spec.md) | |
-| 8 | StepCards | [StepCards_spec.md](./src/components/StepCards/StepCards_spec.md) | phase dot from Chip |
+| 6 | Panel | [Panel_spec.md](./src/components/Panel/Panel_spec.md) | |
+| 7 | GlanceList | [GlanceList_spec.md](./src/components/GlanceList/GlanceList_spec.md) | Panel, Chip |
+| 8 | CardList | [CardList_spec.md](./src/components/CardList/CardList_spec.md) | phase dot from Chip |
 | 9 | SpellTable | [SpellTable_spec.md](./src/components/SpellTable/SpellTable_spec.md) | Chip |
-| 10 | ComboCards | [ComboCards_spec.md](./src/components/ComboCards/ComboCards_spec.md) | |
-| 11 | PageHero | [PageHero_spec.md](./src/components/PageHero/PageHero_spec.md) | |
-| 12 | SideNav | [SideNav_spec.md](./src/components/SideNav/SideNav_spec.md) | phase dot from Chip |
+| 10 | PageHero | [PageHero_spec.md](./src/components/PageHero/PageHero_spec.md) | |
+| 11 | SideNav | [SideNav_spec.md](./src/components/SideNav/SideNav_spec.md) | phase dot from Chip |
+
+Panel replaced NotePanel, and CardList replaced StepCards and ComboCards (Antoinette, 2026-10-24).
 
 New components get a spec from [`component-template_spec.md`](./component-template_spec.md), saved as `<Name>_spec.md` in the component's folder, before any code.
 
@@ -157,7 +158,7 @@ Every component spec has the same sections in the same order (Antoinette, 2026-1
 - Keep the props in the component spec exactly. Export the component and its props types by name from `src/index.ts`. Where a spec changes markup for accessibility, the props and the look stay the same.
 - Every color, length and text style is a token. Component CSS has no raw values except `480px` in media queries (see the layout spec) and unitless numbers such as opacity.
 - Accept `className` and merge it onto the root element with a small internal `cx()` helper.
-- Server-component safe: no state, effects or browser APIs. None of the 12 components needs interaction.
+- Server-component safe: no state, effects or browser APIs. None of the 11 components needs interaction.
 - No inline `style` props.
 - Semantic HTML first, ARIA only where HTML can't express it.
 - Tappable elements are at least `space-12` (48px) in both directions. Focus rings: outline `stroke-strong` in `accent`, offset `space-1`.
