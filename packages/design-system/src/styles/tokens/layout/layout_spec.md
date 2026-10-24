@@ -27,7 +27,7 @@ Page widths, grid column minimums and fixed element sizes, so no component CSS n
   --layout-sidenav-max: 320px;
 
   /* Grid column minimums */
-  /* Narrowest column in card grids: NotePanel, StepCards, ComboCards. */
+  /* Narrowest column in card grids: Panel notes and CardList. */
   --layout-card-min: 208px;
   /* Narrowest column for side-by-side picks in a LevelCard. */
   --layout-pick-min: 256px;
@@ -39,7 +39,7 @@ Page widths, grid column minimums and fixed element sizes, so no component CSS n
   --size-icon: 16px;
   /* Phase dot in SideNav. */
   --size-dot: 8px;
-  /* Phase marker in StepCards. */
+  /* Phase marker in CardList. */
   --size-dot-lg: 12px;
 }
 ```

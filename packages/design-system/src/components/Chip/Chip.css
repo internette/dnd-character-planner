@@ -42,7 +42,7 @@
   color: var(--color-strike);
 }
 
-/* Phase dot, used by SideNav and StepCards next to the phase word. */
+/* Phase dot, used by SideNav and CardList next to the phase word. */
 .cp-dot {
   flex: none;
   width: var(--size-dot);
